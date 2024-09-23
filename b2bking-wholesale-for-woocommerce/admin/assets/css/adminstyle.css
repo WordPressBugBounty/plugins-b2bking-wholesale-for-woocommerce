@@ -1,0 +1,592 @@
+/**
+*
+* CSS File that styles the Admin Settings Panel of the Plugin
+* 
+* TABLE OF CONTENTS:
+* 1. WordPress Admin Dashboard Background
+* 2. Menu items
+* 3. Swing animation for icons
+* 4. Tools
+* 5. Media Queries
+*
+* 
+*/
+
+/* 1. WordPress Admin Dashboard Background (CSS file enqueued only in this plugin's specific admin slug) */
+#wpcontent{
+	background-color: #313437;
+	padding:0px 35px 0px 35px;
+	min-height: 800px;
+}
+#wpfooter{
+	background-color: #313437;
+	position:unset;
+}
+#wpbody-content {
+    padding-bottom: 5px;
+}
+.form-table th{
+	padding: 20px 10px 20px 10px;
+}
+#b2bking_admin_form .checkbox input{
+	margin:0;
+}
+.b2bking_button_color_gold.b2bking_button_color_gold_main button{
+  background: radial-gradient(141.77% 141.08% at 100.26% 99.25%, #cd4f72 0%, #e59a45 100%) !important;
+}
+.b2bking_button_color_gold.b2bking_button_color_gold_main button:hover{
+  background: radial-gradient(141.77% 141.08% at 100.26% 99.25%, #c4255c 0%, #dd7838 100%) !important;
+}
+
+/* 2. Menu Items */
+/* !important needed to override Semantic UI Library */
+.b2bking_othersettings_margin{
+  margin-bottom: 50px;
+}
+.ui.menu .item.green.active{
+	color: #f0efec !important;
+	transition: all 0s;
+}
+.ui.menu .item.green:hover{
+	color: #eeedf2;
+}
+#b2bking_admin_menu .active .icon{
+    color: #dea320;
+}
+#b2bking_admin_menu .item{
+	transition: 0.2s all;
+}
+#b2bking_admin_menu .item::before{
+	background: rgba(119, 122, 125, 0.1);
+}
+.item .b2bking_menu_description{
+	color: #686573;
+	font-size: 12px;
+}
+.item.active .b2bking_menu_description{
+	color:#b8b6c3;
+}
+#b2bking_menu_logo{
+	width: 170px;
+	margin: 30px auto;
+	display: block;
+}
+#b2bking_admin_wrapper{
+	display:flex;
+	min-height: 610px;
+  margin-top: 30px;
+}
+#b2bking_admin_wrapper_import{
+  display:flex;
+  min-height: 450px;
+  margin-top: 30px;
+}
+#b2bking_download_products_button{
+  min-height: 36px;
+}
+#b2bking_tabs_wrapper{
+	display: inline-block;
+    width: 100%;
+}
+#b2bking_admin_menu{
+	display:inline-block;
+	vertical-align: top;
+	height:auto;
+	min-width: 225px;
+	width:21%;
+	border: 0;
+	border-radius: 5px 0px 0px 5px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.17);
+	background: linear-gradient(172deg, #15141b, #201e2e, #15141b)
+}
+#b2bking_admin_menu .active{
+	/* !important needed to override Semantic UI Library */
+	border-color: #d4d4d5 !important; 
+	box-shadow: 0 3px 6px rgba(0,0,0,.07);
+	border-top-width:0px;
+	background: #6c667d;
+}
+.ui.menu .item{
+	transition: all .1s ease-out;
+	color:#bcc0c7;
+	padding:20px;
+}
+.ui.menu .item>i.icon{
+	font-size: 22px;
+	display:inline-table;
+	position: relative;
+	top: 5px;
+	transition: 0.3s all;
+}
+#b2bking_admin_menu .item:hover .icon{
+
+	animation: swing 1s ease;
+	animation-iteration-count: 1;
+}
+#b2bking_admin_menu .item.active:hover .icon{
+	animation: none;
+	animation-iteration-count: 1;
+}
+#b2bking_admin_menu.ui.menu .item:hover{
+	background: rgba(108, 102, 125, 0.18);
+}
+#b2bking_admin_menu.ui.menu .item.active:hover{
+	background: #6c667d;
+}
+a.item:after {
+    content: "";
+    width: 0;
+    left:0;
+    top: 0;
+    position: absolute;
+    transition: 0.2s ease;
+    height: 3px;
+}
+a.item.active:after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background: #dea320;
+}
+.ui.menu .item.teal:hover{
+	color: #00b5ad;
+}
+.ui.menu .item.pink:hover{
+	color: #e03997;
+}
+.ui.menu .item.red:hover{
+	color: #db2828;
+}
+.ui.menu .item.blue:hover{
+	color: #2185d0;
+}
+
+
+@keyframes glow {
+    0% {
+        background-position: initial;
+    }
+    50% {
+        background-position: right center;
+    }
+    100% {
+        background-position: initial;
+    }
+}
+#b2bking-admin-submit{
+    padding: 14px 26px;
+    margin-top: 8px;
+}
+#b2bking-admin-submit.active {
+   animation: glow 1.5s infinite;
+   background-image: linear-gradient(to right, #1e6396 0%, #268eda 51%, #1e6396 100%);
+   transition: 0.5s;
+   background-size: 200% auto;
+   border-color: #3582c4;
+   box-shadow: inset 0 2px 5px -3px #0a4b78, 0 0 0 1px #3582c4;
+ }
+
+ #b2bking_tabs_wrapper > .segment {
+     max-width: 1050px;
+ }
+
+.ui.tab.segment{
+	border:0;
+	box-shadow: 0 3px 6px rgba(0,0,0,.07);
+	border-top: 1px;
+	border-radius: 0 5px 5px 0;
+	height:100%;
+}
+.b2bking_attached_content_wrapper{
+	transition: all .15s ease;
+}
+.b2bking_plugin_status_container{
+  padding: 10px;
+}
+.b2bking_settings_explained{
+  font-size: 12px;
+  font-style: italic;
+}
+label.b2bking_access_restriction_label {
+    font-weight: 600;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 5px;
+    padding-bottom: 3px;
+    display: block;
+}
+
+/* 3. Swing Animation for Icons */
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+.swing {
+  -webkit-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swing;
+  animation-name: swing;
+}
+/* 4. Tools */
+div#b2bking_tools_setusergroup {
+    font-size: 16px;
+    padding: 10px;
+}
+div#b2bking_tools_setcategoryvisibility{
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+}
+div#b2bking_set_users_in_group, div#b2bking_set_category_in_bulk {
+    margin-top: 15px;
+}
+#toplevel_page_b2bkingcore img{
+  position: relative;
+  bottom: 2px;
+}
+.b2bking_spacer_10{
+    width: 10px;
+    display: inline-block;
+}
+a.b2bking_button_color_gold button {
+    min-height: 42px !important;
+}
+.b2bking_button_color_gold button{
+   background:#dea320 !important;
+}
+.b2bking_button_color_gold button:hover{
+   background:#d78017 !important;
+}
+.b2bking_button_color_gold{
+  display: flex;
+  justify-content: center;
+}
+.b2bking_upgrade_icon{
+  margin-right: 0.6em !important;
+   min-width: 70px !important;
+   text-align: center;
+   display:flex !important;
+   justify-content: center;
+}
+ul.b2bking_upgrade_list {
+    list-style: square;
+    margin-left: 25px;
+}
+
+/* 5. Media Queries */
+@media screen and (max-width: 767px) { 
+  div#b2bking_admin_wrapper{
+    display: block;
+  }
+  div#b2bking_admin_menu{
+    width: 100%;
+  }
+}
+
+
+
+/* New Styling */
+
+#b2bking_menu_logo {
+    width: 150px;
+    margin: 18px auto 32px auto;
+    display: block;
+}
+#b2bking_admin_menu .item {
+    transition: 0.2s all;
+    display: flex;
+}
+#b2bking_admin_menu .active {
+    border-color: #d4d4d5 !important;
+    box-shadow: 0 3px 6px rgba(0,0,0,.07);
+    border-top-width: 0px;
+    background: #6c667d47;
+}
+
+.ui.vertical.menu .item>.header:not(.ui) {
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    font-size: 13.3px;
+    font-weight: 300;
+    top: 5px;
+    margin:0px;
+}
+
+.ui.vertical.menu .item>i.icon {
+    filter: brightness(0.7);
+    width: 1.18em;
+    float: right;
+    margin-right: 16px;
+    margin-left: 5px;
+    position: relative;
+    top: 0px;
+}
+.ui.menu .item>i.icon {
+    font-size: 19px;
+    display: inline-table;
+    position: relative;
+    transition: 0.3s all;
+}
+#b2bking_admin_menu .item::before {
+    background: rgb(119 122 125 / 5%);
+}
+span.b2bking_menu_description {
+    display: none;
+}
+.ui.menu .item {
+    transition: all .1s ease-out;
+    color: #f3f4f5;
+    padding: 16px 20px;
+}
+
+a.item.active:after{
+  height: 2px;
+}
+#b2bking_admin_menu.ui.menu .item.active:hover {
+    background: #6c667dad;
+}
+#b2bking_admin_menu {
+    width: 20%;
+}
+a.green.item.active .icon, a.green.item.active path {
+    filter: brightness(1) !important;
+    stroke: #ffbd2a;
+}
+#b2bking_admin_menu.ui.menu .item:hover .icon{
+    filter: brightness(1) !important;
+}
+
+#b2bking_tabs_wrapper > .segment {
+    max-width: 1050px;
+}
+.tieredpricing td, .bulkorder td, .b2bking_languagesettings_tab td, .b2bking_othersettings_tab td, .quotesoffers td, .accessrestriction td, .b2bking_registrationsettings_tab td{
+    padding: 15px 34px;
+}
+.b2bking_languagesettings_tab tr{
+   /* border-bottom: 1px solid #efefef8f; */
+}
+.bulkorder tr, .quotesoffers tr{
+    border-bottom: 1px solid #efefef8f;
+    display: block;
+}
+.b2bking_bulkorder_section_settings tbody{
+    width: 100%;
+    display: block;
+}
+.b2bking_settings_segment{
+    padding: 5px !important;
+    display: block;
+    border-radius: 0px 0px 5px 5px !important;
+}
+.tieredpricing th, .bulkorder th, .quotesoffers th, .b2bking_languagesettings_tab th, .accessrestriction th, .other_priceproduct th, .other_priceproduct th{
+    width:400px;
+    font-size: 14.5px;
+    vertical-align: middle;
+}
+.other_toggles th{
+    width:580px;
+    font-size: 14.5px;
+    vertical-align: middle;
+}
+.other_toggles_multiple tr {
+    border-bottom: 1px solid #f6f6f6;
+}
+.b2bking_documentation_link{
+    text-decoration: underline;
+    font-weight: bold;
+    color: #295b6b;
+}
+.b2bking_registrationsettings_tab th{
+    width: 550px;
+    font-size: 14.5px;
+    vertical-align: middle;
+}
+.b2bking_setting_description{
+    font-weight: 100;
+    color: #6f6f6f;
+    margin-top: 6px !important;
+    -webkit-font-smoothing: antialiased;
+}
+.view_documentation_ribbon{
+    position: absolute !important;
+    margin-left:1px !important;
+    padding-left: 37px !important;
+}
+#b2bking_admin_wrapper .woocommerce-help-tip::after {
+    font-size: 0.7em !important;
+    top: initial !important;
+    position: relative;
+    left: 3px;
+    bottom: 1.5px;
+    color: #606060;
+    border-radius: 100px;
+    border: 1px solid #606060;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "?";
+    font-weight: 700 !important;
+    font-family: 'Lato', sans-serif;
+}
+.b2bking_setting_block{
+    padding: 0.3em !important;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    width: fit-content;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 4px #fff;
+}
+.b2bking_setting_block.b2bking_setting_block_noborder{
+    border:none;
+    box-shadow: none;
+}
+.bulkorder #b2bking_bulkorder_form_shortcode_button {
+    bottom: 37px !important;
+}
+.ui.orange.label.b2bking_orange{
+    border-color: #dca120 !important;
+    font-size: .56428571rem;
+}
+.b2bking_setting_block.active {
+    box-shadow: 0 2px 4px #007cba33;
+    border: 1px solid #007cba;
+}
+
+p.b2bking_block_description {
+    text-align: center;
+    color: #828282;
+}
+.ui.horizontal.divider:before {
+    width: 1% !important;
+}
+.ui.horizontal.divider:after {
+    width: 99%;
+}
+.divider_icon{
+    background: #F3F3F3;
+    width: 35px;
+    color: #3c434a;
+    height: 35px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+.b2bking_grid_min{
+    min-width: 420px;
+}
+.b2bking_centered_column{
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+}
+.b2bking_icon_svg_setting{
+    width: 93px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+}
+.b2bking_visibility_settings tr td {
+    padding-left: 0px;
+}
+.b2bking_grid_two_columns{
+    width: 200px;
+}
+.b2bking_grid_two_columns .column{
+    width: 180px !important;
+}
+.b2bking_visibility_instructions_message{
+    max-width: 715px;
+}
+.b2bking_setting_cog_visible {
+    width: 28px;
+    transition: all .2s ease-in-out;
+}
+.b2bking_setting_cog_visible path{
+    stroke: #9c9c9c;
+}
+.b2bking_setting_block.active .b2bking_setting_cog_visible path{
+    stroke: #085378;
+}
+
+.b2bking_setting_eye_visible{
+    transition: all .2s ease-in-out;
+    width: 36px;
+    fill: #9c9c9c;
+}
+
+.toplevel_page_b2bkingcore div#tiptip_content {
+    min-width: 300px !important;
+}
+.b2bking_setting_block.active .b2bking_setting_eye_visible{
+    fill: #085378;
+}
+
+#b2bking_existing_users_apply_warning_row{
+    display:none;
+}
+#b2bking_access_restriction_force_redirect th {
+    width: 620px;
+}
+.b2bking_existing_users_apply_warning {
+    max-width: 619px;
+}
+.b2bking_existing_users_apply_warning p {
+    font-size: 12.7px !important;
+}
+.b2bking_existing_users_apply_warning i{
+    font-size: 34px !important;
+    margin-right: 5px !important;
+}
+td#b2bking_existing_users_apply_warning_row {
+    padding: 10px;
+}
