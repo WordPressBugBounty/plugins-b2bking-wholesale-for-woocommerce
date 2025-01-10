@@ -6,7 +6,7 @@ Tags: 	wholesale prices, woocommerce b2b, woocommerce wholesale, b2b plugin for 
 Author URI: webwizards.dev
 Author: WebWizards
 Requires at least: 4.8
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 5.6.20
 Stable tag: 4.7.10
 Version: 4.7.10
@@ -16,13 +16,15 @@ B2BKing is the complete solution for running a Wholesale, B2B or B2B + B2C hybri
 
 == Description ==
 
-**B2BKing is the complete solution for running a Wholesale, B2B or B2B + B2C hybrid store with WooCommerce.**
+**B2BKing® is the complete solution for running a Wholesale, B2B or B2B + B2C hybrid store with WooCommerce.**
 
-🥇 **Highest Rated** B2B & Wholesale plugin: **4.98/5 stars** from [98+ reviews](https://codecanyon.net/item/b2bking-the-ultimate-woocommerce-b2b-plugin/reviews/26689576 "98+ reviews")
+🥇 **Highest Rated** B2B & Wholesale plugin: **4.98/5 stars** from [100+ reviews](https://codecanyon.net/item/b2bking-the-ultimate-woocommerce-b2b-plugin/reviews/26689576 "100+ reviews")
 
 🏆 **Most Featured** B2B Solution -  WPLift, WPMayor, Envato, BusinessBloomer, and many other top WP sites have featured B2BKing.
 
-🚀 B2BKing is a **bestseller** and one of fastest-growing WP plugins. In 2024, it has become the **most sold B2B plugin ever** on Envato Market.
+🚀 B2BKing is a global **bestseller** with **over 10,000+ active installs**, backed by 117+ software updates (currently [v5.2](https://woocommerce-b2b-plugin.com/changelog/ "v5.2")) - making B2BKing the most trusted B2B solution for WooCommerce stores.
+
+
 
 —————————————————————————————————
 
@@ -305,7 +307,7 @@ Through the business registration feature you can configure complex registration
 
 🎉 *"Great Plug-in with all the functions a B2B shop may need. It was ideal for our Company since we use a multisite with retail and separate B2B shop that we need it to be hidden. Thank you also for the great and fast Support."*
 
-🎉 *"This plugin is by far the most promising! In order to do what this plugin does, you have to install many plugins, which costs money and are heavy. Lite with nice and easy UI"*
+🎉 *"This plugin is by far the most promising! In order to do what this plugin does, you have to install many plugins, which cost money and are heavy. Lite with nice and easy UI"*
 
 🎉 *"This is the best B2B plugin in the market - but not only that the plugin is amazing - and the customer support is out of the world - I wish that every plugin authors would have 10% of the care and support - I highly recommend buying this plugin if you need to sell to vendors and B2C."*
 
