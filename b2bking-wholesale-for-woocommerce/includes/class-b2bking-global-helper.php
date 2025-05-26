@@ -234,6 +234,153 @@ class B2bking_Globalhelpercore{
 		return false;
 	}
 
+	public static function safe_get_queried_object_id() {
+	    global $wp_query;
+	    if ($wp_query !== null && is_object($wp_query) && method_exists($wp_query, 'get_queried_object_id')) {
+	        return get_queried_object_id();
+	    }
+	    return 0; 
+	}
+
+	public static function force_purge_caches(){
+		// Try common actions
+		do_action('wp_cache_clear_cache');
+		do_action('cache_cleared');
+		do_action('wp_cache_flush');
+		do_action( 'litespeed_purge_all' );
+
+		// Try specific plugins
+		if (function_exists('rocket_clean_domain')) {
+			rocket_clean_domain();
+		}
+
+		if (function_exists('w3tc_pgcache_flush')) {
+			w3tc_pgcache_flush();
+		}
+
+		if (function_exists('wp_cache_clear_cache')) {
+			wp_cache_clear_cache();
+		}
+
+		if (class_exists('LiteSpeed_Cache_API')) {
+			LiteSpeed_Cache_API::purge_all();
+		}
+
+
+		// WP Fastest Cache
+		if (class_exists('WpFastestCache')) {
+			$cache = new WpFastestCache();
+			$cache->deleteCache(true);
+		}
+	}
+
+	// Check function - validates against highest number in log
+	public static function check_visibility_cache_integrity($cache_product_ids) {
+
+		// disable for now 
+		return $cache_product_ids;
+
+
+	    if (!$cache_product_ids) {
+	        // cache is false, will regenerate, nothing to do here
+	        return $cache_product_ids;
+	    }
+	    
+	    $use_cache_integrity_checks = get_option('b2bking_use_cache_integrity_checks', 0);
+	    if (intval($use_cache_integrity_checks) === 0) {
+	        return $cache_product_ids;
+	    }
+
+	    // proceed with cache checks
+
+	    // get current user
+	    $currentuserid = get_current_user_id();
+	    $account_type = get_user_meta($currentuserid, 'b2bking_account_type', true);
+	    if ($account_type === 'subaccount') {
+	        // for all intents and purposes set current user as the subaccount parent
+	        $parent_user_id = get_user_meta($currentuserid, 'b2bking_account_parent', true);
+	        $currentuserid = $parent_user_id;
+	    }
+	    // get current count
+	    $product_ids_count = count($cache_product_ids);
+
+	    // if current page shows nothing found, clear site cache, but do not invalidate current ajax visibility cache
+	    if (is_shop() || is_product_category()) {
+	        global $wp_query;
+	        if ($wp_query->post_count === 0) {
+				b2bking()->force_purge_caches();
+				
+	            $cache_product_ids = false;
+	        }
+	    }
+
+	    // get current ajax visibility cache
+	    $visibility_cache_db = get_transient('b2bking_user_'.$currentuserid.'_ajax_visibility');
+	    $user_cache_integrity_log = get_option('b2bking_cache_integrity_log' . $currentuserid, false);
+
+	    // If no log exists yet, assume cache is valid
+	    if (!is_array($user_cache_integrity_log) || empty($user_cache_integrity_log)) {
+	        return $cache_product_ids;
+	    }
+
+	    // get the highest recorded log
+	    $highest_count = max($user_cache_integrity_log);
+	    $current_count_db = count($visibility_cache_db);
+
+	    // if current visibility in DB is more than 100 less than highest ever recorded, invalidate DB cache
+	    if (abs($current_count_db - $highest_count) > 100) {
+    		delete_transient('b2bking_user_'.$currentuserid.'_ajax_visibility');
+    		
+    		if (apply_filters('b2bking_flush_cache_wp', true)){
+    			wp_cache_flush();
+    		}
+	    }
+
+
+	    return $cache_product_ids;
+	}
+
+	// Update function - only called when generating fresh values
+	public static function update_visibility_integrity_log($product_ids) {
+	    $use_cache_integrity_checks = get_option('b2bking_use_cache_integrity_checks', 0);
+	    if (intval($use_cache_integrity_checks) === 0) {
+	        return;
+	    }
+	    
+	    // Proceed only if we have products (avoid logging zero values from corrupt generations)
+	    $product_ids_count = count($product_ids);
+	    $min_expected_products = intval(get_option('b2bking_min_expected_products', 100));
+	    if ($product_ids_count < $min_expected_products) {
+	        return; // Don't log potentially corrupted values
+	    }
+	    
+	    // get current user id
+	    $currentuserid = get_current_user_id();
+	    $account_type = get_user_meta($currentuserid, 'b2bking_account_type', true);
+	    if ($account_type === 'subaccount') {
+	        // for all intents and purposes set current user as the subaccount parent
+	        $parent_user_id = get_user_meta($currentuserid, 'b2bking_account_parent', true);
+	        $currentuserid = $parent_user_id;
+	    }
+	    
+	    // get current products count
+	    $user_cache_integrity_log = get_option('b2bking_cache_integrity_log' . $currentuserid, false);
+	    
+	    // if no log exists, create it
+	    if (!is_array($user_cache_integrity_log)) {
+	        $user_cache_integrity_log = array($product_ids_count);
+	    } else {
+	        // if log exists, add latest number to log and if log is higher than 10000 items, cut out the first (oldest) numbers
+	        $user_cache_integrity_log[] = $product_ids_count;
+	        while (count($user_cache_integrity_log) > 50000) {
+	            array_shift($user_cache_integrity_log);
+	        }
+	    }
+	    
+	    // save log
+	    update_option('b2bking_cache_integrity_log' . $currentuserid, $user_cache_integrity_log);
+	}
+
 	// returns either false if not have, or the value if have
 	public static function get_product_meta_max($product_id){
 
