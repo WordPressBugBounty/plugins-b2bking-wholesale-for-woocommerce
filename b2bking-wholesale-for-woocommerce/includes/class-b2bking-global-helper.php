@@ -12,6 +12,33 @@ class B2bking_Globalhelpercore{
 	    return self::$instance;
 	}
 
+	public static function format_price_range( $from, $to ) {
+		$price = wc_format_price_range($from, $to);
+
+		// remove screen reader text as it breaks some b2bking scripts
+		return preg_replace('/<span\s+class=["\']screen-reader-text["\'][^>]*>.*?<\/span>/s', '', $price);
+	}
+
+	public static function use_wpml_cache(){
+		$use_wpml_cache = false;
+		if (defined('ICL_LANGUAGE_NAME_EN')) {
+			// Get language code from WPML filter for validation
+			$current_language_code = function_exists('apply_filters') ? apply_filters('wpml_current_language', null) : '';
+
+			if (!empty($current_language_code)) {
+				// Convert language code to language name for comparison
+				$current_language_name = function_exists('apply_filters') ? apply_filters('wpml_translated_language_name', '', $current_language_code, 'en') : '';
+
+				// Only use WPML cache if both methods agree on the language
+				if (!empty($current_language_name) && $current_language_name === ICL_LANGUAGE_NAME_EN) {
+					$use_wpml_cache = true;
+				}
+			}
+		}
+
+		return $use_wpml_cache;
+	}
+
 	public static function convert_date_from_to_range($date_from){
 		$local_date_start = new DateTime("$date_from 00:00:00", wp_timezone());
 		$local_date_end = new DateTime("$date_from 23:59:59", wp_timezone());
