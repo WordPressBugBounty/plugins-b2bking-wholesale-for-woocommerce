@@ -19,6 +19,27 @@ class B2bking_Globalhelpercore{
 		return preg_replace('/<span\s+class=["\']screen-reader-text["\'][^>]*>.*?<\/span>/s', '', $price);
 	}
 
+	public static function is_marketplace_dashboard() {
+	    // Check if we're on any admin page first
+	    if (!is_admin()) {
+	        // Check for Dokan dashboard
+	        if (function_exists('dokan_is_seller_dashboard')) {
+	            if (dokan_is_seller_dashboard()) {
+	                return 'dokan';
+	            }
+	        }
+	        
+	        // Check for WCFM dashboard
+	        if (function_exists('is_wcfm_page')) {
+	            if (is_wcfm_page()) {
+	                return 'wcfm';
+	            }
+	        }
+	    }
+	    
+	    return false;
+	}
+
 	public static function use_wpml_cache(){
 		$use_wpml_cache = false;
 		if (defined('ICL_LANGUAGE_NAME_EN')) {

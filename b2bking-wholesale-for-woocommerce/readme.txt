@@ -8,8 +8,8 @@ Author: WebWizards
 Requires at least: 4.8
 Tested up to: 6.8
 Requires PHP: 5.6.20
-Stable tag: 4.9.00
-Version: 4.9.00
+Stable tag: 4.9.10
+Version: 4.9.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 B2BKing is the complete solution for running a Wholesale, B2B or B2B + B2C hybrid store with WooCommerce.
