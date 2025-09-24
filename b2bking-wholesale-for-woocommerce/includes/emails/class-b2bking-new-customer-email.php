@@ -2,7 +2,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if (!class_exists('B2bking_New_Customer_Email')){
+if (!class_exists('B2bkingcore_New_Customer_Email')){
     class B2bkingcore_New_Customer_Email extends WC_Email {
 
         public function __construct() {
