@@ -102,10 +102,9 @@ class B2bkingcore {
 			
 			});
 
-    		// Approve and Reject users
-    		add_action( 'wp_ajax_b2bkingapproveuser', array($this, 'b2bkingapproveuser') );
-    		add_action( 'wp_ajax_nopriv_b2bkingapproveuser', array($this, 'b2bkingapproveuser') );
-    		add_action( 'wp_ajax_b2bkingrejectuser', array($this, 'b2bkingrejectuser') );
+	   		// Approve and Reject users
+	   		add_action( 'wp_ajax_b2bkingapproveuser', array($this, 'b2bkingapproveuser') );
+	   		add_action( 'wp_ajax_b2bkingrejectuser', array($this, 'b2bkingrejectuser') );
     	
     		// Dismiss "activate woocommerce" admin notice permanently
     		add_action( 'wp_ajax_b2bking_dismiss_activate_woocommerce_admin_notice', array($this, 'b2bking_dismiss_activate_woocommerce_admin_notice') );
@@ -128,50 +127,37 @@ class B2bkingcore {
     		add_action( 'wp_ajax_b2bking_dismiss_review_admin_notice', array( $this, 'b2bking_dismiss_review_admin_notice' ) );
     		add_action( 'wp_ajax_b2bking_dismiss_review_admin_notice_temporary', array( $this, 'b2bking_dismiss_review_admin_notice_temporary' ) );
 
-    		// Save Special group settings (b2c and guests) in groups
-    		add_action( 'wp_ajax_nopriv_b2bking_b2c_special_group_save_settings', array($this, 'b2bking_b2c_special_group_save_settings') );
-    		add_action( 'wp_ajax_b2bking_b2c_special_group_save_settings', array($this, 'b2bking_b2c_special_group_save_settings') );
-    		add_action( 'wp_ajax_nopriv_b2bking_logged_out_special_group_save_settings', array($this, 'b2bking_logged_out_special_group_save_settings') );
-    		add_action( 'wp_ajax_b2bking_logged_out_special_group_save_settings', array($this, 'b2bking_logged_out_special_group_save_settings') );
-    		
-    		// Backend Customers Panel
-    		add_action( 'wp_ajax_nopriv_b2bking_admin_customers_ajax', array($this, 'b2bking_admin_customers_ajax') );
-    		add_action( 'wp_ajax_b2bking_admin_customers_ajax', array($this, 'b2bking_admin_customers_ajax') );
+	   		// Save Special group settings (b2c and guests) in groups
+	   		add_action( 'wp_ajax_b2bking_b2c_special_group_save_settings', array($this, 'b2bking_b2c_special_group_save_settings') );
+	   		add_action( 'wp_ajax_b2bking_logged_out_special_group_save_settings', array($this, 'b2bking_logged_out_special_group_save_settings') );
+	    		
+	   		// Backend Customers Panel
+	   		add_action( 'wp_ajax_b2bking_admin_customers_ajax', array($this, 'b2bking_admin_customers_ajax') );
 
-    		// Backend Update User Data
-    		add_action( 'wp_ajax_nopriv_b2bkingupdateuserdata', array($this, 'b2bkingupdateuserdata') );
-    		add_action( 'wp_ajax_b2bkingupdateuserdata', array($this, 'b2bkingupdateuserdata') );
+	   		// Backend Update User Data
+	   		add_action( 'wp_ajax_b2bkingupdateuserdata', array($this, 'b2bkingupdateuserdata') );
 
-    		// Get page content function
+	   		// Get page content function
 			add_action( 'wp_ajax_b2bking_get_page_content', array($this, 'b2bking_get_page_content') );
-    		add_action( 'wp_ajax_nopriv_b2bking_get_page_content', array($this, 'b2bking_get_page_content') );
 
-    		// refresh dashboard data
-    		add_action( 'wp_ajax_nopriv_b2bking_refresh_dashboard_data', array($this, 'b2bking_refresh_dashboard_data') );
-    		add_action( 'wp_ajax_b2bking_refresh_dashboard_data', array($this, 'b2bking_refresh_dashboard_data') );
+	   		// refresh dashboard data
+	   		add_action( 'wp_ajax_b2bking_refresh_dashboard_data', array($this, 'b2bking_refresh_dashboard_data') );
 
-    		// Reports get data
-    		add_action( 'wp_ajax_nopriv_b2bking_reports_get_data', array($this, 'b2bking_reports_get_data') );
-    		add_action( 'wp_ajax_b2bking_reports_get_data', array($this, 'b2bking_reports_get_data') );
+	   		// Reports get data
+	   		add_action( 'wp_ajax_b2bking_reports_get_data', array($this, 'b2bking_reports_get_data') );
 
 
-    		add_action( 'wp_ajax_nopriv_b2bkingchangefield', array($this, 'b2bkingchangefield') );
-    		add_action( 'wp_ajax_b2bkingchangefield', array($this, 'b2bkingchangefield') );
+	   		add_action( 'wp_ajax_b2bkingchangefield', array($this, 'b2bkingchangefield') );
 
-    		add_action( 'wp_ajax_nopriv_b2bking_clear_rules_caches', array($this, 'b2bking_clear_rules_caches') );
-    		add_action( 'wp_ajax_b2bking_clear_rules_caches', array($this, 'b2bking_clear_rules_caches') );
-    		// required
-    		add_action( 'wp_ajax_nopriv_b2bkingchangefieldrequired', array($this, 'b2bkingchangefieldrequired') );
-    		add_action( 'wp_ajax_b2bkingchangefieldrequired', array($this, 'b2bkingchangefieldrequired') );
-    		//placeholder
-    		add_action( 'wp_ajax_nopriv_b2bkingsavefieldplaceholder', array($this, 'b2bkingsavefieldplaceholder') );
-    		add_action( 'wp_ajax_b2bkingsavefieldplaceholder', array($this, 'b2bkingsavefieldplaceholder') );
+	   		add_action( 'wp_ajax_b2bking_clear_rules_caches', array($this, 'b2bking_clear_rules_caches') );
+	   		// required
+	   		add_action( 'wp_ajax_b2bkingchangefieldrequired', array($this, 'b2bkingchangefieldrequired') );
+	   		//placeholder
+	   		add_action( 'wp_ajax_b2bkingsavefieldplaceholder', array($this, 'b2bkingsavefieldplaceholder') );
 
-    		add_action( 'wp_ajax_nopriv_b2bkingsavefieldlabel', array($this, 'b2bkingsavefieldlabel') );
-    		add_action( 'wp_ajax_b2bkingsavefieldlabel', array($this, 'b2bkingsavefieldlabel') );
+	   		add_action( 'wp_ajax_b2bkingsavefieldlabel', array($this, 'b2bkingsavefieldlabel') );
 
-    		add_action( 'wp_ajax_nopriv_b2bking_save_posts_per_page', array($this, 'b2bking_save_posts_per_page') );
-    		add_action( 'wp_ajax_b2bking_save_posts_per_page', array($this, 'b2bking_save_posts_per_page') );
+	   		add_action( 'wp_ajax_b2bking_save_posts_per_page', array($this, 'b2bking_save_posts_per_page') );
 
     		add_action( 'wp_ajax_b2bking_update_sort_menu_order', array($this, 'b2bking_update_sort_menu_order') );
 
@@ -1432,6 +1418,12 @@ class B2bkingcore {
 		    wp_die();
 		}
 
+		// Capability check
+		if (!current_user_can( apply_filters('b2bking_backend_capability_needed', 'manage_woocommerce') )){
+			wp_send_json_error( 'Failed capability check.' );
+			wp_die();
+		}
+
 		$user_id = sanitize_text_field($_POST['userid']);
 		$fields_string = sanitize_text_field($_POST['field_strings']);
 		$fields_array = explode(',',$fields_string);
@@ -1464,6 +1456,12 @@ class B2bkingcore {
 		if ( ! check_ajax_referer( 'b2bking_security_nonce', 'security' ) ) {
 		  	wp_send_json_error( 'Invalid security token sent.' );
 		    wp_die();
+		}
+
+		// Capability check
+		if (!current_user_can( apply_filters('b2bking_backend_capability_needed', 'manage_woocommerce') )){
+			wp_send_json_error( 'Failed capability check.' );
+			wp_die();
 		}
 
 		if (apply_filters('b2bking_use_zone_shipping_control', true)){
@@ -1525,6 +1523,12 @@ class B2bkingcore {
 		if ( ! check_ajax_referer( 'b2bking_security_nonce', 'security' ) ) {
 		  	wp_send_json_error( 'Invalid security token sent.' );
 		    wp_die();
+		}
+
+		// Capability check
+		if (!current_user_can( apply_filters('b2bking_backend_capability_needed', 'manage_woocommerce') )){
+			wp_send_json_error( 'Failed capability check.' );
+			wp_die();
 		}
 
 		if (apply_filters('b2bking_use_zone_shipping_control', true)){

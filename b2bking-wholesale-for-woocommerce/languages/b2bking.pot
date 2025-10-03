@@ -2,15 +2,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: B2BKing Core\n"
-"POT-Creation-Date: 2024-08-17 18:01+0300\n"
-"PO-Revision-Date: 2024-08-17 18:01+0300\n"
+"POT-Creation-Date: 2025-10-03 19:18+0200\n"
+"PO-Revision-Date: 2025-10-03 19:18+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: b2bking.php\n"
@@ -2023,15 +2023,15 @@ msgstr ""
 msgid "Total Spent"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6776 includes/class-b2bking.php:1270
+#: admin/class-b2bking-admin.php:6776 includes/class-b2bking.php:1256
 msgid "Subaccount"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6778 includes/class-b2bking.php:1272
+#: admin/class-b2bking-admin.php:6778 includes/class-b2bking.php:1258
 msgid "Main business account"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6806 includes/class-b2bking.php:1300
+#: admin/class-b2bking-admin.php:6806 includes/class-b2bking.php:1286
 msgid "Waiting Approval"
 msgstr ""
 
@@ -2334,7 +2334,7 @@ msgstr ""
 msgid "Unselect"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7617 includes/class-b2bking.php:189
+#: admin/class-b2bking-admin.php:7617 includes/class-b2bking.php:175
 msgid "Disabled"
 msgstr ""
 
@@ -2883,141 +2883,141 @@ msgstr ""
 msgid "B2BKing B2C User"
 msgstr ""
 
-#: includes/class-b2bking.php:889
+#: includes/class-b2bking.php:875
 msgid "Invalid post type."
 msgstr ""
 
-#: includes/class-b2bking.php:894
+#: includes/class-b2bking.php:880
 msgid "You need a higher level of permission."
 msgstr ""
 
-#: includes/class-b2bking.php:895
+#: includes/class-b2bking.php:881
 msgid "Sorry, you are not allowed to edit posts in this post type."
 msgstr ""
 
-#: includes/class-b2bking.php:968
+#: includes/class-b2bking.php:954
 #, php-format
 msgid "%s post updated."
 msgid_plural "%s posts updated."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:969
+#: includes/class-b2bking.php:955
 msgid "1 post not updated, somebody is editing it."
 msgstr ""
 
-#: includes/class-b2bking.php:971
+#: includes/class-b2bking.php:957
 #, php-format
 msgid "%s post not updated, somebody is editing it."
 msgid_plural "%s posts not updated, somebody is editing them."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:973
+#: includes/class-b2bking.php:959
 #, php-format
 msgid "%s post permanently deleted."
 msgid_plural "%s posts permanently deleted."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:974
+#: includes/class-b2bking.php:960
 #, php-format
 msgid "%s post moved to the Trash."
 msgid_plural "%s posts moved to the Trash."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:975
+#: includes/class-b2bking.php:961
 #, php-format
 msgid "%s post restored from the Trash."
 msgid_plural "%s posts restored from the Trash."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:978
+#: includes/class-b2bking.php:964
 #, php-format
 msgid "%s page updated."
 msgid_plural "%s pages updated."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:979
+#: includes/class-b2bking.php:965
 msgid "1 page not updated, somebody is editing it."
 msgstr ""
 
-#: includes/class-b2bking.php:980
+#: includes/class-b2bking.php:966
 #, php-format
 msgid "%s page not updated, somebody is editing it."
 msgid_plural "%s pages not updated, somebody is editing them."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:981
+#: includes/class-b2bking.php:967
 #, php-format
 msgid "%s page permanently deleted."
 msgid_plural "%s pages permanently deleted."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:982
+#: includes/class-b2bking.php:968
 #, php-format
 msgid "%s page moved to the Trash."
 msgid_plural "%s pages moved to the Trash."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:983
+#: includes/class-b2bking.php:969
 #, php-format
 msgid "%s page restored from the Trash."
 msgid_plural "%s pages restored from the Trash."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:986
+#: includes/class-b2bking.php:972
 #, php-format
 msgid "%s block updated."
 msgid_plural "%s blocks updated."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:987
+#: includes/class-b2bking.php:973
 msgid "1 block not updated, somebody is editing it."
 msgstr ""
 
-#: includes/class-b2bking.php:988
+#: includes/class-b2bking.php:974
 #, php-format
 msgid "%s block not updated, somebody is editing it."
 msgid_plural "%s blocks not updated, somebody is editing them."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:989
+#: includes/class-b2bking.php:975
 #, php-format
 msgid "%s block permanently deleted."
 msgid_plural "%s blocks permanently deleted."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:990
+#: includes/class-b2bking.php:976
 #, php-format
 msgid "%s block moved to the Trash."
 msgid_plural "%s blocks moved to the Trash."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:991
+#: includes/class-b2bking.php:977
 #, php-format
 msgid "%s block restored from the Trash."
 msgid_plural "%s blocks restored from the Trash."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:1015
+#: includes/class-b2bking.php:1001
 #, php-format
 msgid "Search results for: %s"
 msgstr ""
 
-#: includes/class-b2bking.php:1038
+#: includes/class-b2bking.php:1024
 msgid "Undo"
 msgstr ""
 
@@ -3035,65 +3035,65 @@ msgid "New customer registration"
 msgstr ""
 
 #: includes/emails/class-b2bking-new-customer-email.php:106
-#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:102
-#: includes/emails/class-b2bking-new-message-email.php:89
-#: includes/emails/class-b2bking-your-account-approved-email.php:82
+#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:104
+#: includes/emails/class-b2bking-new-message-email.php:91
+#: includes/emails/class-b2bking-your-account-approved-email.php:85
 msgid "Enable/Disable"
 msgstr ""
 
 #: includes/emails/class-b2bking-new-customer-email.php:108
-#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:104
-#: includes/emails/class-b2bking-new-message-email.php:91
-#: includes/emails/class-b2bking-your-account-approved-email.php:84
+#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:106
+#: includes/emails/class-b2bking-new-message-email.php:93
+#: includes/emails/class-b2bking-your-account-approved-email.php:87
 msgid "Enable this email notification"
 msgstr ""
 
 #: includes/emails/class-b2bking-new-customer-email.php:112
-#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:108
+#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:110
 msgid "Recipient(s)"
 msgstr ""
 
 #: includes/emails/class-b2bking-new-customer-email.php:114
-#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:110
+#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:112
 msgid "Enter recipients (comma separated) for this email. Defaults to"
 msgstr ""
 
 #: includes/emails/class-b2bking-new-customer-email.php:121
-#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:117
-#: includes/emails/class-b2bking-new-message-email.php:97
-#: includes/emails/class-b2bking-your-account-approved-email.php:90
+#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:119
+#: includes/emails/class-b2bking-new-message-email.php:99
+#: includes/emails/class-b2bking-your-account-approved-email.php:93
 msgid ""
 "This controls the email subject line. Leave blank to use the default "
 "subject: "
 msgstr ""
 
 #: includes/emails/class-b2bking-new-customer-email.php:126
-#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:122
-#: includes/emails/class-b2bking-new-message-email.php:102
-#: includes/emails/class-b2bking-your-account-approved-email.php:95
+#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:124
+#: includes/emails/class-b2bking-new-message-email.php:104
+#: includes/emails/class-b2bking-your-account-approved-email.php:98
 msgid "Email Heading"
 msgstr ""
 
 #: includes/emails/class-b2bking-new-customer-email.php:128
-#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:124
-#: includes/emails/class-b2bking-new-message-email.php:104
-#: includes/emails/class-b2bking-your-account-approved-email.php:97
+#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:126
+#: includes/emails/class-b2bking-new-message-email.php:106
+#: includes/emails/class-b2bking-your-account-approved-email.php:100
 msgid ""
 "This controls the main heading contained within the email notification. "
 "Leave blank to use the default heading: "
 msgstr ""
 
 #: includes/emails/class-b2bking-new-customer-email.php:133
-#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:129
-#: includes/emails/class-b2bking-new-message-email.php:109
-#: includes/emails/class-b2bking-your-account-approved-email.php:102
+#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:131
+#: includes/emails/class-b2bking-new-message-email.php:111
+#: includes/emails/class-b2bking-your-account-approved-email.php:105
 msgid "Email type"
 msgstr ""
 
 #: includes/emails/class-b2bking-new-customer-email.php:135
-#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:131
-#: includes/emails/class-b2bking-new-message-email.php:111
-#: includes/emails/class-b2bking-your-account-approved-email.php:104
+#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:133
+#: includes/emails/class-b2bking-new-message-email.php:113
+#: includes/emails/class-b2bking-your-account-approved-email.php:107
 msgid "Choose which format of email to send."
 msgstr ""
 
@@ -3109,45 +3109,45 @@ msgstr ""
 msgid "N/A"
 msgstr ""
 
-#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:13
-#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:19
-#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:20
+#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:15
+#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:21
+#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:22
 msgid "New customer requires approval"
 msgstr ""
 
-#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:16
+#: includes/emails/class-b2bking-new-customer-requires-approval-email.php:18
 msgid ""
 "This email is sent to admin when a new customer registers and requires "
 "manual approval"
 msgstr ""
 
-#: includes/emails/class-b2bking-new-message-email.php:13
+#: includes/emails/class-b2bking-new-message-email.php:15
 msgid "New message (B2BKing Premium)"
 msgstr ""
 
-#: includes/emails/class-b2bking-new-message-email.php:16
+#: includes/emails/class-b2bking-new-message-email.php:18
 msgid ""
 "This email is sent when a new message (quote request, or user inquiry, or "
 "user conversation) is sent"
 msgstr ""
 
-#: includes/emails/class-b2bking-new-message-email.php:19
-#: includes/emails/class-b2bking-new-message-email.php:20
+#: includes/emails/class-b2bking-new-message-email.php:21
+#: includes/emails/class-b2bking-new-message-email.php:22
 msgid "New message (conversations)"
 msgstr ""
 
-#: includes/emails/class-b2bking-your-account-approved-email.php:13
+#: includes/emails/class-b2bking-your-account-approved-email.php:16
 msgid "Account approved"
 msgstr ""
 
-#: includes/emails/class-b2bking-your-account-approved-email.php:18
+#: includes/emails/class-b2bking-your-account-approved-email.php:21
 msgid ""
 "This email notifies the customer when their account has been manually "
 "approved"
 msgstr ""
 
-#: includes/emails/class-b2bking-your-account-approved-email.php:21
-#: includes/emails/class-b2bking-your-account-approved-email.php:22
+#: includes/emails/class-b2bking-your-account-approved-email.php:24
+#: includes/emails/class-b2bking-your-account-approved-email.php:25
 msgid "Your account has been approved"
 msgstr ""
 

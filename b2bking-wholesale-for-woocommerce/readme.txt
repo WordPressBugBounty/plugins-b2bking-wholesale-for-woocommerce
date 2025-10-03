@@ -8,8 +8,8 @@ Author: WebWizards
 Requires at least: 4.8
 Tested up to: 6.8
 Requires PHP: 5.6.20
-Stable tag: 4.9.20
-Version: 4.9.20
+Stable tag: 4.9.30
+Version: 4.9.30
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 B2BKing is the complete solution for running a Wholesale, B2B or B2B + B2C hybrid store with WooCommerce.
@@ -380,3 +380,7 @@ Yes, you can create 'Fixed Price' dynamic rules, which allow you to select indiv
 = Can I hide some products completely for some users? = 
 
 Yes! B2BKing can not only hide price, but it can also hide products entirely using the plugin's visibility module. This can be configured for specific products, categories, users or user groups. More info [here](https://woocommerce-b2b-plugin.com/docs/faq-product-visibility-is-not-working-how-to-set-up-product-visibility/ "here")
+
+= How can I report security bugs? =
+
+You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team helps validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/9e5fb5c8-597a-4c1a-b7be-6766c7894710)
