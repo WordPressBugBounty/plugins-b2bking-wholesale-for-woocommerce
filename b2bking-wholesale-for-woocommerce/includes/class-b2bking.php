@@ -1390,8 +1390,20 @@ class B2bkingcore {
 		// If nonce verification didn't fail, run further
 		$user_id = sanitize_text_field($_POST['user']);
 
+		// Check that account is pending B2BKing B2B approval (only B2B user registrations can be rejected)
+		$account_approved = get_user_meta($user_id, 'b2bking_account_approved', true );
+		if ($account_approved !== 'no'){
+			wp_die();
+		}
+
 		// delete account
-		wp_delete_user($user_id);
+		if (apply_filters('b2bking_reject_user_delete', true)){
+			if (is_multisite()) {
+				wpmu_delete_user($user_id);
+			} else {
+				wp_delete_user($user_id);
+			}
+		}
 
 		// check if this function is being run by delete subaccount in the frontend
 		if(isset($_POST['issubaccount'])){

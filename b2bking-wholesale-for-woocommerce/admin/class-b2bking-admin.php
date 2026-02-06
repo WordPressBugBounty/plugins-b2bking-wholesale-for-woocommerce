@@ -7494,10 +7494,17 @@ class B2bkingcore_Admin{
 				$do_not_load = true;
 			}
 		}
-		if (isset($_GET['page'])){
-			if ($_GET['page'] === 'wc-orders'){
+		if ($hook === 'edit.php' && isset($_GET['post_type'])){
+			if ($_GET['post_type'] === 'shop_order'){
+				// do not load
 				$do_not_load = true;
 			}
+		}
+		// zbs = zerobscrm / jetpack crm
+		if (isset($_GET['page'])){
+		    if ($_GET['page'] === 'wc-orders' || $_GET['page'] === 'manage-customers' || strpos($_GET['page'], 'zbs') === 0){
+		        $do_not_load = true;
+		    }
 		}
 		if (!$do_not_load){
 			wp_enqueue_script('sweetalert2', plugins_url('../includes/assets/lib/sweetalert/sweetalert2.all.min.js', __FILE__), $deps = array(), $ver = B2BKINGCORE_VERSION );
