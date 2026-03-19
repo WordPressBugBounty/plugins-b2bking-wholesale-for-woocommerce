@@ -41,7 +41,88 @@
 		        userid: userid
 		    };
 
+			// Timeout mechanism for loading issues
+			var loadingTimeout = setTimeout(function(){
+				if (jQuery('#b2bking_admin_overlay').length > 0) {
+					var errorHtml = '<div style="' +
+						'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(25, 24, 33, 0.95); ' +
+						'display: flex; align-items: center; justify-content: center; z-index: 999999; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;' +
+						'">' +
+						'<div style="' +
+						'background: white; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); ' +
+						'padding: 40px; max-width: 480px; width: 90%; text-align: center; position: relative;' +
+						'">' +
+						'<div style="' +
+						'width: 64px; height: 64px; background: linear-gradient(135deg, #906a1d, #b8860b); ' +
+						'border-radius: 50%; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center;' +
+						'">' +
+						'<svg width="32" height="32" viewBox="0 0 512 512" style="color: white;">' +
+						'<path d="M104.426,139.813l83.563,83.781c14.344-13.766,26.781-25.703,36.109-34.672l-84.297-84.5l-10.313-45.719 L54.27,12.985L33.629,33.642L12.988,54.282l45.719,75.219L104.426,139.813z" fill="currentColor"/>' +
+						'<path d="M358.363,276.298L481.926,399.47c22.781,22.766,22.781,59.688,0,82.469c-22.781,22.766-59.688,22.766-82.469,0 L275.895,358.767L358.363,276.298z" fill="currentColor"/>' +
+						'<path d="M459.957,203.407c42.547-38.609,49.656-82.484,40.141-119.484c-0.281-2.938-0.984-5.406-3.547-7.25 l-8.563-7.016c-1.484-1.391-3.484-2.063-5.484-1.875c-2.016,0.203-3.844,1.234-5.031,2.875l-49.25,64.031 c-1.375,1.891-3.594,2.969-5.922,2.891l-17.875,1.313c-1.531-0.047-3.016-0.594-4.219-1.563l-34.531-29.266 c-1.406-1.141-2.328-2.766-2.563-4.563l-2.141-16.188c-0.25-1.781,0.203-3.594,1.266-5.063l46.109-62.641 c2.094-2.875,1.688-6.859-0.906-9.281l-11.188-8.75c-2.188-2.031-4.672-1.75-8.063-1.094 c-31.844,6.281-86.219,37.125-100.016,79.75c-12.156,37.516-7.922,63.969-7.922,63.969c0,21.141-6.953,41.516-15.5,50.063 L24.504,424.923c-0.469,0.422-0.922,0.859-1.375,1.313c-19.844,19.844-19.813,52.047-0.641,71.219s51.859,19.672,71.703-0.172 c0.922-0.922,1.813-1.875,2.641-2.859l231.672-250.438C357.004,218.61,413.426,245.642,459.957,203.407z" fill="currentColor"/>' +
+						'</svg>' +
+						'</div>' +
+						'<h3 style="' +
+						'color: #191821; font-size: 20px; font-weight: 600; margin: 0 0 12px; line-height: 1.3;' +
+						'">Page Loading Issue Detected</h3>' +
+						'<p style="' +
+						'color: #666; font-size: 15px; line-height: 1.5; margin: 0 0 24px;' +
+						'">The page is taking longer than expected to load. This is typically caused by a JavaScript error or plugin conflict in your WordPress admin.</p>' +
+						'<div style="' +
+						'background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 16px; margin: 0 0 24px; text-align: left;' +
+						'">' +
+						'<p style="' +
+						'color: #495057; font-size: 14px; margin: 0; font-weight: 500;' +
+						'">&#128161; <strong>Quick Solution:</strong> Click the button below to disable AJAX loading and use standard page navigation.</p>' +
+						'</div>' +
+						'<div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">' +
+						'<button type="button" id="b2bking_disable_ajax_loading" style="' +
+						'background: linear-gradient(135deg, #906a1d, #b8860b); color: white; border: none; ' +
+						'padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; ' +
+						'transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(144, 106, 29, 0.3);' +
+						'">Disable AJAX Loading</button>' +
+						'<a href="https://woocommerce-b2b-plugin.com/docs/issue-b2bking-pages-do-not-load-infinite-loading-icon/" target="_blank" style="' +
+						'background: white; color: #191821; border: 2px solid #e9ecef; ' +
+						'padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500; ' +
+						'transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 8px;' +
+						'">' +
+						'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="color: #906a1d;">' +
+						'<path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" fill="currentColor"/>' +
+						'</svg>' +
+						'Learn More' +
+						'</a>' +
+						'</div>' +
+						'</div>' +
+						'</div>';
+					jQuery('#b2bking_admin_overlay').html(errorHtml);
+					
+					// Add hover effects
+					jQuery('#b2bking_disable_ajax_loading').hover(
+						function(){ jQuery(this).css('transform', 'translateY(-2px)').css('box-shadow', '0 6px 16px rgba(144, 106, 29, 0.4)'); },
+						function(){ jQuery(this).css('transform', 'translateY(0)').css('box-shadow', '0 4px 12px rgba(144, 106, 29, 0.3)'); }
+					);
+					
+					jQuery('#b2bking_admin_overlay a').hover(
+						function(){ jQuery(this).css('border-color', '#906a1d').css('color', '#906a1d'); },
+						function(){ jQuery(this).css('border-color', '#e9ecef').css('color', '#191821'); }
+					);
+					
+					jQuery('#b2bking_disable_ajax_loading').on('click', function(){
+						jQuery(this).text('Disabling...').prop('disabled', true);
+						jQuery.post(ajaxurl, {
+							action: 'b2bking_disable_ajax_loading',
+							security: b2bking.security
+						}, function(){
+							location.reload();
+						});
+					});
+				}
+			}, 7000);
+
 			jQuery.post(ajaxurl, datavar, function(response){
+
+				// Clear timeout if request completes successfully
+				clearTimeout(loadingTimeout);
 
 				// the current one becomes the old one
 				old_page_slug = page_slug;
@@ -341,23 +422,56 @@
 				if (parseInt(b2bking.b2bking_customers_panel_ajax_setting) !== 1){
 					$('#b2bking_admin_customers_table').DataTable({
 						"retrieve": true,
+						"stateSave": true,
+						"stateSaveParams": function (settings, data) {
+							return {
+								time: data.time,
+								start: 0,
+								length: data.length,
+								order: data.order,
+								search: data.search,
+								columns: data.columns
+							};
+						},
+						"stateLoadParams": function (settings, data) {
+							data.start = 0;
+							return data;
+						},
 			            "language": {
 			                "url": b2bking.datatables_folder+b2bking.purchase_lists_language_option+'.json'
 			            },
-			            dom: 'lBfrtip',
+			            dom: 'Brtip',
 			            buttons: {
 			                buttons: [
 			                    { extend: 'csvHtml5', className: buttonclass, text: '↓ CSV', exportOptions: { columns: ":visible" } },
-			                    { extend: 'pdfHtml5', className: buttonclass, text: '↓ PDF', exportOptions: { columns: ":visible" } },
-			                    { extend: 'print', className: buttonclass, text: b2bking.print, exportOptions: { columns: ":visible" } },
+			                    {
+	                                extend: 'pdfHtml5',
+	                                className: buttonclass,
+	                                text: '↓ PDF',
+	                                exportOptions: { columns: ":visible" },
+	                                customize: function(doc) {
+	                                    if(b2bking.pdf_download_font !== 'standard'){
+	                                        pdfMake.fonts = {
+	                                            Customfont: {
+	                                                normal: b2bking.pdf_download_font,
+	                                                bold: b2bking.pdf_download_font,
+	                                                italics: b2bking.pdf_download_font,
+	                                                bolditalics: b2bking.pdf_download_font
+	                                            }
+	                                        };
+	                                        doc.defaultStyle = {
+	                                            font: 'Customfont'
+	                                        };
+	                                    }
+	                                }
+	                            },
+	                            { extend: 'print', className: buttonclass, text: b2bking.print, exportOptions: { columns: ":visible" } },
 			                    { extend: 'colvis', className: buttonclass, text: b2bking.edit_columns },
 			                ]
 			            },
-			            initComplete: function (settings, json) {
-		                    // move buttons
-		                    jQuery('<span class="b2bking_customers_export_text">Export: </span>').insertBefore('.dt-buttons');
-		                }
 			        });
+
+			        
 				} else {
 		       		$('#b2bking_admin_customers_table').DataTable({
 		       			"retrieve": true,
@@ -366,6 +480,7 @@
 		       			},
 		       			"processing": true,
 		       			"serverSide": true,
+		       			"ordering": false,
 		       			"info": true,
 		       		    "ajax": {
 		       		   		"url": ajaxurl,
@@ -375,23 +490,278 @@
 		       		   			security: b2bking.security,
 		       		   		}
 		       		   	},
-			            dom: 'lBfrtip',
+		       		    "stateSave": true,
+		       		    "stateSaveParams": function (settings, data) {
+		       		        // Only save column visibility and search state, not pagination
+		       		        return {
+		       		            time: data.time,
+		       		            start: 0, // Always start from first page
+		       		            length: data.length,
+		       		            order: data.order,
+		       		            search: data.search,
+		       		            columns: data.columns
+		       		        };
+		       		    },
+		       		    "stateLoadParams": function (settings, data) {
+		       		        // Always load from first page but keep other settings
+		       		        data.start = 0;
+		       		        return data;
+		       		    },
+			            dom: 'Brtip',
 			            buttons: {
 			                buttons: [
 			                    { extend: 'csvHtml5', className: buttonclass, text: '↓ CSV', exportOptions: { columns: ":visible" } },
-			                    { extend: 'pdfHtml5', className: buttonclass, text: '↓ PDF', exportOptions: { columns: ":visible" } },
-			                    { extend: 'print', className: buttonclass, text: b2bking.print, exportOptions: { columns: ":visible" } },
+    		                    {
+                                    extend: 'pdfHtml5',
+                                    className: buttonclass,
+                                    text: '↓ PDF',
+                                    exportOptions: { columns: ":visible" },
+                                    customize: function(doc) {
+                                        if(b2bking.pdf_download_font !== 'standard'){
+                                            pdfMake.fonts = {
+                                                Customfont: {
+                                                    normal: b2bking.pdf_download_font,
+                                                    bold: b2bking.pdf_download_font,
+                                                    italics: b2bking.pdf_download_font,
+                                                    bolditalics: b2bking.pdf_download_font
+                                                }
+                                            };
+                                            doc.defaultStyle = {
+                                                font: 'Customfont'
+                                            };
+                                        }
+                                    }
+                                },
+                                { extend: 'print', className: buttonclass, text: b2bking.print, exportOptions: { columns: ":visible" } },
 			                    { extend: 'colvis', className: buttonclass, text: b2bking.edit_columns },
 			                ]
 			            },
-			            initComplete: function (settings, json) {
-		                    // move buttons
-		                    jQuery('<span class="b2bking_customers_export_text">Export: </span>').insertBefore('.dt-buttons');
-		                }
 
 		            });
 				}
+
+				// Custom toolbar bindings for customers table
+				if ($('#b2bking_admin_customers_table').length) {
+					var customersTable = $('#b2bking_admin_customers_table').DataTable();
+
+					// Clear any saved search state on page load
+					customersTable.search('').draw();
+					$('#b2bking_dt_search_input').val('');
+
+					// Replace empty-table message with image on each draw;
+					// also re-inject the length wrapper inside dataTables_info (DT overwrites it on draw)
+					var noProductsImg = $('#b2bking_admin_customers_table').data('noproducts-img');
+					customersTable.on('draw', function() {
+						var $empty = $('#b2bking_admin_customers_table tbody td.dataTables_empty');
+						if ($empty.length) {
+							$empty.html('<img src="' + noProductsImg + '" class="b2bking-dt-noresults-img" alt=""><span class="b2bking-dt-noresults-text">' + b2bking.no_customers_found + '</span>');
+						}
+						// Re-prepend the length wrapper if DT wiped it
+						if (!$('#b2bking_dt_length_wrapper').parent().is('#b2bking_admin_customers_table_info')) {
+							$('#b2bking_admin_customers_table_info').prepend($lengthWrapper);
+						}
+					});
+
+					// Clicking a pending approval badge navigates to the registration data section
+					$(document).on('click', '#b2bking_admin_customers_table .approval_badge.pending', function(e) {
+						if ($(e.target).closest('a').length) { return; } // let the inner <a> handle it naturally
+						var href = $(this).find('a').attr('href');
+						if (href) { window.location.href = href; }
+					});
+
+					// CRM Hub icons — open CRM panel modal via AJAX
+					$(document).on('click', '#b2bking_admin_customers_table .b2bking-crm-icon', function(e) {
+						e.stopPropagation();
+						var tab = $(this).data('tab') || 'overview';
+						var userId = $(this).data('user-id');
+						Swal.fire({
+							width: 700,
+							padding: 0,
+							backdrop: 'rgba(15,17,23,0.25)',
+							showCloseButton: true,
+							showConfirmButton: false,
+							customClass: { popup: 'b2bking-crm-swal-popup', closeButton: 'b2bking-crm-close-btn' },
+							showClass: { popup: 'b2bking-crm-swal-enter', backdrop: 'swal2-backdrop-show' },
+							hideClass: { popup: 'b2bking-crm-swal-exit', backdrop: 'swal2-backdrop-hide' },
+							didOpen: function() {
+								Swal.showLoading();
+								$.post(ajaxurl, { action: 'b2bking_crm_panel', security: b2bking.security, user_id: userId, tab: tab }, function(response) {
+									Swal.update({ html: response, showCloseButton: true, showConfirmButton: false });
+									Swal.hideLoading();
+								});
+							}
+						});
+					});
+
+
+					// Search toggle
+					$('#b2bking_dt_search_toggle').on('click', function() {
+						$('#b2bking_dt_search_input').toggleClass('b2bking-dt-search-collapsed');
+						if (!$('#b2bking_dt_search_input').hasClass('b2bking-dt-search-collapsed')) {
+							$('#b2bking_dt_search_input').focus();
+						}
+					});
+
+					$('#b2bking_dt_search_input').on('keyup', function() {
+						customersTable.search(this.value).draw();
+					});
+
+					// Length select — injected before the info text once DataTables signals fully ready
+					var $lengthSelect = $('<select id="b2bking_dt_length_select" class="b2bking-dt-toolbar-select"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select>');
+					// Use delegation — direct binding gets wiped by jQuery cleanData when DT rewrites the info div
+					$(document).on('change', '#b2bking_dt_length_select', function() {
+						customersTable.page.len($(this).val()).draw();
+					});
+					var $lengthWrapper = $('<div id="b2bking_dt_length_wrapper" class="b2bking-dt-length-wrapper"></div>')
+						.append($('<span class="b2bking-dt-length-label">Rows:</span>'))
+						.append($lengthSelect);
+					$('#b2bking_admin_customers_table').one('init.dt', function() {
+						$lengthSelect.val(customersTable.page.len());
+						$('#b2bking_admin_customers_table_info').prepend($lengthWrapper);
+					});
+					// Export dropdown
+					$('#b2bking_dt_export_toggle').on('click', function(e) {
+						e.stopPropagation();
+						$('#b2bking_dt_export_menu').toggle();
+					});
+					$('.b2bking-dt-dropdown-item').on('click', function() {
+						customersTable.button('.buttons-' + $(this).data('export')).trigger();
+						$('#b2bking_dt_export_menu').hide();
+					});
+					$(document).on('click.bk_export_close', function(e) {
+						if (!$(e.target).closest('#b2bking_dt_export_toggle, #b2bking_dt_export_menu').length) {
+							$('#b2bking_dt_export_menu').hide();
+						}
+					});
+
+					// Column visibility — custom dropdown using DataTables column API
+					function bkBuildColvisMenu() {
+						var $menu = $('#b2bking_dt_colvis_menu').empty();
+						customersTable.columns().every(function() {
+							var col = this;
+							var title = $(col.header()).text().trim();
+							$('<button class="b2bking-dt-dropdown-item b2bking-dt-colvis-item">')
+								.toggleClass('b2bking-dt-colvis-active', col.visible())
+								.text(title)
+								.on('click', function(e) {
+									e.stopPropagation();
+									col.visible(!col.visible());
+									$(this).toggleClass('b2bking-dt-colvis-active', col.visible());
+								})
+								.appendTo($menu);
+						});
+					}
+
+					$('#b2bking_dt_colvis_btn').on('click', function(e) {
+						e.stopPropagation();
+						bkBuildColvisMenu();
+						$('#b2bking_dt_colvis_menu').toggle();
+					});
+
+					$(document).on('click.bk_colvis_close', function(e) {
+						if (!$(e.target).closest('#b2bking_dt_colvis_btn, #b2bking_dt_colvis_menu').length) {
+							$('#b2bking_dt_colvis_menu').hide();
+						}
+					});
+				}
 			}
+
+			// CRM Panel tab switching
+			$(document).off('click.bk_crm_tab').on('click.bk_crm_tab', '.b2bking-crm-tab-btn', function() {
+				var $btn = $(this);
+				var $panel = $(this).closest('.b2bking-crm-panel');
+				$panel.find('.b2bking-crm-tab-btn').removeClass('active');
+				$btn.addClass('active');
+				$panel.find('.b2bking-crm-tab-pane').removeClass('active');
+				$panel.find('.b2bking-crm-tab-pane[data-tab="'+$btn.data('tab')+'"]').addClass('active');
+			});
+
+			// CRM Notes save
+			$(document).off('click.bk_crm_notes').on('click.bk_crm_notes', '.b2bking-crm-save-notes', function() {
+				var $btn = $(this);
+				var userId = $btn.data('user-id');
+				var notes = $btn.closest('.b2bking-crm-notes-wrap').find('.b2bking-crm-notes-textarea').val();
+				var $status = $btn.siblings('.b2bking-crm-notes-status');
+				$btn.prop('disabled', true);
+				$.post(ajaxurl, { action: 'b2bking_crm_save_notes', security: b2bking.security, user_id: userId, notes: notes }, function(response) {
+					$btn.prop('disabled', false);
+					$status.text(response.success ? b2bking.saved : b2bking.error).fadeIn().delay(2000).fadeOut();
+				});
+			});
+
+			// CRM Files: download registration file
+			$(document).off('click.bk_crm_dl_reg').on('click.bk_crm_dl_reg', '.b2bking-crm-file-dl-reg', function() {
+				var att = $(this).data('attachment');
+				if (parseInt(b2bking.download_go_to_file) === 1) {
+					$.post(ajaxurl, { action: 'b2bkinghandledownloadrequest', security: b2bking.security, attachment: att }, function(url) {
+						var a = document.createElement('a'); a.href = url; a.download = url.split('/').pop(); document.body.appendChild(a); a.click(); a.remove();
+					});
+				} else if (parseInt(b2bking.download_go_to_file) === 2) {
+					window.open(b2bking.adminurl + 'upload.php?item=' + att, '_blank');
+				} else {
+					var a = document.createElement('a'); a.href = b2bking.ajaxurl + '?action=b2bkinghandledownloadrequest&security=' + b2bking.security + '&attachment=' + att; a.download = ''; document.body.appendChild(a); a.click(); a.remove();
+				}
+			});
+
+			// CRM Files: download uploaded CRM file
+			$(document).off('click.bk_crm_dl').on('click.bk_crm_dl', '.b2bking-crm-file-dl', function() {
+				var att = $(this).data('attachment');
+				var uid = $(this).data('user-id');
+				$.post(ajaxurl, { action: 'b2bking_crm_download_file', security: b2bking.security, attachment_id: att, user_id: uid }, function(response) {
+					if (response.success && response.data.url) {
+						var a = document.createElement('a'); a.href = response.data.url; a.download = response.data.url.split('/').pop(); document.body.appendChild(a); a.click(); a.remove();
+					}
+				});
+			});
+
+
+			// CRM Files: view file in new tab (no forced download)
+			$(document).off('click.bk_crm_view').on('click.bk_crm_view', '.b2bking-crm-file-view', function() {
+				var att = $(this).data('attachment');
+				var uid = $(this).data('user-id');
+				$.post(ajaxurl, { action: 'b2bking_crm_download_file', security: b2bking.security, attachment_id: att, user_id: uid }, function(response) {
+					if (response.success && response.data.url) {
+						window.open(response.data.url, '_blank');
+					}
+				});
+			});
+
+			// CRM Files: remove file association
+			$(document).off('click.bk_crm_del').on('click.bk_crm_del', '.b2bking-crm-file-del', function() {
+				var att = $(this).data('attachment');
+				var uid = $(this).data('user-id');
+				var $row = $(this).closest('.b2bking-crm-file-row');
+				$.post(ajaxurl, { action: 'b2bking_crm_remove_file', security: b2bking.security, attachment_id: att, user_id: uid }, function(response) {
+					if (response.success) { $row.fadeOut(150, function() { $row.remove(); }); }
+				});
+			});
+
+			// CRM Files: upload via WP Media Library
+			$(document).off('click.bk_crm_upload').on('click.bk_crm_upload', '.b2bking-crm-upload-btn', function(e) {
+				e.preventDefault();
+				var $btn = $(this);
+				var uid = $btn.data('user-id');
+				if (typeof wp === 'undefined' || !wp.media) { return; }
+				var frame = wp.media({ title: b2bking.select_file, button: { text: b2bking.use_file }, multiple: false });
+				frame.on('select', function() {
+					var att = frame.state().get('selection').first().toJSON();
+					$.post(ajaxurl, { action: 'b2bking_crm_upload_file', security: b2bking.security, attachment_id: att.id, user_id: uid }, function(response) {
+						if (response.success) {
+							if (typeof Swal !== 'undefined' && Swal.isVisible()) {
+								Swal.showLoading();
+								$.post(ajaxurl, { action: 'b2bking_crm_panel', security: b2bking.security, user_id: uid, tab: 'files' }, function(html) {
+									Swal.update({ html: html, showCloseButton: true, showConfirmButton: false });
+									Swal.hideLoading();
+								});
+							} else {
+								jQuery(window).off('beforeunload');
+								window.location.reload();
+							}
+						}
+					});
+				});
+				frame.open();
+			});
 
 			// Dashboard
 			if ($(".b2bkingpreloader").val()!== undefined){
@@ -2616,7 +2986,6 @@
         });
 
         $('#b2bking_b2b_pricing_variations').detach().insertAfter('option[value=delete_all]');
-
         // bulk edit variations
         $( '.wc-metaboxes-wrapper' ).on('change', '#field_to_edit', function(){
         	var do_variation_action = $( 'select.variation_actions' ).val();
@@ -3416,5 +3785,43 @@
 
 
 	});
+
+
+    // Group pricing container toggle
+    $(document).on('click', '.b2bking-group-header, .b2bking-group-toggle', function(e) {
+        e.stopPropagation();
+        var $container = $(this).closest('.b2bking-group-pricing-container');
+        $container.toggleClass('collapsed').find('.b2bking-group-content').slideToggle(300);
+        localStorage.setItem('b2bking_group_' + $container.data('group-id'), $container.hasClass('collapsed') ? 'collapsed' : 'expanded');
+    });
+
+    // Expand / Collapse all groups within the nearest scope
+    function b2bkingGetScope($el) {
+        return $el.closest('.b2bking-groups-toolbar-variation').length
+            ? $el.closest('.woocommerce_variation')
+            : $el.closest('.options_group');
+    }
+    $(document).on('click', '.b2bking-expand-all', function(e) {
+        e.preventDefault();
+        var $containers = b2bkingGetScope($(this)).find('.b2bking-group-pricing-container');
+        $containers.removeClass('collapsed').find('.b2bking-group-content').show();
+    });
+    $(document).on('click', '.b2bking-collapse-all', function(e) {
+        e.preventDefault();
+        var $containers = b2bkingGetScope($(this)).find('.b2bking-group-pricing-container');
+        $containers.addClass('collapsed').find('.b2bking-group-content').hide();
+    });
+
+    // Restore saved states on load AND after WooCommerce loads variation panels
+    function b2bkingRestoreGroupStates() {
+        $('.b2bking-group-pricing-container').each(function() {
+            if (localStorage.getItem('b2bking_group_' + $(this).data('group-id')) === 'collapsed') {
+                $(this).addClass('collapsed').find('.b2bking-group-content').hide();
+            }
+        });
+    }
+
+    b2bkingRestoreGroupStates();
+    $(document).on('woocommerce_variations_loaded', b2bkingRestoreGroupStates);
 
 })(jQuery);

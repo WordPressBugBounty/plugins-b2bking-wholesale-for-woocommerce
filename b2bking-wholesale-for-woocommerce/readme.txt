@@ -1,15 +1,15 @@
-=== B2BKing — Ultimate WooCommerce Wholesale and B2B Solution — Wholesale Order Form, Catalog Mode, Dynamic Pricing & More ===
+=== B2BKing — Ultimate WooCommerce B2B and Wholesale Solution — Dynamic Pricing, Wholesale Order Form & More ===
 Plugin URI: https://kingsplugins.com/woocommerce-wholesale/b2bking/
 Contributors: WebWizardsDev
 Donate link: https://webwizards.dev
-Tags: 	wholesale prices, woocommerce b2b, woocommerce wholesale, b2b plugin for woocommerce, wholesale plugin
+Tags: 	wholesale prices, woocommerce b2b, woocommerce wholesale, b2b, wholesale
 Author URI: webwizards.dev
 Author: WebWizards
 Requires at least: 4.8
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 5.6.20
-Stable tag: 5.0.25
-Version: 5.0.25
+Stable tag: 5.1.00
+Version: 5.1.00
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 B2BKing is the complete solution for running a Wholesale, B2B or B2B + B2C hybrid store with WooCommerce.
@@ -20,9 +20,9 @@ B2BKing is the complete solution for running a Wholesale, B2B or B2B + B2C hybri
 
 🥇 **Highest Rated** B2B & Wholesale plugin: **4.98/5 stars** from [100+ reviews](https://codecanyon.net/item/b2bking-the-ultimate-woocommerce-b2b-plugin/reviews/26689576 "100+ reviews")
 
-🏆 **Most Featured** B2B Solution -  WPLift, WPMayor, Envato, BusinessBloomer, and many other top WP sites have featured B2BKing.
+🏆 **Most Featured** B2B Solution - Highlighted by WPLift, WPMayor, Envato, BusinessBloomer, GreenGeeks, LearnWoo and top WP industry sites.
 
-🚀 B2BKing is a global **bestseller** with **over 10,000+ active installs**, backed by 117+ software updates (currently [v5.4](https://woocommerce-b2b-plugin.com/changelog/ "v5.2")) - making B2BKing the most trusted B2B solution for WooCommerce stores.
+🚀 B2BKing is a global **bestseller** powering **10,000+ active stores**, backed by 6+ years of dedicated, monthly updates (126+ releases, currently [v5.5](https://woocommerce-b2b-plugin.com/changelog/ "v5.5")) - making it the most trusted B2B solution for WooCommerce.
 
 
 
@@ -37,11 +37,11 @@ B2BKing is the complete solution for running a Wholesale, B2B or B2B + B2C hybri
 
 == B2BKing – #1 WooCommerce B2B and Wholesale Plugin ==
 
-B2BKing takes care of everything, from basic B2B aspects such as hiding prices for guest users, to complex features such as tiered pricing structures, tax exemptions, VAT handling, multiple buyers per account, wholesale prices, catalog mode, order form, and more.
+B2BKing takes care of everything, from basic B2B requirements such as hiding prices for guest users, to advanced features such as tiered pricing structures, tax exemptions, VAT handling, multiple buyers per account, wholesale prices, catalog mode, order form, and more.
 
 From an extended business registration and separate B2B/B2C registration forms, to custom billing fields, an invoice payment gateway and negotiated price offers, B2BKing does it all.
 
-[youtube https://www.youtube.com/watch?v=-PDKNkOlcNU]
+[youtube https://www.youtube.com/watch?v=NZfIE6MaDAs]
 
 == Free Plugin: Step-by-Step Guides ==
 
@@ -68,14 +68,14 @@ Example: Give B2B buyers a 10% discount on all products with a single rule.
 
 == Business Registration & Custom Fields ==
 
-Through the business registration feature you can configure complex registration forms for your business customers, with 9 types of custom fields available. You can set automatic or manual approval, review applications, and assign customers to specific groups with different pricing and order rules. 
+With the business registration feature you can configure comprehensive registration forms for your business customers, with 9 types of custom fields available. You can set automatic or manual approval, review applications, and assign customers to specific groups with different pricing and order rules. 
 
 * Multiple registration options, with manual or automatic approval
 * 9 types of custom fields: text, dropdown, number, date, file upload, etc
-* Make specific fields required (e.g. require business license to register)
+* Make specific fields required (e.g. require a business license to register)
 * Configure custom forms and add any field (company name, vat number, registration number etc)
 * Fields can be added to billing and checkout forms
-* Shortcodes for B2B registration allow you to setup dedicated registration pages
+* Shortcodes for B2B registration allow you to set up dedicated registration pages
 * Optional: For EU countries automatically validate VAT numbers via VIES
 
 == Wholesale Order Form ==
@@ -83,7 +83,7 @@ Through the business registration feature you can configure complex registration
 * 3 Stunning order form themes: Cream, Indigo and Classic
 * Quick AJAX Search allows customers to easily find products
 * Search by product name or by SKU
-* Sort products alphabetically or by best selling status
+* Sort products alphabetically or by best-selling status
 * Shortcodes allow you to configure and add it to any page
 
 == Private Store ==
@@ -93,7 +93,7 @@ Through the business registration feature you can configure complex registration
 * Require logged out users to request quotes
 * Hide prices for specific products only
 
-== Supports both B2B, and hybrid B2B + B2C sites ==
+== Supports both B2B and hybrid B2B + B2C sites ==
 
 * Dedicated mode for B2B-only sites
 * Dedicated mode for hybrid B2B + B2C sites
@@ -102,7 +102,7 @@ Through the business registration feature you can configure complex registration
 
 == Invoice Payment Gateway ==
 
-* Easily adds an invoice payment gateway to your site
+* Easily add an invoice payment gateway to your site
 * Customers can order without immediate payment
 * Compatible with popular PDF invoice plugins
 * Enable invoice payments for B2B customers only
@@ -112,13 +112,13 @@ Through the business registration feature you can configure complex registration
 * Easily set up different prices based on quantity ordered
 * Stunning tiered pricing table is automatically generated
 * Tiered price table adapts to any theme
-* Animated graphics highight current price
+* Animated graphics highlight the current price
 
 == Custom Information Table ==
 
 * Custom table allows you to show any custom info
 * Show MSRP, Shipping info, estimates or any other relevant info
-* Different tables for each group and for b2b / b2c users
+* Different tables for each group and for B2B / B2C users
 
 == Wholesale Prices ==
 
@@ -136,9 +136,9 @@ Through the business registration feature you can configure complex registration
 
 * Plugin adds a conversation and messaging system for business users
 * Users can send inquiries, quote requests and message back-and-forth
-* Can be used to negotiate prices, answer questions and communicate well with business customers
+* Can be used to negotiate prices, answer questions and communicate seamlessly with business customers
 * Automatic email notifications.
-* Both users and shop can initiate conversations.
+* Both users and store admins can initiate conversations.
 
 == Quote Requests ==
 
@@ -162,9 +162,9 @@ Through the business registration feature you can configure complex registration
 
 == Purchase Lists ==
 
-* Save purchase lists for later usage (e.g. requisition lists)
+* Save purchase lists for later use (e.g. requisition lists)
 * Add lists to cart and save order forms as lists
-* Lists show for each user in My Account panel
+* Lists are displayed in each user's My Account panel
 
 == Offers & Bundles ==
 
@@ -186,7 +186,7 @@ Through the business registration feature you can configure complex registration
 * Set free shipping based on order value
 * Set free shipping differently for B2B & B2C (e.g. B2C = $200 free shipping threshold, B2B = $2000)
 
-== CSV Import Export Tools for Pricing ==
+== CSV Import & Export Tools for Pricing ==
 
 * Easily configure prices in bulk through our dedicated price import tool
 * Configure wholesale prices and tiered prices for B2C and B2B
@@ -195,7 +195,7 @@ Through the business registration feature you can configure complex registration
 == Package / Box / Carton Quantity Rules ==
 
 * Configure a 'package' quantity for each product
-* Quantity multiple will be forced automatically.
+* Quantity multiples are enforced automatically.
 * For example if the multiple is set to 6 for a product, the qty will go to 6, 12, 18, etc.
 
 == Quick Orders via CSV Upload ==
@@ -224,7 +224,7 @@ Through the business registration feature you can configure complex registration
 
 * Each business account can create subaccounts (e.g. employee accounts)
 * Parent accounts can configure names, account details and permissions for subaccounts
-* Multiple company accounts can collaborate on a conversation, order or purchase list
+* Multiple team members can collaborate on a conversation, order or purchase list
 * Parent accounts can view subaccount orders, lists, etc.
 
 == Company Order Approval ==
@@ -244,11 +244,11 @@ Through the business registration feature you can configure complex registration
 * You can add and configure custom taxes and fees through rules
 * These can be applied to specific users or user groups only
 
-== Payment Method Min and Max Order ==
+== Minimum and Maximum Orders per Payment Method ==
 
 * Set a minimum or maximum value or qty for each payment method
-* For example B2C can use Cash on Delivery for Maximum $500, B2B can use Cash on Delivery for max $2000
-* For example Bank Transfer is enabled for $2000+ orders only
+* For example, B2C customers can use Cash on Delivery for a maximum of $500, while B2B customers can use it for up to $2000.
+* For example, Bank Transfer is enabled for $2000+ orders only
 
 == Customer Group Rules ==
 
@@ -258,17 +258,17 @@ Through the business registration feature you can configure complex registration
 == Payment Method Discounts & Surcharges ==
 
 * Configure a discount or a surcharge for paying with certain methods
-* For example configure a 5% surcharge (increased price) when paying with PayPal
+* For example, apply a 5% surcharge (increased price) when paying with PayPal
 * For example give a 10% discount to B2B users when paying with Credit Cards
 
-== Complex Dynamic Rules ==
+== Advanced Dynamic Rules ==
 
 * Rules can be set for specific products, categories, users and groups
 * Hidden Price rule
 * Buy X Get 1 Free rule
 * Non-Purchasable rule
 * Set Currency rules
-* Raise prices rules
+* Price increase rules
 * many more options
 
 
@@ -346,15 +346,15 @@ https://woocommerce-b2b-plugin.com/changelog
 
 = Can B2BKing be added to an existing B2C site without affecting existing customers? = 
 
-Yes! B2BKing has a dedicated 'B2B & B2C Hybrid' mode. This allows you to add it to your site without affecting the experience of B2C users. B2B features would only be available to B2B users after they login.
+Yes! B2BKing has a dedicated 'B2B & B2C Hybrid' mode. This allows you to add it to your site without affecting the experience of B2C users. B2B features would only be available to B2B users after they log in.
 
 = Is this for B2B-only sites? Can it support B2B + B2C ? =
 
 B2BKing is ideal for both types of sites, and has 2 dedicated modes, one for each of these situations.
 
-= Can I hide prices for logged out users? =
+= Can I hide prices for logged-out users? =
 
-Yes, B2BKing has an easy to use feature that hides prices until users login. More info [here](https://woocommerce-b2b-plugin.com/docs/guest-access-restriction-hide-prices-hide-the-website-replace-prices-with-quote-request/ "here")
+Yes, B2BKing has an easy-to-use feature that hides prices until users log in. More info [here](https://woocommerce-b2b-plugin.com/docs/guest-access-restriction-hide-prices-hide-the-website-replace-prices-with-quote-request/ "here")
 
 
 = Can I hide prices on specific products only? = 

@@ -4007,10 +4007,12 @@ class B2bkingcore_Admin{
 		    if (isset($user->ID)){
 		    	$account_type = get_user_meta($user->ID, 'b2bking_account_type', true);
 		    	if ($account_type === 'subaccount'){
+		    		echo '<div class="b2bking_parent_account_user">';
 		    		esc_html_e('This account is a subaccount. Its parent account is: ', 'b2bking');
 		    		$parent_account = get_user_meta($user->ID, 'b2bking_account_parent', true);
 		    		$parent_user = get_user_by('id', $parent_account);
-		    		echo esc_html($parent_user->user_login);
+		    		echo '<a class="b2bking_parent_account_link" href="'.get_edit_user_link($parent_account).'">'.esc_html($parent_user->user_login).'</a>';
+		    		echo '</div><br>';
 		    	}
 
 		    	$user_approved = get_user_meta($user->ID, 'b2bking_account_approved', true);
@@ -4082,7 +4084,6 @@ class B2bkingcore_Admin{
 		    		</div>
 				</div>
 					        	
-			<br /><br />
 			<?php
 
 			}
@@ -4237,7 +4238,6 @@ class B2bkingcore_Admin{
     	    		</div>
     	    	</div>
     	    </div>
-		    <br /><br />
 		    <?php
 			}
 			
@@ -4280,8 +4280,25 @@ class B2bkingcore_Admin{
 		    ?>
 		    <input type="hidden" id="b2bking_admin_user_fields_string" value="<?php echo esc_attr($custom_fields);?>">
 		    <?php
-		    $registration_role = get_user_meta($user->ID, 'b2bking_registration_role', true);
-		    $account_approved = get_user_meta($user->ID, 'b2bking_account_approved', true);
+
+		    // if this is not the add new user panel
+		    if( get_current_screen()->action !== 'add'){
+			    $registration_role = get_user_meta($user->ID, 'b2bking_registration_role', true);
+			    $account_approved = get_user_meta($user->ID, 'b2bking_account_approved', true);
+
+			    // CRM Hub metabox
+			    ?>
+			    <div id="b2bking_crm_hub_container" class="b2bking_user_shipping_payment_methods_container">
+			    	<div class="b2bking_user_shipping_payment_methods_container_top">
+			    		<div class="b2bking_user_shipping_payment_methods_container_top_title">
+			    			<?php esc_html_e('CRM Hub','b2bking'); ?>
+			    		</div>
+			    	</div>
+			    	<?php echo self::b2bking_render_crm_panel($user->ID); ?>
+			    </div>
+			    <?php
+
+			    if (apply_filters('b2bking_backend_registration_data_allow', true)){
 
 		    // show this panel if user 1) has custom fields OR 2) manual user approval is needed OR 3) there is a chosen registration role
 		    if((trim($custom_fields) !== '' && $custom_fields !== NULL) || ($registration_role !== NULL && $registration_role !== '' && $registration_role !== false) || ($account_approved === 'no') ){
@@ -4498,8 +4515,10 @@ class B2bkingcore_Admin{
 				</div>
 			<?php
 			}
+		    } // end if apply_filters b2bking_backend_registration_data_allow
+		} // end if get_current_screen action !== add
 		    ?>
-		<?php 
+		<?php
 		}
 
 	}
@@ -5342,7 +5361,7 @@ class B2bkingcore_Admin{
 	    // Show Tiered Prices for B2C
 	    ?>
     	<p class="form-field b2bking_tiered_pricing">
-    		<label for="b2bking_tiered_pricing"><?php echo esc_html__( 'Price Tiers', 'b2bking' ).' ('.get_woocommerce_currency_symbol().')'; ?></label>
+    		<label for="b2bking_tiered_pricing"><?php echo esc_html__( 'Price Tiers', 'b2bking' ); echo get_option('b2bking_enter_percentage_tiered_setting') === '1' ? ' (%)' : apply_filters('b2bking_group_price_currency_symbol', ' ('.get_woocommerce_currency_symbol().')'); ?></label>
     		<span class="wrap b2bking_product_wrap">
     			<input name="b2bking_group_b2c_pricetiers_quantity[]" placeholder="<?php esc_attr_e( 'Min. Quantity', 'b2bking' ); ?>" class="b2bking_tiered_pricing_element b2bking_disabled_input" type="number" min="1" step="1" disabled />
     			<input name="b2bking_group_b2c_pricetiers_price[]" placeholder="<?php echo apply_filters('b2bking_final_price_text', esc_attr__('Final Price', 'b2bking')); ?>" class="b2bking_tiered_pricing_element short wc_input_price b2bking_disabled_input" type="text" disabled/>
@@ -5356,16 +5375,25 @@ class B2bkingcore_Admin{
 	    // End Show Tiered Prices for B2C
 
 	   	echo '</div><div class="options_group pricing show_if_simple show_if_external show_if_composite">';
-	    echo '<br>';
-
 	    $groups = get_posts( array( 'post_type' => 'b2bking_group','post_status'=>'publish','numberposts' => -1) );
+	    echo '<div class="b2bking-groups-toolbar">'.count($groups).' '.__( 'price groups', 'b2bking' ).' (<a href="#" class="b2bking-expand-all">'.__( 'Expand', 'b2bking' ).'</a> / <a href="#" class="b2bking-collapse-all">'.__( 'Collapse', 'b2bking' ).'</a>)</div>';
 	    foreach ($groups as $group){
+	    	?>
+	    	<div class="b2bking-group-pricing-container" data-group-id="<?php echo esc_attr($group->ID); ?>">
+	    		<div class="b2bking-group-header">
+	    			<h4 class="b2bking-group-title"><?php echo esc_html($group->post_title); ?></h4>
+	    			<button type="button" class="b2bking-group-toggle" title="<?php esc_attr_e('Toggle Group', 'b2bking'); ?>">
+	    				<span class="b2bking-toggle-icon">▼</span>
+	    			</button>
+	    		</div>
+	    		<div class="b2bking-group-content">
+	    	<?php
 	    	woocommerce_wp_text_input(
 	    	    array(
 	    	      'id' => 'b2bking_regular_product_price_group_'.esc_attr($group->ID),
-	    	      'label' => esc_html($group->post_title).' '.esc_html__('Regular Price', 'b2bking'),
+	    	      'label' => esc_html__('Regular Price', 'b2bking').apply_filters('b2bking_group_price_currency_symbol',' ('.get_woocommerce_currency_symbol().')'),
 	    	      'placeholder' => '',
-	    	      'description' => esc_html__( 'Enter the regular price for this B2BKing group here.', 'woocommerce' ),
+	    	      'description' => sprintf( esc_html__( 'Enter the regular price for the %s group here.', 'b2bking' ), $group->post_title ),
 	    	      'type' => 'number',
 	    	      'custom_attributes' => array(
 	    	         'step' => 'any',
@@ -5376,9 +5404,9 @@ class B2bkingcore_Admin{
 	    	woocommerce_wp_text_input(
 	    	    array(
 	    	      'id' => 'b2bking_sale_product_price_group_'.esc_attr($group->ID),
-	    	      'label' => esc_html($group->post_title).' '.esc_html__('Sale Price', 'b2bking'),
+	    	      'label' => esc_html__('Sale Price', 'b2bking').apply_filters('b2bking_group_price_currency_symbol',' ('.get_woocommerce_currency_symbol().')'),
 	    	      'placeholder' => '',
-	    	      'description' => esc_html__( 'Enter the sale price for this B2BKing group here.', 'woocommerce' ),
+	    	      'description' => sprintf( esc_html__( 'Enter the sale price for the %s group here.', 'b2bking' ), $group->post_title ),
 	    	      'type' => 'number',
 	    	      'custom_attributes' => array(
 	    	         'step' => 'any',
@@ -5390,7 +5418,7 @@ class B2bkingcore_Admin{
 	    	// add fields for Tiered Pricing
 	    	?>
 	    	<p class="form-field b2bking_tiered_pricing">
-	    		<label for="b2bking_tiered_pricing"><?php echo esc_html($group->post_title).esc_html__( ' Price Tiers', 'b2bking' ); ?></label>
+	    		<label for="b2bking_tiered_pricing"><?php echo esc_html__( 'Price Tiers', 'b2bking' ); echo get_option('b2bking_enter_percentage_tiered_setting') === '1' ? ' (%)' : apply_filters('b2bking_group_price_currency_symbol', ' ('.get_woocommerce_currency_symbol().')'); ?></label>
 	    		
 	    		<span class="wrap b2bking_product_wrap">
 	    			<input name="b2bking_group_b2c_pricetiers_quantity[]" placeholder="<?php esc_attr_e( 'Min. Quantity', 'b2bking' ); ?>" class="b2bking_tiered_pricing_element b2bking_disabled_input" type="number" min="1" step="1" disabled />
@@ -5400,6 +5428,8 @@ class B2bkingcore_Admin{
 					<?php esc_html_e('Unlock Price Tiers','b2bking'); ?>
 		    	</span>
 	    	</p>
+	    		</div>
+	    	</div>
 	    	<?php
 	    }
 	}
@@ -5419,18 +5449,27 @@ class B2bkingcore_Admin{
 
 	    // End Show Tiered Prices for B2C
 
-	    echo '<br>';
-
 	    $groups = get_posts( array( 'post_type' => 'b2bking_group','post_status'=>'publish','numberposts' => -1) );
+	    echo '<div class="b2bking-groups-toolbar b2bking-groups-toolbar-variation">'.count($groups).' '.__( 'price groups', 'b2bking' ).' (<a href="#" class="b2bking-expand-all">'.__( 'Expand', 'b2bking' ).'</a> / <a href="#" class="b2bking-collapse-all">'.__( 'Collapse', 'b2bking' ).'</a>)</div>';
 	    foreach ($groups as $group){
+	    	?>
+	    	<div class="b2bking-group-pricing-container" data-group-id="<?php echo esc_attr($group->ID); ?>">
+	    		<div class="b2bking-group-header">
+	    			<h4 class="b2bking-group-title"><?php echo esc_html($group->post_title); ?></h4>
+	    			<button type="button" class="b2bking-group-toggle" title="<?php esc_attr_e('Toggle Group', 'b2bking'); ?>">
+	    				<span class="b2bking-toggle-icon">▼</span>
+	    			</button>
+	    		</div>
+	    		<div class="b2bking-group-content">
+	    	<?php
 	    	woocommerce_wp_text_input(
 	    	    array(
 	    	      'id' => 'b2bking_regular_product_price_group_'.esc_attr($group->ID).'_'.esc_attr($variation->ID),
 	    	      'value' => get_post_meta($variation->ID,'b2bking_regular_product_price_group_'.$group->ID, true),
 	    	      'wrapper_class' => 'form-row form-row-first',
-	    	      'label' => esc_html($group->post_title).' '.esc_html__('Regular price', 'b2bking').' ('.get_woocommerce_currency_symbol().')',
+	    	      'label' => esc_html__('Regular Price', 'b2bking').apply_filters('b2bking_group_price_currency_symbol',' ('.get_woocommerce_currency_symbol().')'),
 	    	      'placeholder' => '',
-	    	      'description' => esc_html__( 'Enter the regular price for this B2BKing group here.', 'woocommerce' ),
+	    	      'description' => sprintf( esc_html__( 'Enter the regular price for the %s group here.', 'b2bking' ), $group->post_title ),
 	    	      'type' => 'number',
 	    	      'desc_tip'      => true,
 	    	      'custom_attributes' => array(
@@ -5444,9 +5483,9 @@ class B2bkingcore_Admin{
 	    	      'id' => 'b2bking_sale_product_price_group_'.esc_attr($group->ID).'_'.esc_attr($variation->ID),
 	    	      'value' => get_post_meta($variation->ID,'b2bking_sale_product_price_group_'.$group->ID, true),
 	    	      'wrapper_class' => 'form-row form-row-last',
-	    	      'label' => esc_html($group->post_title).' '.esc_html__('Sale price', 'b2bking').' ('.get_woocommerce_currency_symbol().')',
+	    	      'label' => esc_html__('Sale Price', 'b2bking').apply_filters('b2bking_group_price_currency_symbol',' ('.get_woocommerce_currency_symbol().')'),
 	    	      'placeholder' => '',
-	    	      'description' => esc_html__( 'Enter the sale price for this B2BKing group here.', 'woocommerce' ),
+	    	      'description' => sprintf( esc_html__( 'Enter the sale price for the %s group here.', 'b2bking' ), $group->post_title ),
 	    	      'type' => 'number',
 	    	      'desc_tip'      => true,
 	    	      'custom_attributes' => array(
@@ -5461,6 +5500,8 @@ class B2bkingcore_Admin{
 						<?php esc_html_e('Unlock Price Tiers','b2bking'); ?>
 			    	</span>
 	    		</p>
+	    		</div>
+	    	</div>
  	    	
     	    	<?php
 	    }
@@ -6709,7 +6750,6 @@ class B2bkingcore_Admin{
 
 		echo self::get_header_bar();
 
-
 		// if more than 500 users, get only the first 500.
 		if (intval(get_option('b2bking_customers_panel_ajax_setting', 0)) !== 1){
 			// get all WooCommerce customers
@@ -6717,7 +6757,7 @@ class B2bkingcore_Admin{
 				$args = array(
 					'meta_key'     => 'b2bking_b2buser',
 					'meta_value'   => 'yes',
-				    'role'   		=> 'customer',
+				    'role'   		=> apply_filters('b2bking_admin_customers_page_role',''),
 				    'fields'=> array('ID', 'display_name'),
 				);
 				$users = get_users( $args );
@@ -6725,15 +6765,25 @@ class B2bkingcore_Admin{
 				$users_not_approved = get_users(array(
 				    'meta_key'     => 'b2bking_account_approved',
 				    'meta_value'   => 'no',
-				    'role'    => 'customer',
+				    'role'    => apply_filters('b2bking_admin_customers_page_role',''),
 				    'fields' => array('ID', 'display_name'),
 				));
 
 				$users = array_merge($users, $users_not_approved);
-				
+
+				$subaccounts = get_users(array(
+				    'meta_key'     => 'b2bking_account_type',
+				    'meta_value'   => 'subaccount',
+				    'role'    => apply_filters('b2bking_admin_customers_page_role',''),
+				    'fields' => array('ID', 'display_name'),
+				));
+
+				$users = array_merge($users, $subaccounts);
+				$users = array_map("unserialize", array_unique(array_map("serialize", $users)));
+
 			} else {
 				$args = array(
-				    'role'    => 'customer',
+				    'role'    => apply_filters('b2bking_admin_customers_page_role',''),
 				    'fields'=> array('ID', 'display_name'),
 				);
 
@@ -6742,20 +6792,99 @@ class B2bkingcore_Admin{
 		} else {
 			$users = array();
 		}
-		
+
 
 		?>
-		<h1 class="b2bking_page_title"><?php esc_html_e('B2B Customers','b2bking');?></h1>
+		<div class="b2bking-customers-header">
+			<h1 class="b2bking_page_title"><?php esc_html_e('B2B Customers','b2bking');?></h1>
+			<div class="b2bking-dt-toolbar">
+				<div class="b2bking-dt-toolbar-search">
+					<button id="b2bking_dt_search_toggle" class="b2bking-dt-toolbar-btn" title="<?php esc_attr_e('Search', 'b2bking'); ?>">
+						<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+					</button>
+					<input type="text" id="b2bking_dt_search_input" class="b2bking-dt-search-input b2bking-dt-search-collapsed" placeholder="<?php esc_attr_e('Search...', 'b2bking'); ?>">
+				</div>
+				<div class="b2bking-dt-toolbar-dropdown">
+					<button id="b2bking_dt_export_toggle" class="b2bking-dt-toolbar-btn b2bking-dt-toolbar-btn--text">
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+						<?php esc_html_e('Export', 'b2bking'); ?> <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+					</button>
+					<div id="b2bking_dt_export_menu" class="b2bking-dt-dropdown-menu" style="display:none;">
+						<button class="b2bking-dt-dropdown-item" data-export="csv">CSV</button>
+						<button class="b2bking-dt-dropdown-item" data-export="pdf">PDF</button>
+						<button class="b2bking-dt-dropdown-item" data-export="print"><?php esc_html_e('Print', 'b2bking'); ?></button>
+					</div>
+				</div>
+				<div class="b2bking-dt-toolbar-dropdown">
+					<button id="b2bking_dt_colvis_btn" class="b2bking-dt-toolbar-btn b2bking-dt-toolbar-btn--text">
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+						<?php esc_html_e('Columns', 'b2bking'); ?> <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+					</button>
+					<div id="b2bking_dt_colvis_menu" class="b2bking-dt-dropdown-menu" style="display:none;"></div>
+				</div>
+			</div>
+		</div>
 		<div id="b2bking_admin_customers_table_container">
-			<table id="b2bking_admin_customers_table">
+			<table id="b2bking_admin_customers_table" data-noproducts-img="<?php echo esc_url( plugins_url( '../includes/assets/images/no_products.svg', __FILE__ ) ); ?>">
 			        <thead>
 			            <tr>
-			                <th><?php esc_html_e('Name','b2bking'); ?></th>
-			                <th><?php esc_html_e('Company Name','b2bking'); ?></th>
-			                <th><?php esc_html_e('Customer Group','b2bking'); ?></th>
-			                <th><?php esc_html_e('Account Type','b2bking'); ?></th>
-			                <th><?php esc_html_e('Approval','b2bking'); ?></th>
-			                <th><?php esc_html_e('Total Spent','b2bking'); ?></th>
+			                <th><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							  <circle cx="12" cy="8" r="5"></circle>
+							  <path d="M20 21a8 8 0 0 0-16 0"></path>
+							</svg><?php esc_html_e('Name','b2bking'); ?></th>
+			                <th><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+							  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+							</svg><?php esc_html_e('Company Name','b2bking'); ?></th>
+			                <th><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+							  <polyline points="2 12 12 17 22 12"></polyline>
+							  <polyline points="2 17 12 22 22 17"></polyline>
+							</svg><?php esc_html_e('Customer Group','b2bking'); ?></th>
+			                <th><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							  <rect x="8" y="2" width="8" height="6" rx="1"></rect>
+							  <path d="M12 8v4"></path>
+							  <path d="M6 12h12"></path>
+							  <path d="M6 12v2"></path>
+							  <path d="M18 12v2"></path>
+							  <rect x="2" y="14" width="8" height="6" rx="1"></rect>
+							  <rect x="14" y="14" width="8" height="6" rx="1"></rect>
+							</svg><?php esc_html_e('Account Type','b2bking'); ?></th>
+			                <th><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+							  <path d="M9 12l2 2 4-4"></path>
+							</svg><?php esc_html_e('Approval','b2bking'); ?></th>
+			                <th><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							  <polyline points="3 3 3 21 21 21"></polyline>
+							  <polyline points="3 14 8 9 13 14 21 5"></polyline>
+							  <polyline points="16 5 21 5 21 10"></polyline>
+							</svg><?php esc_html_e('Total Spent','b2bking'); ?></th>
+        	                <?php
+
+    	                	// credit balance
+    	               		if (defined('b2bkingcredit_DIR')){
+    	               			?><th><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							  <path d="M20 5H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z"></path>
+							  <path d="M22 10H18v4h4"></path>
+							</svg><?php esc_html_e('Credit Balance','b2bking'); ?></th><?php
+    	               		}
+
+			                if (defined('SALESKING_DIR')){
+			                	?>
+			                	<th><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							  <path d="M19 22H5c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2z"></path>
+							  <circle cx="12" cy="11" r="3"></circle>
+							  <path d="M17 19v-1a4 4 0 0 0-4-4H11a4 4 0 0 0-4 4v1"></path>
+							</svg><?php esc_html_e('Agent','b2bking'); ?></th>
+			                	<?php
+			                }
+			                ?><th><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  							<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
+							  <circle cx="12" cy="8" r="2"></circle>
+							  <path d="M15 13a3 3 0 1 0-6 0"></path>
+							</svg><?php esc_html_e('CRM Hub','b2bking'); ?></th><?php
+			                do_action('b2bking_b2bcustomers_column_header');
+			                ?>
 			            </tr>
 			        </thead>
 			        <tbody>
@@ -6769,75 +6898,394 @@ class B2bkingcore_Admin{
 
 			        		// first check if subaccount. If subaccount, user is equivalent with parent
 			        		$account_type = get_user_meta($user_id, 'b2bking_account_type', true);
+
+			        		// This view should show
 			        		if ($account_type === 'subaccount'){
 			        			// get parent
-			        			$parent_account_id = get_user_meta ($user_id, 'b2bking_account_parent', true);
-			        			$user_id = $parent_account_id;
+			        			$parent_account_id = get_user_meta($user_id, 'b2bking_account_parent', true);
 			        			$account_type = esc_html__('Subaccount','b2bking');
 			        		} else {
-			        			$account_type = esc_html__('Main business account','b2bking');
+			        			$account_type = esc_html__('Main account','b2bking');
 			        		}
+
 
 			        		$company_name = get_user_meta($user_id, 'billing_company', true);
 			        		if (empty($company_name)){
 			        			$company_name = '-';
 			        		}
 
-			        		$b2b_enabled = get_user_meta($user_id, 'b2bking_b2buser', true);
-			        		if ($b2b_enabled === 'yes'){
-			        			$b2b_enabled = 'Business';
-			        		} else {
-			        			$b2b_enabled = 'Consumer';
-			        			$account_type = '-';
-			        		}
-
-			        		$group_name = get_the_title(get_user_meta($user_id, 'b2bking_customergroup', true));
+			        		$group_name = get_the_title(b2bking()->get_user_group($user_id));
 			        		if (empty($group_name)){
 			        			$group_name = '-';
-			        			if ($b2b_enabled !== 'yes'){
-			        				$group_name = 'B2C Users';
-			        			}
 			        		}
 
 			        		$approval = get_user_meta($user_id, 'b2bking_account_approved', true);
-			        		if (empty($approval)){
-			        			$approval = '-';
+			        		if (empty($approval) or $approval === 'yes'){
+			        			$approval_text = esc_html__('Active','b2bking');
+			        			$approval_class = 'active';
 			        		} else if ($approval === 'no'){
-			        			$approval = esc_html__('Waiting Approval','b2bking');
+			        			$approval_text = esc_html__('Pending','b2bking').'<svg class="pending_icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								  <line x1="7" y1="17" x2="17" y2="7"></line>
+								  <polyline points="7 7 17 7 17 17"></polyline>
+								</svg>';
+			        			$approval_class = 'pending';
+			        		}
+			        		if ($approval_class === 'pending'){
+			        		    $approval = '<a href="'.esc_attr(get_edit_user_link($user_id).'#b2bking_registration_data_container').'">'.$approval_text.'</a>';
+			        		} else {
+			        		    $approval = $approval_text;
 			        		}
 
-			        		$customer = new WC_Customer($user_id);
-			        		$total_spent = $customer->get_total_spent();
+			        		if (apply_filters('b2bking_group_rules_total_spent_incl_tax', true)){
+			        			$customer = new WC_Customer($user_id);
+			        			$total_spent = $customer->get_total_spent();
+			        		} else {
+			        			$total_spent = b2bking()->get_customer_total_spent_without_tax($user_id);
+			        		}
 
-			        		echo
-			        		'<tr>
-			        		    <td><a href="'.esc_attr(get_edit_user_link($original_user_id)).'">'.esc_html( $username ).'</a></td>
+			        		if (defined('b2bkingcredit_DIR')){
+			        			$credit_balance = get_user_meta($user_id,'b2bking_user_credit_consumed_balance', true);
+			        			if (!$credit_balance){
+			        				$credit_balance = 0;
+
+			        			}
+			        		}
+
+			        		$echostring = '<td><a href="'.esc_attr(get_edit_user_link($original_user_id)).'">'.esc_html( $username ).'</a></td>
 			        		    <td>'.esc_html( $company_name ).'</td>
 			        		    <td>'.esc_html( $group_name ).'</td>
 			        		    <td>'.esc_html( $account_type ).'</td>
-			        		    <td>'.esc_html( $approval ).'</td>
-			        		    <td data-order="'.$total_spent.'">'.wc_price( $total_spent ).'</td>
+			        		    <td><div class="approval_badge '.$approval_class.'">'.$approval.'</div></td>
+			        		    <td data-order="'.$total_spent.'">'.wc_price( $total_spent ).'</td>';
 
-			        		</tr>';
-			        	}
+        		 	// credit balance
+        				if (defined('b2bkingcredit_DIR')){
+        					$echostring .= '<td data-order="'.$credit_balance.'"><a href="'.get_edit_user_link($user_id).'#b2bking_user_credit_container">';
 
-			        	?>
-			           
+        					if ($credit_balance > 0){
+        						$echostring .= '-'.wc_price($credit_balance);
+        					} else if ($credit_balance === 0){
+        						$echostring .= wc_price(0);
+        					} else if ($credit_balance < 0){
+        						$echostring .= wc_price(substr($credit_balance,1)); // remove the minus
+        					}
+
+        					$echostring .= '</a></td>';
+        				}
+
+
+		        		if (defined('SALESKING_DIR')){
+		        			$agent = get_user_meta($user_id, 'salesking_assigned_agent', true);
+
+		        			if (empty($agent) or $agent === 'none'){
+		        				$echostring .= '<td>-</td>';
+		        			} else {
+		        				$agent = new WP_User($agent);
+		        				$echostring .= '<td><a href="'.esc_attr(get_edit_user_link($agent->ID)).'">'.esc_html( $agent->user_login ).'</a></td>';
+		        			}
+		        		}
+
+						// crm hub
+						$echostring .= '<td class="b2bking-crm-hub-cell"><div class="b2bking-crm-icons"><span class="b2bking-crm-icon" data-tab="overview" data-user-id="'.esc_attr($original_user_id).'" title="'.esc_attr__('Overview','b2bking').'"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span><span class="b2bking-crm-icon" data-tab="notes" data-user-id="'.esc_attr($original_user_id).'" title="'.esc_attr__('Notes','b2bking').'"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></span><span class="b2bking-crm-icon" data-tab="files" data-user-id="'.esc_attr($original_user_id).'" title="'.esc_attr__('Files','b2bking').'"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path><path d="M12 12v9"></path><polyline points="8 16 12 12 16 16"></polyline></svg></span><span class="b2bking-crm-icon" data-tab="orders" data-user-id="'.esc_attr($original_user_id).'" title="'.esc_attr__('Orders','b2bking').'"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></span></div></td>';
+
+		        		echo '<tr>'.apply_filters('b2bking_b2bcustomers_row_content', $echostring, $user_id).'</tr>';
+
+
+		        	}
+
+		        	?>
+
 			        </tbody>
-			        <tfoot>
-			            <tr>
-			                <th><?php esc_html_e('Name','b2bking'); ?></th>
-			                <th><?php esc_html_e('Company Name','b2bking'); ?></th>
-			                <th><?php esc_html_e('Customer Group','b2bking'); ?></th>
-			                <th><?php esc_html_e('Account Type','b2bking'); ?></th>
-			                <th><?php esc_html_e('Approval','b2bking'); ?></th>
-			                <th><?php esc_html_e('Total Spent','b2bking'); ?></th>
-			            </tr>
-			        </tfoot>
 			    </table>
 			</div>
 		<?php
 	}
+
+	static function b2bking_render_crm_panel($user_id = 0, $active_tab = 'overview'){
+		$user = get_userdata($user_id);
+		if (!$user) {
+			return '';
+		}
+
+		// Basic info
+		$display_name  = $user->display_name;
+		$email         = $user->user_email;
+		$phone         = get_user_meta($user_id, 'billing_phone', true) ?: '-';
+		$company       = get_user_meta($user_id, 'billing_company', true) ?: '-';
+		$vat = get_user_meta($user_id, 'vat_number', true) ?: get_user_meta($user_id, 'billing_vat', true) ?: '-';
+		$registered    = date_i18n(get_option('date_format'), strtotime($user->user_registered));
+
+		// Address
+		$addr_parts = array_filter([
+			get_user_meta($user_id, 'billing_address_1', true),
+			get_user_meta($user_id, 'billing_address_2', true),
+			get_user_meta($user_id, 'billing_city', true),
+			get_user_meta($user_id, 'billing_state', true),
+			get_user_meta($user_id, 'billing_postcode', true),
+			get_user_meta($user_id, 'billing_country', true),
+		]);
+		$address = $addr_parts ? implode(', ', $addr_parts) : '-';
+
+		// B2BKing data
+		$group_id   = b2bking()->get_user_group($user_id);
+		$group_name = $group_id ? get_the_title($group_id) : '-';
+		$approval   = get_user_meta($user_id, 'b2bking_account_approved', true);
+		$status     = (empty($approval) || $approval === 'yes') ? esc_html__('Active', 'b2bking') : esc_html__('Pending', 'b2bking');
+		$acct_type  = get_user_meta($user_id, 'b2bking_account_type', true);
+		$acct_label = ($acct_type === 'subaccount') ? esc_html__('Subaccount', 'b2bking') : esc_html__('Main Account', 'b2bking');
+
+		// WooCommerce data
+		$wc_customer  = new WC_Customer($user_id);
+		$total_spent  = wc_price($wc_customer->get_total_spent());
+		$recent_orders   = wc_get_orders(['customer' => $user_id, 'limit' => 10, 'orderby' => 'date', 'order' => 'DESC']);
+		$all_order_ids   = wc_get_orders(['customer' => $user_id, 'limit' => -1, 'return' => 'ids']);
+		$total_orders    = count($all_order_ids);
+		$last_order_date = !empty($recent_orders) ? $recent_orders[0]->get_date_created()->date_i18n(get_option('date_format')) : '-';
+		$hpos_enabled    = class_exists('\\Automattic\\WooCommerce\\Utilities\\OrderUtil') && \Automattic\WooCommerce\Utilities\OrderUtil::custom_orders_table_usage_is_enabled();
+		$all_orders_url  = $hpos_enabled
+			? admin_url('admin.php?page=wc-orders&_customer_user=' . $user_id)
+			: admin_url('edit.php?post_type=shop_order&_customer_user=' . $user_id);
+
+		// Agent (SalesKing)
+		$agent_text = '-';
+		if (defined('SALESKING_DIR')) {
+			$agent_id = get_user_meta($user_id, 'salesking_assigned_agent', true);
+			if ($agent_id && $agent_id !== 'none') {
+				$agent_user = get_userdata($agent_id);
+				if ($agent_user) $agent_text = esc_html($agent_user->display_name);
+			}
+		}
+
+		// Notes
+		$notes = get_user_meta($user_id, 'b2bking_crm_notes', true) ?: '';
+
+		// Subaccounts
+		$subaccounts = get_users(['meta_key' => 'b2bking_account_parent', 'meta_value' => $user_id, 'number' => 250]);
+
+		// Registration files (from custom fields, stored separately from CRM files)
+		$reg_files = [];
+		$cfs_string = get_user_meta($user_id, 'b2bking_custom_fields_string', true);
+		if (!empty($cfs_string)) {
+			foreach (array_filter(explode(',', $cfs_string)) as $fid) {
+				$fid = intval($fid);
+				if (!$fid || get_post_meta($fid, 'b2bking_custom_field_field_type', true) !== 'file') continue;
+				$flabel = get_post_meta($fid, 'b2bking_custom_field_field_label', true) ?: get_the_title($fid);
+				$multi_found = false;
+				for ($i = 0; $i < 20; $i++) {
+					$mid = intval(get_user_meta($user_id, 'b2bking_custom_field_' . $fid . $i, true));
+					if (!$mid) break;
+					$multi_found = true;
+					$reg_files[] = ['id' => $mid, 'label' => $flabel];
+				}
+				if (!$multi_found) {
+					$sid = intval(get_user_meta($user_id, 'b2bking_custom_field_' . $fid, true));
+					if ($sid) $reg_files[] = ['id' => $sid, 'label' => $flabel];
+				}
+			}
+		}
+
+		// CRM files — stored separately under b2bking_crm_files (never mixed with registration files)
+		$crm_files_raw = get_user_meta($user_id, 'b2bking_crm_files', true);
+		$crm_file_ids  = (!empty($crm_files_raw) && is_string($crm_files_raw)) ? json_decode($crm_files_raw, true) : [];
+		if (!is_array($crm_file_ids)) $crm_file_ids = [];
+
+		// Initials for avatar
+		$parts    = explode(' ', trim($display_name));
+		$initials = strtoupper(substr($parts[0], 0, 1) . (isset($parts[1]) ? substr($parts[1], 0, 1) : ''));
+
+		$tabs = ['overview' => esc_html__('Overview','b2bking'), 'notes' => esc_html__('Notes','b2bking'), 'files' => esc_html__('Files','b2bking'), 'orders' => esc_html__('Orders','b2bking'), 'subaccounts' => esc_html__('Subaccounts','b2bking')];
+
+		ob_start();
+		?>
+		<div class="b2bking-crm-panel" data-user-id="<?php echo esc_attr($user_id); ?>">
+			<div class="b2bking-crm-panel-head">
+				<div class="b2bking-crm-avatar">
+				<span class="b2bking-crm-avatar-initials"><?php echo esc_html($initials); ?></span>
+				<?php $avatar_url = get_avatar_url($user_id, ['size' => 54, 'default' => '404']); if ($avatar_url) : ?>
+				<img class="b2bking-crm-avatar-img" src="<?php echo esc_url($avatar_url); ?>" onerror="this.style.display='none'" alt="">
+				<?php endif; ?>
+			</div>
+				<div class="b2bking-crm-panel-head-info">
+					<strong><?php echo esc_html($display_name); ?></strong>
+					<span><a href="<?php echo esc_url(get_edit_user_link($user_id)); ?>"><?php echo esc_html($email); ?></a></span>
+				</div>
+			</div>
+			<div class="b2bking-crm-tab-nav">
+				<button type="button" class="b2bking-crm-tab-btn<?php echo $active_tab === 'overview' ? ' active' : ''; ?>" data-tab="overview"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> <?php esc_html_e('Overview','b2bking'); ?></button>
+				<button type="button" class="b2bking-crm-tab-btn<?php echo $active_tab === 'notes' ? ' active' : ''; ?>" data-tab="notes"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> <?php esc_html_e('Notes','b2bking'); ?></button>
+				<button type="button" class="b2bking-crm-tab-btn<?php echo $active_tab === 'files' ? ' active' : ''; ?>" data-tab="files"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path><path d="M12 12v9"></path><polyline points="8 16 12 12 16 16"></polyline></svg> <?php esc_html_e('Files','b2bking'); ?></button>
+				<button type="button" class="b2bking-crm-tab-btn<?php echo $active_tab === 'orders' ? ' active' : ''; ?>" data-tab="orders"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg> <?php esc_html_e('Orders','b2bking'); ?></button>
+				<button type="button" class="b2bking-crm-tab-btn<?php echo $active_tab === 'subaccounts' ? ' active' : ''; ?>" data-tab="subaccounts"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> <?php esc_html_e('Subaccounts','b2bking'); ?></button>
+			</div>
+
+			<div class="b2bking-crm-tab-pane<?php echo $active_tab === 'overview' ? ' active' : ''; ?>" data-tab="overview">
+				<div class="b2bking-crm-info-grid">
+					<?php
+					$rows = [
+						[esc_html__('Email','b2bking'),       '<a href="mailto:'.esc_attr($email).'">'.esc_html($email).'</a>'],
+						[esc_html__('Phone','b2bking'),       esc_html($phone)],
+						[esc_html__('Company','b2bking'),     esc_html($company)],
+						[esc_html__('VAT ID','b2bking'),      esc_html($vat)],
+						[esc_html__('Address','b2bking'),     esc_html($address)],
+						[esc_html__('Group','b2bking'),       esc_html($group_name)],
+						[esc_html__('Approval','b2bking'),      '<span class="b2bking-crm-status b2bking-crm-status--'.esc_attr($approval === 'no' ? 'pending' : 'active').'">'.esc_html($status).'</span>'],
+						[esc_html__('Account Type','b2bking'), esc_html($acct_label)],
+						[esc_html__('Total Spent','b2bking'), $total_spent],
+						[esc_html__('Total Orders','b2bking'), esc_html($total_orders)],
+						[esc_html__('Last Order','b2bking'),  esc_html($last_order_date)],
+						[esc_html__('Customer Since','b2bking'), esc_html($registered)],
+					];
+					if (defined('SALESKING_DIR')) {
+						$rows[] = [esc_html__('Agent','b2bking'), $agent_text];
+					}
+					foreach ($rows as $row) {
+						?>
+						<div class="b2bking-crm-info-row">
+							<span class="b2bking-crm-info-label"><?php echo $row[0]; ?></span>
+							<span class="b2bking-crm-info-value"><?php echo $row[1]; ?></span>
+						</div>
+						<?php
+					}
+					?>
+				</div>
+			</div>
+
+			<div class="b2bking-crm-tab-pane<?php echo $active_tab === 'notes' ? ' active' : ''; ?>" data-tab="notes">
+				<div class="b2bking-crm-notes-wrap">
+					<textarea class="b2bking-crm-notes-textarea" placeholder="<?php esc_attr_e('Add notes about this customer...', 'b2bking'); ?>"><?php echo esc_textarea($notes); ?></textarea>
+					<div class="b2bking-crm-notes-footer">
+						<button type="button" class="b2bking-crm-save-notes button button-primary" data-user-id="<?php echo esc_attr($user_id); ?>"><?php esc_html_e('Save Notes', 'b2bking'); ?></button>
+						<span class="b2bking-crm-notes-status"></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="b2bking-crm-tab-pane<?php echo $active_tab === 'files' ? ' active' : ''; ?>" data-tab="files">
+				<div class="b2bking-crm-files-wrap">
+
+					<?php if (!empty($reg_files)) : ?>
+					<div class="b2bking-crm-files-section">
+						<div class="b2bking-crm-files-section-label"><?php esc_html_e('Registration Files', 'b2bking'); ?></div>
+						<?php foreach ($reg_files as $rf) :
+							$rf_url  = wp_get_attachment_url($rf['id']);
+							$rf_name = $rf_url ? wp_basename($rf_url) : '-';
+						?>
+						<div class="b2bking-crm-file-row">
+							<span class="b2bking-crm-file-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></span>
+							<span class="b2bking-crm-file-info">
+								<span class="b2bking-crm-file-name"><?php echo esc_html($rf_name); ?></span>
+								<span class="b2bking-crm-file-meta"><?php echo esc_html($rf['label']); ?></span>
+							</span>
+							<?php if ($rf_url) : ?>
+							<a href="<?php echo esc_url($rf_url); ?>" target="_blank" class="button button-small"><?php esc_html_e('View', 'b2bking'); ?></a> <button class="b2bking-crm-file-dl-reg button button-small" data-attachment="<?php echo esc_attr($rf['id']); ?>"><?php esc_html_e('Download', 'b2bking'); ?></button>
+							<?php endif; ?>
+						</div>
+						<?php endforeach; ?>
+					</div>
+					<div class="b2bking-crm-files-divider"></div>
+					<?php endif; ?>
+
+					<div class="b2bking-crm-files-section">
+						<div class="b2bking-crm-files-section-label b2bking-crm-files-section-label--actions">
+							<span><?php esc_html_e('Uploaded Files', 'b2bking'); ?></span>
+							<button type="button" class="b2bking-crm-upload-btn button button-small" data-user-id="<?php echo esc_attr($user_id); ?>"><?php esc_html_e('Upload File', 'b2bking'); ?></button>
+						</div>
+						<?php if (empty($crm_file_ids)) : ?>
+						<div class="b2bking-crm-empty-state"><?php esc_html_e('No files uploaded yet.', 'b2bking'); ?></div>
+						<?php else : ?>
+						<?php foreach ($crm_file_ids as $cid) :
+							$cid        = intval($cid);
+							if (!$cid) continue;
+							$cpath      = get_attached_file($cid);
+							$cname      = $cpath ? basename($cpath) : wp_basename(wp_get_attachment_url($cid));
+							$csize      = ($cpath && file_exists($cpath)) ? size_format(filesize($cpath)) : '';
+						?>
+						<div class="b2bking-crm-file-row">
+							<span class="b2bking-crm-file-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></span>
+							<span class="b2bking-crm-file-info">
+								<span class="b2bking-crm-file-name"><?php echo esc_html($cname); ?></span>
+								<?php if ($csize) : ?><span class="b2bking-crm-file-meta"><?php echo esc_html($csize); ?></span><?php endif; ?>
+							</span>
+							<button type="button" class="b2bking-crm-file-view button button-small" data-attachment="<?php echo esc_attr($cid); ?>" data-user-id="<?php echo esc_attr($user_id); ?>"><?php esc_html_e('View', 'b2bking'); ?></button> <button type="button" class="b2bking-crm-file-dl button button-small" data-attachment="<?php echo esc_attr($cid); ?>" data-user-id="<?php echo esc_attr($user_id); ?>"><?php esc_html_e('Download', 'b2bking'); ?></button>
+							<button type="button" class="b2bking-crm-file-del" data-attachment="<?php echo esc_attr($cid); ?>" data-user-id="<?php echo esc_attr($user_id); ?>" title="<?php esc_attr_e('Remove', 'b2bking'); ?>">&#10005;</button>
+						</div>
+						<?php endforeach; ?>
+						<?php endif; ?>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="b2bking-crm-tab-pane<?php echo $active_tab === 'orders' ? ' active' : ''; ?>" data-tab="orders">
+				<?php if (empty($recent_orders)) : ?>
+				<div class="b2bking-crm-empty-state"><?php esc_html_e('No orders found.', 'b2bking'); ?></div>
+				<?php else : ?>
+				<div class="b2bking-crm-orders-wrap">
+					<div class="b2bking-crm-orders-header">
+						<span><?php esc_html_e('Order', 'b2bking'); ?></span>
+						<span><?php esc_html_e('Date', 'b2bking'); ?></span>
+						<span><?php esc_html_e('Status', 'b2bking'); ?></span>
+						<span><?php esc_html_e('Total', 'b2bking'); ?></span>
+					</div>
+					<?php foreach ($recent_orders as $order) :
+						$o_status = $order->get_status();
+						$o_statuses = wc_get_order_statuses();
+						$o_label = isset($o_statuses['wc-' . $o_status]) ? $o_statuses['wc-' . $o_status] : ucfirst($o_status);
+					?>
+					<div class="b2bking-crm-order-row">
+						<span><a href="<?php echo esc_url($order->get_edit_order_url()); ?>">#<?php echo esc_html($order->get_order_number()); ?></a></span>
+						<span><?php echo esc_html($order->get_date_created()->date_i18n(get_option('date_format'))); ?></span>
+						<span><span class="b2bking-crm-order-status b2bking-crm-order-status--<?php echo esc_attr($o_status); ?>"><?php echo esc_html($o_label); ?></span></span>
+						<span><?php echo wp_kses_post(wc_price($order->get_total(), ['currency' => $order->get_currency()])); ?></span>
+					</div>
+					<?php endforeach; ?>
+					<?php if ($total_orders > 10) : ?>
+					<div class="b2bking-crm-orders-footer">
+						<a href="<?php echo esc_url($all_orders_url); ?>" class="b2bking-crm-view-all"><?php printf(esc_html__('View all %d orders', 'b2bking'), $total_orders); ?> &rarr;</a>
+					</div>
+					<?php endif; ?>
+				</div>
+				<?php endif; ?>
+			</div>
+
+			<div class="b2bking-crm-tab-pane<?php echo $active_tab === 'subaccounts' ? ' active' : ''; ?>" data-tab="subaccounts">
+				<?php
+				$parent_id = get_user_meta($user_id, 'b2bking_account_parent', true);
+				if ($parent_id) :
+					$parent_user = get_userdata($parent_id);
+					if ($parent_user) :
+				?>
+				<div class="b2bking-crm-subaccounts-parent">
+					<span class="b2bking-crm-subaccounts-parent-label"><?php esc_html_e('Parent account:', 'b2bking'); ?></span>
+					<div class="b2bking-crm-subaccount-item">
+						<div class="b2bking-crm-subaccount-name"><a href="<?php echo esc_url(get_edit_user_link($parent_id)); ?>"><?php echo esc_html($parent_user->display_name); ?></a></div>
+						<div class="b2bking-crm-subaccount-email"><?php echo esc_html($parent_user->user_email); ?></div>
+					</div>
+				</div>
+				<?php endif; endif; ?>
+				<?php if ($parent_id) : ?><span class="b2bking-crm-subaccounts-parent-label"><?php esc_html_e('Subaccounts:', 'b2bking'); ?></span><?php endif; ?>
+				<?php if (empty($subaccounts)) : ?>
+				<div class="b2bking-crm-empty-state"><?php esc_html_e('No subaccounts found.', 'b2bking'); ?></div>
+				<?php else : ?>
+				<div class="b2bking-crm-subaccounts-list">
+					<?php
+					foreach ($subaccounts as $sub) {
+						?>
+						<div class="b2bking-crm-subaccount-item">
+							<div class="b2bking-crm-subaccount-name"><a href="<?php echo esc_url(get_edit_user_link($sub->ID)); ?>"><?php echo esc_html($sub->display_name); ?></a></div>
+							<div class="b2bking-crm-subaccount-email"><?php echo esc_html($sub->user_email); ?></div>
+						</div>
+						<?php
+					}
+					?>
+				</div>
+				<?php endif; ?>
+			</div>
+		</div>
+		<?php
+		return ob_get_clean();
+	}
+
 
 	public static function b2bking_dashboard_page_content(){
 
@@ -7442,6 +7890,10 @@ class B2bkingcore_Admin{
 
 		wp_enqueue_style ( 'b2bking_global_admin_style', plugins_url('assets/css/adminglobal.css', __FILE__), $deps = array(), $ver = B2BKINGCORE_VERSION);
 		wp_enqueue_script( 'b2bking_global_admin_script', plugins_url('assets/js/adminglobal.js', __FILE__), $deps = array(), $ver = B2BKINGCORE_VERSION, $in_footer =true);
+		wp_localize_script( 'b2bking_global_admin_script', 'b2bking_params', array(
+			'expand_all'   => __( 'Expand all', 'b2bking' ),
+			'collapse_all' => __( 'Collapse all', 'b2bking' ),
+		) );
 
 		if ( class_exists( 'woocommerce' ) ) {
 			$symbol = get_woocommerce_currency_symbol();
@@ -7466,6 +7918,8 @@ class B2bkingcore_Admin{
 		}
 
 		if (substr( $hook, 0, 7 ) === "b2bking" || substr( $hook, 0, 18 ) === "admin_page_b2bking" || substr($type, 0, 7) === 'b2bking' || substr($post_type, 0, 7) === 'b2bking' || $hook === 'toplevel_page_b2bkingcore'){
+
+			wp_enqueue_media();
 			wp_enqueue_script('dataTables', plugins_url('../includes/assets/lib/dataTables/jquery.dataTables.min.js', __FILE__), $deps = array(), $ver = false, $in_footer =true);
 			wp_enqueue_style( 'dataTables', plugins_url('../includes/assets/lib/dataTables/jquery.dataTables.min.css', __FILE__));
 
@@ -7484,6 +7938,10 @@ class B2bkingcore_Admin{
 			wp_enqueue_style ('chartist', plugins_url('assets/dashboard/chartist/chartist.min.css', __FILE__), $deps = array(), $ver = B2BKINGCORE_VERSION);
 			wp_enqueue_script('chartist', plugins_url('assets/dashboard/chartist/chartist.min.js', __FILE__), $deps = array(), $ver = B2BKINGCORE_VERSION, $in_footer =true);
 			wp_enqueue_script('chartist-plugin-tooltip', plugins_url('assets/dashboard/chartist/chartist-plugin-tooltip.min.js', __FILE__), $deps = array(), $ver = false, $in_footer =true);
+		} else {
+			if ($hook === 'user-edit.php' || $hook === 'profile.php'){
+				wp_enqueue_media(); //crm hub upload files
+			}
 		}
 
 		$do_not_load = false;
@@ -7568,8 +8026,9 @@ class B2bkingcore_Admin{
 			    'label_text' => esc_html__('Label', 'b2bking'),
 			    'text_text' => esc_html__('Text', 'b2bking'),
 			    'datatables_folder' => plugins_url('../includes/assets/lib/dataTables/i18n/', __FILE__),
-			    'print' => esc_html__('Print', 'b2bking'), 
-			    'edit_columns' => esc_html__('Edit Columns', 'b2bking'), 
+			    'print' => esc_html__('Print', 'b2bking'),
+			    'edit_columns' => esc_html__('Edit Columns', 'b2bking'),
+			    'pdf_download_font' => apply_filters('b2bking_pdf_downloads_font', 'standard'),
 			    'purchase_lists_language_option' => get_option('b2bking_purchase_lists_language_setting','english'),
 			    'group_rules_link' => admin_url( 'edit.php?post_type=b2bking_grule'),
 			    'dynamic_rules_link' => admin_url( 'edit.php?post_type=b2bking_rule'),
@@ -7602,7 +8061,7 @@ class B2bkingcore_Admin{
 			    'caches_have_cleared' => esc_html__('All caches have been cleared', 'b2bking'),
 			    'caches_are_clearing' => esc_html__('Caches are clearing...', 'b2bking'),
 			    'loaderurl' => plugins_url('../includes/assets/images/loaderpagegold5.svg', __FILE__),
-			    'ajax_pages_load' => apply_filters('b2bking_ajax_pages_load', 'enabled'), // disable ajax backend page load via snippets
+			    'ajax_pages_load' => apply_filters('b2bking_ajax_pages_load', get_option('b2bking_ajax_pages_load', 'enabled')), // disable ajax backend page load via snippets
 			    'dashboardstyleurl' => plugins_url('assets/dashboard/cssjs/dashboardstyle.min.css', __FILE__),
 			    'inlineeditpostjsurl' => admin_url('js/inline-edit-post.js'),
 			    'commonjsurl' => plugins_url('assets/js/common.js', __FILE__),
@@ -7756,6 +8215,12 @@ class B2bkingcore_Admin{
 		if (isset($_GET['post'])){
 			$translation_array['current_action'] = sanitize_text_field($_GET['action'] );
 		}
+
+		$translation_array['no_customers_found'] = esc_html__('No customers found...', 'b2bking');
+		$translation_array['saved'] = esc_html__('Saved', 'b2bking');
+		$translation_array['error'] = esc_html__('Error', 'b2bking');
+		$translation_array['select_file'] = esc_html__('Select File', 'b2bking');
+		$translation_array['use_file'] = esc_html__('Use this file', 'b2bking');
 
 		wp_localize_script( 'b2bking_global_admin_script', 'b2bking', $translation_array );
 

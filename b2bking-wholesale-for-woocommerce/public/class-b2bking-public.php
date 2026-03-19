@@ -84,6 +84,8 @@ class B2bkingcore_Public{
 									// Change "Sale!" badge text
 									add_filter('woocommerce_sale_flash', array('B2bkingcore_Dynamic_Rules', 'b2bking_dynamic_rule_discount_display_dynamic_sale_badge'), 999999, 3);
 
+									add_filter('woocommerce_variable_price_html', array($this,'b2bking_variable_cache_bust'), 10, 2);
+
 								}
 							}
 						}
@@ -136,6 +138,13 @@ class B2bkingcore_Public{
 				}
 			}
 		});
+	}
+
+	function b2bking_variable_cache_bust($price, $product){
+		$product_id = $product->get_id();
+		delete_transient( 'wc_var_prices_' . $product_id );
+
+		return $price;
 	}
 
 	function b2bking_individual_pricing_fixed_price($price, $product){

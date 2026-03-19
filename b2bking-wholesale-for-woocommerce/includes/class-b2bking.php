@@ -133,12 +133,20 @@ class B2bkingcore {
 	    		
 	   		// Backend Customers Panel
 	   		add_action( 'wp_ajax_b2bking_admin_customers_ajax', array($this, 'b2bking_admin_customers_ajax') );
+	   		add_action( 'wp_ajax_b2bking_crm_panel', array($this, 'b2bking_crm_panel_ajax') );
+	   		add_action( 'wp_ajax_b2bking_crm_save_notes', array($this, 'b2bking_crm_save_notes_ajax') );
+	   		add_action( 'wp_ajax_b2bking_crm_download_file', array($this, 'b2bking_crm_download_file_ajax') );
+	   		add_action( 'wp_ajax_b2bking_crm_upload_file', array($this, 'b2bking_crm_upload_file_ajax') );
+	   		add_action( 'wp_ajax_b2bking_crm_remove_file', array($this, 'b2bking_crm_remove_file_ajax') );
 
 	   		// Backend Update User Data
 	   		add_action( 'wp_ajax_b2bkingupdateuserdata', array($this, 'b2bkingupdateuserdata') );
 
 	   		// Get page content function
 			add_action( 'wp_ajax_b2bking_get_page_content', array($this, 'b2bking_get_page_content') );
+
+	    	// Disable AJAX loading function
+	    	add_action( 'wp_ajax_b2bking_disable_ajax_loading', array($this, 'b2bking_disable_ajax_loading') );
 
 	   		// refresh dashboard data
 	   		add_action( 'wp_ajax_b2bking_refresh_dashboard_data', array($this, 'b2bking_refresh_dashboard_data') );
@@ -858,6 +866,26 @@ class B2bkingcore {
 
 	}
 
+	function b2bking_disable_ajax_loading(){
+		// Check security nonce.
+		if ( ! check_ajax_referer( 'b2bking_security_nonce', 'security' ) ) {
+		  	wp_send_json_error( 'Invalid security token sent.' );
+		    wp_die();
+		}
+
+		// Capability check
+		if (!current_user_can( apply_filters('b2bking_backend_capability_needed', 'manage_woocommerce') )){
+			wp_send_json_error( 'Failed capability check.' );
+			wp_die();
+		}
+
+		// Disable AJAX loading
+		update_option('b2bking_ajax_pages_load', 'no');
+
+		wp_send_json_success();
+		exit();
+	}
+
 	function b2bking_get_edit_post_type_page($post_type_input){
 
 		echo B2bkingcore_Admin::get_header_bar();
@@ -1160,169 +1188,328 @@ class B2bkingcore {
 	}
 
 	function b2bking_admin_customers_ajax(){
-    	// Check security nonce. 
-		if ( ! check_ajax_referer( 'b2bking_security_nonce', 'security' ) ) {
-		  	wp_send_json_error( 'Invalid security token sent.' );
-		    wp_die();
-		}
+	    // Check security nonce.
+	    if ( ! check_ajax_referer( 'b2bking_security_nonce', 'security' ) ) {
+	        wp_send_json_error( 'Invalid security token sent.' );
+	        wp_die();
+	    }
 
-		// Capability check
-		if (!current_user_can( apply_filters('b2bking_backend_capability_needed', 'manage_woocommerce') )){
-			wp_send_json_error( 'Failed capability check.' );
+	    // Capability check
+	    if (!current_user_can( apply_filters('b2bking_backend_capability_needed', 'manage_woocommerce') )){
+	        wp_send_json_error( 'Failed capability check.' );
+	        wp_die();
+	    }
+
+	    $start = sanitize_text_field($_POST['start']);
+	    $length = sanitize_text_field($_POST['length']);
+	    $search = sanitize_text_field($_POST['search']['value']);
+	    $pagenr = ($start/$length)+1;
+
+	    // We'll need to do two queries and merge results if there's a search term
+	    if (!empty($search)) {
+	        // First query: search in user fields (username, email, display name)
+	        $args_user_fields = array(
+	            'number'  => -1, // Get all results for merging
+	            'search' => "*{$search}*",
+	            'search_columns' => array(
+	                'display_name',
+	                'user_login',
+	                'user_email'
+	            ),
+	            'fields' => array('ID', 'display_name', 'user_login', 'user_email'),
+	        );
+
+	        // Second query: search in company meta
+	        $args_company = array(
+	            'number'  => -1, // Get all results for merging
+	            'fields' => array('ID', 'display_name', 'user_login', 'user_email'),
+	            'meta_query' => array(
+	                array(
+	                    'key' => 'billing_company',
+	                    'value' => $search,
+	                    'compare' => 'LIKE'
+	                )
+	            )
+	        );
+
+	        // Add hybrid mode check if needed
+	        if(get_option('b2bking_plugin_status_setting', 'b2b') === 'hybrid'){
+	            $b2b_meta = array(
+	                'key' => 'b2bking_b2buser',
+	                'value' => 'yes',
+	            );
+	            $args_user_fields['meta_query'] = array($b2b_meta);
+	            $args_company['meta_query'][] = $b2b_meta;
+	        }
+
+	        // Add role filter to both queries
+	        $role = apply_filters('b2bking_admin_customers_page_role','');
+	        if (!empty($role)) {
+	            $args_user_fields['role'] = $role;
+	            $args_company['role'] = $role;
+	        }
+
+	        // Get both sets of results
+	        $users_from_fields = get_users($args_user_fields);
+	        $users_from_company = get_users($args_company);
+
+	        // Merge results and remove duplicates
+	        $users_combined = array_merge($users_from_fields, $users_from_company);
+	        $users = array();
+	        $seen_ids = array();
+
+	        foreach ($users_combined as $user) {
+	            if (!in_array($user->ID, $seen_ids)) {
+	                $users[] = $user;
+	                $seen_ids[] = $user->ID;
+	            }
+	        }
+
+	        // Handle pagination manually since we merged results
+	        $total_count = count($users);
+	        $start_index = ($pagenr - 1) * $length;
+	        $users = array_slice($users, $start_index, $length);
+
+	    } else {
+	        // No search term - use simple query with pagination
+	        $args = array(
+	            'number'  => $length,
+	            'paged'   => floatval($pagenr),
+	            'fields'  => array('ID', 'display_name', 'user_login', 'user_email'),
+	        );
+
+	        if(get_option('b2bking_plugin_status_setting', 'b2b') === 'hybrid'){
+	            $args['meta_query'] = array(
+	                array(
+	                    'key'     => 'b2bking_b2buser',
+	                    'value'   => 'yes',
+	                )
+	            );
+	        }
+
+	        $role = apply_filters('b2bking_admin_customers_page_role','');
+	        if (!empty($role)) {
+	            $args['role'] = $role;
+	        }
+
+	        $users = get_users($args);
+
+	        // Get total count for non-search case
+	        $args_count = $args;
+	        $args_count['number'] = -1;
+	        $args_count['fields'] = array('ID');
+	        $total_count = count(get_users($args_count));
+	    }
+
+	    $data = array(
+	        'length'=> $length,
+	        'data' => array(),
+	        'recordsFiltered' => $total_count,
+	        'recordsTotal' => $total_count
+	    );
+
+	    foreach ($users as $user) {
+	        $user_id = $user->ID;
+	        $original_user_id = $user_id;
+	        $username = $user->display_name;
+
+	        // first check if subaccount. If subaccount, user is equivalent with parent
+	        $account_type = get_user_meta($user_id, 'b2bking_account_type', true);
+	        if ($account_type === 'subaccount'){
+	            // get parent
+	            $parent_account_id = get_user_meta($user_id, 'b2bking_account_parent', true);
+	            $account_type = esc_html__('Subaccount','b2bking');
+	        } else {
+	            $account_type = esc_html__('Main account','b2bking');
+	        }
+
+	        $company_name = get_user_meta($user_id, 'billing_company', true);
+	        if (empty($company_name)){
+	            $company_name = '-';
+	        }
+
+	        $b2b_enabled = get_user_meta($user_id, 'b2bking_b2buser', true);
+	        if ($b2b_enabled === 'yes'){
+	            $b2b_enabled = 'Business';
+	        } else {
+	            $b2b_enabled = 'Consumer';
+	            $account_type = '-';
+	        }
+
+	        $group_name = get_the_title(b2bking()->get_user_group($user_id));
+	        if (empty($group_name)){
+	            $group_name = '-';
+	            if ($b2b_enabled !== 'yes'){
+	                $group_name = 'B2C Users';
+	            }
+	        }
+
+	        $approval_raw = get_user_meta($user_id, 'b2bking_account_approved', true);
+	        if (empty($approval_raw) || $approval_raw === 'yes'){
+	            $approval_text  = esc_html__('Active', 'b2bking');
+	            $approval_class = 'active';
+	        } else {
+	            $approval_text  = esc_html__('Pending', 'b2bking') . '<svg class="pending_icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>';
+	            $approval_class = 'pending';
+	        }
+	        if ($approval_class === 'pending'){
+	            $approval_inner = '<a href="' . esc_attr(get_edit_user_link($user_id) . '#b2bking_registration_data_container') . '">' . $approval_text . '</a>';
+	        } else {
+	            $approval_inner = $approval_text;
+	        }
+	        $approval = '<div class="approval_badge ' . $approval_class . '">' . $approval_inner . '</div>';
+
+	        if (apply_filters('b2bking_group_rules_total_spent_incl_tax', true)){
+	            $customer = new WC_Customer($user_id);
+	            $total_spent = $customer->get_total_spent();
+	        } else {
+	            $total_spent = b2bking()->get_customer_total_spent_without_tax($user_id);
+	        }
+
+	        $name_link = '<a href="'.esc_attr(get_edit_user_link($original_user_id)).'">'.esc_html($username).'</a>';
+
+	        // CRM hub cell
+	        $crm_hub_cell = '<div class="b2bking-crm-icons">'
+	            . '<span class="b2bking-crm-icon" data-tab="overview" data-user-id="'.esc_attr($original_user_id).'" title="'.esc_attr__('Overview','b2bking').'"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span><span class="b2bking-crm-icon" data-tab="notes" data-user-id="'.esc_attr($original_user_id).'" title="'.esc_attr__('Notes','b2bking').'"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></span>'
+	            . '<span class="b2bking-crm-icon" data-tab="files" data-user-id="'.esc_attr($original_user_id).'" title="'.esc_attr__('Files','b2bking').'"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path><path d="M12 12v9"></path><polyline points="8 16 12 12 16 16"></polyline></svg></span>'
+	            . '<span class="b2bking-crm-icon" data-tab="orders" data-user-id="'.esc_attr($original_user_id).'" title="'.esc_attr__('Orders','b2bking').'"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></span>'
+	            . '</div>';
+
+	        $row_array = array($name_link, $company_name, $group_name, $account_type, $approval, wc_price($total_spent), $crm_hub_cell);
+
+	        if (defined('b2bkingcredit_DIR')){
+
+	        	$credit_balance = get_user_meta($user_id,'b2bking_user_credit_consumed_balance', true);
+	        	if (!$credit_balance){
+	        		$credit_balance = 0;
+	        	}
+
+	        	$creditstring = '<td data-order="'.$credit_balance.'"><a href="'.get_edit_user_link($user_id).'#b2bking_user_credit_container">';
+
+	        	if ($credit_balance > 0){
+	        		$creditstring .= '-'.wc_price($credit_balance);
+	        	} else if ($credit_balance === 0){
+	        		$creditstring .= wc_price(0);
+	        	} else if ($credit_balance < 0){
+	        		$creditstring .= wc_price(substr($credit_balance,1)); // remove the minus
+	        	}
+
+	        	$creditstring .= '</a></td>';
+	        }
+
+
+	        if (defined('SALESKING_DIR')){
+	        	$agent = get_user_meta($user_id, 'salesking_assigned_agent', true);
+
+	        	if (empty($agent) or $agent === 'none'){
+	        		$agent = '-';
+	        	} else {
+	        		$agent = new WP_User($agent);
+	        		$agent = '<td><a href="'.esc_attr(get_edit_user_link($agent->ID)).'">'.esc_html( $agent->user_login ).'</a></td>';
+	        	}
+	        }
+
+	        if (defined('b2bkingcredit_DIR') && defined('SALESKING_DIR')){
+	        	$row_array = array($name_link, $company_name, $group_name, $account_type, $approval, wc_price( $total_spent ), $creditstring, $agent, $crm_hub_cell);
+	        }
+
+	        if (!defined('b2bkingcredit_DIR') && defined('SALESKING_DIR')){
+	        	$row_array = array($name_link, $company_name, $group_name, $account_type, $approval, wc_price( $total_spent ), $agent, $crm_hub_cell);
+	        }
+
+	        if (defined('b2bkingcredit_DIR') && !defined('SALESKING_DIR')){
+	        	$row_array = array($name_link, $company_name, $group_name, $account_type, $approval, wc_price( $total_spent ), $creditstring, $crm_hub_cell);
+	        }
+
+	        if (!defined('b2bkingcredit_DIR') && !defined('SALESKING_DIR')){
+	        	$row_array = array($name_link, $company_name, $group_name, $account_type, $approval, wc_price( $total_spent ), $crm_hub_cell);
+	        }
+
+	        array_push($data['data'], apply_filters('b2bking_b2bcustomers_row_content', $row_array, $user_id));
+	    }
+
+	    echo json_encode($data);
+	    exit();
+	}
+
+	function b2bking_crm_panel_ajax(){
+		if (!check_ajax_referer('b2bking_security_nonce', 'security')) {
+			wp_send_json_error('Invalid security token.');
 			wp_die();
 		}
-
-		$start = sanitize_text_field($_POST['start']);
-		$length = sanitize_text_field($_POST['length']);
-		$search = sanitize_text_field($_POST['search']['value']);
-		$pagenr = ($start/$length)+1;
-
-		if(get_option( 'b2bking_plugin_status_setting', 'b2b' ) === 'hybrid'){
-			$args = array(
-				'meta_key'     => 'b2bking_b2buser',
-				'meta_value'   => 'yes',
-			    'role'    => apply_filters('b2bking_admin_customers_page_role','customer'),
-			    'number'  => $length,
-			    'search' => "*{$search}*",
-			    'search_columns' => array(
-			        'display_name',
-		        ),
-			    'paged'   => floatval($pagenr),
-			    'fields'=> array('ID', 'display_name'),
-			);
-
-			// also get total number, same as above without "paged", and number -1
-			$args_total_number = array(
-				'meta_key'     => 'b2bking_b2buser',
-				'meta_value'   => 'yes',
-			    'role'    => apply_filters('b2bking_admin_customers_page_role','customer'),
-			    'number'  => -1,
-			    'search' => "*{$search}*",
-			    'search_columns' => array(
-			        'display_name',
-		        ),
-			    'fields'=> array('ID', 'display_name'),
-			);
-
-
-		} else {
-			$args = array(
-			    'role'    => 'customer',
-			    'number'  => $length,
-			    'search' => "*{$search}*",
-			    'search_columns' => array(
-			        'display_name',
-		        ),
-			    'paged'   => floatval($pagenr),
-			    'fields'=> array('ID', 'display_name'),
-			);
-
-			// also get total number, same as above without "paged", and number -1
-			$args_total_number = array(
-			    'role'    => 'customer',
-			    'number'  => -1,
-			    'search' => "*{$search}*",
-			    'search_columns' => array(
-			        'display_name',
-		        ),
-			    'fields'=> array('ID', 'display_name'),
-			);
+		if (!current_user_can(apply_filters('b2bking_backend_capability_needed', 'manage_woocommerce'))) {
+			wp_send_json_error('Insufficient permissions.');
+			wp_die();
 		}
-		
+		$user_id   = intval($_POST['user_id']);
+		$active_tab = sanitize_key($_POST['tab'] ?? 'overview');
+		echo B2BKingcore_Admin::b2bking_render_crm_panel($user_id, $active_tab);
+		wp_die();
+	}
 
-		$users = get_users( $args );
-
-		$total_count = count(get_users($args_total_number));
-
-		$data = array(
-			'length'=> $length,
-			'data' => array(),
-			'recordsFiltered' => $total_count, 
-			'recordsTotal' => $total_count
-		);
-
-		foreach ( $users as $user ) {
-
-			$user_id = $user->ID;
-			$original_user_id = $user_id;
-			$username = $user->display_name;
-
-			// first check if subaccount. If subaccount, user is equivalent with parent
-			$account_type = get_user_meta($user_id, 'b2bking_account_type', true);
-			if ($account_type === 'subaccount'){
-				// get parent
-				$parent_account_id = get_user_meta ($user_id, 'b2bking_account_parent', true);
-				$user_id = $parent_account_id;
-				$account_type = esc_html__('Subaccount','b2bking');
-			} else {
-				$account_type = esc_html__('Main business account','b2bking');
-			}
-
-			$company_name = get_user_meta($user_id, 'billing_company', true);
-			if (empty($company_name)){
-				$company_name = '-';
-			}
-
-			$b2b_enabled = get_user_meta($user_id, 'b2bking_b2buser', true);
-			if ($b2b_enabled === 'yes'){
-				$b2b_enabled = 'Business';
-			} else {
-				$b2b_enabled = 'Consumer';
-				$account_type = '-';
-			}
-
-			$group_name = get_the_title(b2bking()->get_user_group($user_id));
-			if (empty($group_name)){
-				$group_name = '-';
-				if ($b2b_enabled !== 'yes'){
-					$group_name = 'B2C Users';
-				}
-			}
-
-			$approval = get_user_meta($user_id, 'b2bking_account_approved', true);
-			if (empty($approval)){
-				$approval = '-';
-			} else if ($approval === 'no'){
-				$approval = esc_html__('Waiting Approval','b2bking');
-			}
-
-			if (apply_filters('b2bking_group_rules_total_spent_incl_tax', true)){
-    			$customer = new WC_Customer($user_id);
-    			$total_spent = $customer->get_total_spent();
-    		} else {
-    			$total_spent = b2bking()->get_customer_total_spent_without_tax($user_id);
-    		}
-
-			$name_link = '<a href="'.esc_attr(get_edit_user_link($original_user_id)).'">'.esc_html( $username ).'</a>';
-
-			if (defined('SALESKING_DIR')){
-				$agent = get_user_meta($user_id, 'salesking_assigned_agent', true);
-
-				if (empty($agent) or $agent === 'none'){
-					$agent = '-';
-				} else {
-					$agent = new WP_User($agent);
-					$agent = '<td><a href="'.esc_attr(get_edit_user_link($agent->ID)).'">'.esc_html( $agent->user_login ).'</a></td>';
-				}
-				
-
-				$row_array = array($name_link, $company_name, $group_name, $account_type, $approval, wc_price( $total_spent ), $agent);
-
-			} else {
-				$row_array = array($name_link, $company_name, $group_name, $account_type, $approval, wc_price( $total_spent ));
-
-			}
-
-			array_push($data['data'], apply_filters('b2bking_b2bcustomers_row_content', $row_array, $user_id));
-
-			
+	// CRM file download — returns the attachment URL after verifying the file belongs to this user's CRM list
+	function b2bking_crm_download_file_ajax(){
+		if (!check_ajax_referer('b2bking_security_nonce', 'security')) { wp_send_json_error(); wp_die(); }
+		if (!current_user_can(apply_filters('b2bking_backend_capability_needed', 'manage_woocommerce'))) { wp_send_json_error(); wp_die(); }
+		$attachment_id = intval($_POST['attachment_id']);
+		$user_id       = intval($_POST['user_id']);
+		$crm_files_raw = get_user_meta($user_id, 'b2bking_crm_files', true);
+		$crm_ids       = (!empty($crm_files_raw) && is_string($crm_files_raw)) ? json_decode($crm_files_raw, true) : [];
+		if (!is_array($crm_ids) || !in_array($attachment_id, array_map('intval', $crm_ids))) {
+			wp_send_json_error('File not associated with this user.');
+			wp_die();
 		}
+		$url = wp_get_attachment_url($attachment_id);
+		if (!$url) { wp_send_json_error('File not found.'); wp_die(); }
+		wp_send_json_success(['url' => $url, 'filename' => wp_basename($url)]);
+	}
 
-		echo json_encode($data);
-		
-		exit();
-	} 
-	
+	// CRM file upload — saves a WP attachment ID to the user's b2bking_crm_files list
+	function b2bking_crm_upload_file_ajax(){
+		if (!check_ajax_referer('b2bking_security_nonce', 'security')) { wp_send_json_error(); wp_die(); }
+		if (!current_user_can(apply_filters('b2bking_backend_capability_needed', 'manage_woocommerce'))) { wp_send_json_error(); wp_die(); }
+		$attachment_id = intval($_POST['attachment_id']);
+		$user_id       = intval($_POST['user_id']);
+		if (!$attachment_id || !$user_id || !get_post($attachment_id)) { wp_send_json_error(); wp_die(); }
+		$crm_files_raw = get_user_meta($user_id, 'b2bking_crm_files', true);
+		$crm_ids       = (!empty($crm_files_raw) && is_string($crm_files_raw)) ? json_decode($crm_files_raw, true) : [];
+		if (!is_array($crm_ids)) $crm_ids = [];
+		if (!in_array($attachment_id, array_map('intval', $crm_ids))) {
+			$crm_ids[] = $attachment_id;
+			update_user_meta($user_id, 'b2bking_crm_files', json_encode($crm_ids));
+		}
+		wp_send_json_success();
+	}
+
+	// CRM file remove — removes an attachment ID from b2bking_crm_files (does NOT delete the media file)
+	function b2bking_crm_remove_file_ajax(){
+		if (!check_ajax_referer('b2bking_security_nonce', 'security')) { wp_send_json_error(); wp_die(); }
+		if (!current_user_can(apply_filters('b2bking_backend_capability_needed', 'manage_woocommerce'))) { wp_send_json_error(); wp_die(); }
+		$attachment_id = intval($_POST['attachment_id']);
+		$user_id       = intval($_POST['user_id']);
+		$crm_files_raw = get_user_meta($user_id, 'b2bking_crm_files', true);
+		$crm_ids       = (!empty($crm_files_raw) && is_string($crm_files_raw)) ? json_decode($crm_files_raw, true) : [];
+		if (!is_array($crm_ids)) $crm_ids = [];
+		$crm_ids = array_values(array_filter($crm_ids, function($id) use ($attachment_id) { return intval($id) !== $attachment_id; }));
+		update_user_meta($user_id, 'b2bking_crm_files', json_encode($crm_ids));
+		wp_send_json_success();
+	}
+
+	function b2bking_crm_save_notes_ajax(){
+		if (!check_ajax_referer('b2bking_security_nonce', 'security')) {
+			wp_send_json_error();
+			wp_die();
+		}
+		if (!current_user_can(apply_filters('b2bking_backend_capability_needed', 'manage_woocommerce'))) {
+			wp_send_json_error();
+			wp_die();
+		}
+		$user_id = intval($_POST['user_id']);
+		$notes   = sanitize_textarea_field($_POST['notes'] ?? '');
+		update_user_meta($user_id, 'b2bking_crm_notes', $notes);
+		wp_send_json_success();
+	}
+
  	function b2bkingapproveuser(){
 		// Check security nonce. 
 		if ( ! check_ajax_referer( 'b2bking_security_nonce', 'security' ) ) {

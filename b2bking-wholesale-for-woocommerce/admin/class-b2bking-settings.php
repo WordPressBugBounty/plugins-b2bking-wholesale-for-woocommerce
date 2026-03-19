@@ -568,9 +568,12 @@ class B2bkingcore_Settings {
 
 	function b2bking_isactivetab($tab){
 		$gototab = get_option( 'b2bking_current_tab_setting', 'mainsettings' );
-		if (empty($gototab) || !($gototab)){
+
+		// only 3 tabs in free plugin, otherwise default to main
+		if (empty($gototab) || !($gototab) || !in_array($gototab, array('mainsettings','registration','upgrade'))){
 			$gototab = 'mainsettings';
 		}
+
 		if ($tab === $gototab){
 			return 'active';
 		} 

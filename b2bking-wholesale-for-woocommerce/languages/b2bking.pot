@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: B2BKing Core\n"
-"POT-Creation-Date: 2025-10-03 19:18+0200\n"
-"PO-Revision-Date: 2025-10-03 19:18+0200\n"
+"POT-Creation-Date: 2026-03-19 18:08+0200\n"
+"PO-Revision-Date: 2026-03-19 18:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -161,13 +161,14 @@ msgstr ""
 
 #: admin/class-b2bking-admin.php:238 admin/class-b2bking-admin.php:530
 #: admin/class-b2bking-admin.php:994 admin/class-b2bking-admin.php:3983
+#: admin/class-b2bking-admin.php:7227
 msgid "Status"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:242 admin/class-b2bking-admin.php:383
 #: admin/class-b2bking-admin.php:534 admin/class-b2bking-admin.php:745
 #: admin/class-b2bking-admin.php:796 admin/class-b2bking-admin.php:3755
-#: admin/class-b2bking-admin.php:7616
+#: admin/class-b2bking-admin.php:8082
 msgid "Enabled"
 msgstr ""
 
@@ -191,7 +192,7 @@ msgstr ""
 msgid "None (B2C)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:285 admin/class-b2bking-admin.php:4456
+#: admin/class-b2bking-admin.php:285 admin/class-b2bking-admin.php:4473
 msgid "Sales Agent Groups"
 msgstr ""
 
@@ -352,7 +353,7 @@ msgstr ""
 msgid "Field Type"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:649 admin/class-b2bking-admin.php:7562
+#: admin/class-b2bking-admin.php:649 admin/class-b2bking-admin.php:8027
 msgid "Text"
 msgstr ""
 
@@ -376,7 +377,7 @@ msgstr ""
 msgid "Checkboxes (check all that apply)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:655
+#: admin/class-b2bking-admin.php:655 admin/class-b2bking-admin.php:7125
 msgid "Email"
 msgstr ""
 
@@ -384,7 +385,8 @@ msgstr ""
 msgid "File Upload (supported: jpg, jpeg, png, txt, pdf, doc, docx)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:657 admin/class-b2bking-admin.php:6190
+#: admin/class-b2bking-admin.php:657 admin/class-b2bking-admin.php:6231
+#: admin/class-b2bking-admin.php:7226
 msgid "Date"
 msgstr ""
 
@@ -429,8 +431,7 @@ msgstr ""
 msgid "Last Name"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:722 admin/class-b2bking-admin.php:6754
-#: admin/class-b2bking-admin.php:6830
+#: admin/class-b2bking-admin.php:722 admin/class-b2bking-admin.php:6838
 msgid "Company Name"
 msgstr ""
 
@@ -466,7 +467,7 @@ msgstr ""
 msgid "Phone Number"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:731
+#: admin/class-b2bking-admin.php:731 admin/class-b2bking-admin.php:7128
 msgid "VAT ID"
 msgstr ""
 
@@ -531,17 +532,18 @@ msgid "Multiple Roles"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1069 admin/class-b2bking-admin.php:1856
-#: admin/class-b2bking-admin.php:2191 admin/class-b2bking-admin.php:4054
-#: admin/class-b2bking-admin.php:4695 admin/class-b2bking-admin.php:4778
+#: admin/class-b2bking-admin.php:2191 admin/class-b2bking-admin.php:4056
+#: admin/class-b2bking-admin.php:4714 admin/class-b2bking-admin.php:4797
 msgid "B2B Groups"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1070 admin/class-b2bking-admin.php:1095
+#: admin/class-b2bking-admin.php:7130
 msgid "Group"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1071 admin/class-b2bking-admin.php:1072
-#: admin/class-b2bking-admin.php:5928 admin/class-b2bking-admin.php:6215
+#: admin/class-b2bking-admin.php:5969 admin/class-b2bking-admin.php:6256
 msgid "Groups"
 msgstr ""
 
@@ -625,7 +627,7 @@ msgstr ""
 msgid "This is where you can create new customer groups"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:1124 admin/class-b2bking-admin.php:4096
+#: admin/class-b2bking-admin.php:1124 admin/class-b2bking-admin.php:4097
 msgid "Shipping and Payment Methods"
 msgstr ""
 
@@ -637,13 +639,13 @@ msgstr ""
 msgid "Dynamic rules applied to this group"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:1162 admin/class-b2bking-admin.php:4118
-#: admin/class-b2bking-admin.php:6302 admin/class-b2bking-admin.php:6456
+#: admin/class-b2bking-admin.php:1162 admin/class-b2bking-admin.php:4119
+#: admin/class-b2bking-admin.php:6343 admin/class-b2bking-admin.php:6497
 msgid "Shipping Methods"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:1248 admin/class-b2bking-admin.php:4200
-#: admin/class-b2bking-admin.php:6379 admin/class-b2bking-admin.php:6534
+#: admin/class-b2bking-admin.php:1248 admin/class-b2bking-admin.php:4201
+#: admin/class-b2bking-admin.php:6420 admin/class-b2bking-admin.php:6575
 msgid "Payment Methods"
 msgstr ""
 
@@ -662,22 +664,21 @@ msgid "There are no dynamic rules applicable to this group"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1357 admin/class-b2bking-admin.php:3749
-#: admin/class-b2bking-admin.php:4941 admin/class-b2bking-admin.php:6753
-#: admin/class-b2bking-admin.php:6829
+#: admin/class-b2bking-admin.php:4960 admin/class-b2bking-admin.php:6834
 msgid "Name"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1359 admin/class-b2bking-admin.php:3750
-#: admin/class-b2bking-admin.php:3982 admin/class-b2bking-admin.php:4943
+#: admin/class-b2bking-admin.php:3982 admin/class-b2bking-admin.php:4962
 msgid "Type"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1360 admin/class-b2bking-admin.php:3751
-#: admin/class-b2bking-admin.php:4944
+#: admin/class-b2bking-admin.php:4963
 msgid "How much"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:1361 admin/class-b2bking-admin.php:4945
+#: admin/class-b2bking-admin.php:1361 admin/class-b2bking-admin.php:4964
 msgid "Conditions apply"
 msgstr ""
 
@@ -699,67 +700,67 @@ msgstr ""
 
 #: admin/class-b2bking-admin.php:1404 admin/class-b2bking-admin.php:1407
 #: admin/class-b2bking-admin.php:3866 admin/class-b2bking-admin.php:3869
-#: admin/class-b2bking-admin.php:5010 admin/class-b2bking-admin.php:5013
+#: admin/class-b2bking-admin.php:5029 admin/class-b2bking-admin.php:5032
 msgid "pieces"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1416 admin/class-b2bking-admin.php:1726
-#: admin/class-b2bking-admin.php:3791 admin/class-b2bking-admin.php:5022
+#: admin/class-b2bking-admin.php:3791 admin/class-b2bking-admin.php:5041
 msgid "Discount Amount"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1420 admin/class-b2bking-admin.php:1727
-#: admin/class-b2bking-admin.php:3795 admin/class-b2bking-admin.php:5026
+#: admin/class-b2bking-admin.php:3795 admin/class-b2bking-admin.php:5045
 msgid "Discount Percentage"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1424 admin/class-b2bking-admin.php:3799
-#: admin/class-b2bking-admin.php:5030
+#: admin/class-b2bking-admin.php:5049
 msgid "Fixed Price"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1428 admin/class-b2bking-admin.php:3803
-#: admin/class-b2bking-admin.php:5034
+#: admin/class-b2bking-admin.php:5053
 msgid "Hidden Price"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1432 admin/class-b2bking-admin.php:3807
-#: admin/class-b2bking-admin.php:5038
+#: admin/class-b2bking-admin.php:5057
 msgid "Free Shipping"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1436 admin/class-b2bking-admin.php:3811
-#: admin/class-b2bking-admin.php:5042
+#: admin/class-b2bking-admin.php:5061
 msgid "Minimum Order"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1440 admin/class-b2bking-admin.php:3815
-#: admin/class-b2bking-admin.php:5046
+#: admin/class-b2bking-admin.php:5065
 msgid "Maximum Order"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1444 admin/class-b2bking-admin.php:3819
-#: admin/class-b2bking-admin.php:5050
+#: admin/class-b2bking-admin.php:5069
 msgid "Required Multiple"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1448 admin/class-b2bking-admin.php:3823
-#: admin/class-b2bking-admin.php:5054
+#: admin/class-b2bking-admin.php:5073
 msgid "Tax Exemption"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1452 admin/class-b2bking-admin.php:3827
-#: admin/class-b2bking-admin.php:5058
+#: admin/class-b2bking-admin.php:5077
 msgid "Zero Tax Product"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1456 admin/class-b2bking-admin.php:3831
-#: admin/class-b2bking-admin.php:5062
+#: admin/class-b2bking-admin.php:5081
 msgid "Add Tax / Fee (Percentage)"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1460 admin/class-b2bking-admin.php:3835
-#: admin/class-b2bking-admin.php:5066
+#: admin/class-b2bking-admin.php:5085
 msgid "Add Tax / Fee (Amount)"
 msgstr ""
 
@@ -775,7 +776,7 @@ msgstr ""
 msgid "Payment Method Minimum Order"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:1486 admin/class-b2bking-admin.php:5078
+#: admin/class-b2bking-admin.php:1486 admin/class-b2bking-admin.php:5097
 msgid "(no title)"
 msgstr ""
 
@@ -1021,17 +1022,17 @@ msgid "Everyone"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1849 admin/class-b2bking-admin.php:2185
-#: admin/class-b2bking-admin.php:3938 admin/class-b2bking-admin.php:4968
+#: admin/class-b2bking-admin.php:3938 admin/class-b2bking-admin.php:4987
 msgid "All registered users"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1850 admin/class-b2bking-admin.php:2186
-#: admin/class-b2bking-admin.php:3933 admin/class-b2bking-admin.php:4963
+#: admin/class-b2bking-admin.php:3933 admin/class-b2bking-admin.php:4982
 msgid "All registered B2B users"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1851 admin/class-b2bking-admin.php:2187
-#: admin/class-b2bking-admin.php:3935 admin/class-b2bking-admin.php:4965
+#: admin/class-b2bking-admin.php:3935 admin/class-b2bking-admin.php:4984
 msgid "All registered B2C users"
 msgstr ""
 
@@ -1068,7 +1069,7 @@ msgid "Pay TAX in Cart:"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:1966 admin/class-b2bking-admin.php:2033
-#: admin/class-b2bking-admin.php:4649
+#: admin/class-b2bking-admin.php:4668
 msgid "No"
 msgstr ""
 
@@ -1084,7 +1085,7 @@ msgstr ""
 msgid "Quantity/Value:"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:1981 admin/class-b2bking-admin.php:7582
+#: admin/class-b2bking-admin.php:1981 admin/class-b2bking-admin.php:8048
 msgid "Quantity"
 msgstr ""
 
@@ -1150,47 +1151,47 @@ msgstr ""
 msgid "Conditions (all must apply)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:2280 admin/class-b2bking-admin.php:7541
+#: admin/class-b2bking-admin.php:2280 admin/class-b2bking-admin.php:8006
 msgid "Cart Total Quantity"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:2281 admin/class-b2bking-admin.php:7542
+#: admin/class-b2bking-admin.php:2281 admin/class-b2bking-admin.php:8007
 msgid "Cart Total Value"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:2282 admin/class-b2bking-admin.php:7543
+#: admin/class-b2bking-admin.php:2282 admin/class-b2bking-admin.php:8008
 msgid "Category Product Quantity"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:2283 admin/class-b2bking-admin.php:7544
+#: admin/class-b2bking-admin.php:2283 admin/class-b2bking-admin.php:8009
 msgid "Category Product Value"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:2284 admin/class-b2bking-admin.php:7545
+#: admin/class-b2bking-admin.php:2284 admin/class-b2bking-admin.php:8010
 msgid "Product Quantity"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:2285 admin/class-b2bking-admin.php:7546
+#: admin/class-b2bking-admin.php:2285 admin/class-b2bking-admin.php:8011
 msgid "Product Value"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:2288 admin/class-b2bking-admin.php:7547
+#: admin/class-b2bking-admin.php:2288 admin/class-b2bking-admin.php:8012
 msgid "greater (>)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:2289 admin/class-b2bking-admin.php:7548
+#: admin/class-b2bking-admin.php:2289 admin/class-b2bking-admin.php:8013
 msgid "equal (=)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:2290 admin/class-b2bking-admin.php:7549
+#: admin/class-b2bking-admin.php:2290 admin/class-b2bking-admin.php:8014
 msgid "smaller (<)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:2292 admin/class-b2bking-admin.php:7551
+#: admin/class-b2bking-admin.php:2292 admin/class-b2bking-admin.php:8016
 msgid "Enter the quantity/value"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:2293 admin/class-b2bking-admin.php:7552
+#: admin/class-b2bking-admin.php:2293 admin/class-b2bking-admin.php:8017
 msgid "Add Condition"
 msgstr ""
 
@@ -1341,8 +1342,8 @@ msgstr ""
 msgid "Additional custom text to display for this offer"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:3350 admin/class-b2bking-admin.php:4668
-#: admin/class-b2bking-admin.php:4744 admin/class-b2bking-admin.php:4749
+#: admin/class-b2bking-admin.php:3350 admin/class-b2bking-admin.php:4687
+#: admin/class-b2bking-admin.php:4763 admin/class-b2bking-admin.php:4768
 msgid "Group Visibility (B2BKing)"
 msgstr ""
 
@@ -1350,8 +1351,8 @@ msgstr ""
 msgid "Groups who can see this offer"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:3391 admin/class-b2bking-admin.php:4719
-#: admin/class-b2bking-admin.php:4814
+#: admin/class-b2bking-admin.php:3391 admin/class-b2bking-admin.php:4738
+#: admin/class-b2bking-admin.php:4833
 msgid "User Visibility (B2BKing)"
 msgstr ""
 
@@ -1359,7 +1360,7 @@ msgstr ""
 msgid "Users who can see this offer (comma-separated)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:3408 admin/class-b2bking-admin.php:7540
+#: admin/class-b2bking-admin.php:3408 admin/class-b2bking-admin.php:8005
 msgid "Add user"
 msgstr ""
 
@@ -1457,7 +1458,7 @@ msgstr ""
 msgid "Conversation Details"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:3482 admin/class-b2bking-admin.php:7084
+#: admin/class-b2bking-admin.php:3482 admin/class-b2bking-admin.php:7532
 msgid "Messages"
 msgstr ""
 
@@ -1518,7 +1519,7 @@ msgid "yes"
 msgstr ""
 
 #: admin/class-b2bking-admin.php:3897 admin/class-b2bking-admin.php:3960
-#: admin/class-b2bking-admin.php:4990
+#: admin/class-b2bking-admin.php:5009
 msgid "Multiple Options"
 msgstr ""
 
@@ -1526,7 +1527,7 @@ msgstr ""
 msgid "One-Time (Unique) "
 msgstr ""
 
-#: admin/class-b2bking-admin.php:3950 admin/class-b2bking-admin.php:4980
+#: admin/class-b2bking-admin.php:3950 admin/class-b2bking-admin.php:4999
 msgid "All guest users"
 msgstr ""
 
@@ -1542,718 +1543,877 @@ msgstr ""
 msgid "B2B User Settings (B2BKing)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4010
+#: admin/class-b2bking-admin.php:4011
 msgid "This account is a subaccount. Its parent account is: "
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4030
+#: admin/class-b2bking-admin.php:4032
 msgid "User Settings"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4039 admin/class-b2bking-admin.php:4609
-#: admin/class-b2bking-admin.php:6755 admin/class-b2bking-admin.php:6831
+#: admin/class-b2bking-admin.php:4041 admin/class-b2bking-admin.php:4628
+#: admin/class-b2bking-admin.php:6843
 msgid "Customer Group"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4051
+#: admin/class-b2bking-admin.php:4053
 msgid "B2C Group"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4052 admin/class-b2bking-admin.php:4642
-#: admin/class-b2bking-admin.php:4689 admin/class-b2bking-admin.php:4771
-#: admin/class-b2bking-admin.php:6250 admin/class-b2bking-admin.php:6280
+#: admin/class-b2bking-admin.php:4054 admin/class-b2bking-admin.php:4661
+#: admin/class-b2bking-admin.php:4708 admin/class-b2bking-admin.php:4790
+#: admin/class-b2bking-admin.php:6291 admin/class-b2bking-admin.php:6321
 msgid "B2C Users"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4081
+#: admin/class-b2bking-admin.php:4083
 msgid ""
 "If you are running a hybrid B2B / B2C shop, here you can set users as B2B or "
 "B2C and control their group."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4105
+#: admin/class-b2bking-admin.php:4106
 msgid "Set Shipping and Payment Methods"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4108
+#: admin/class-b2bking-admin.php:4109
 msgid "Follow group rules (default / automatic)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4109
+#: admin/class-b2bking-admin.php:4110
 msgid "Manual setting (override group settings)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4236
+#: admin/class-b2bking-admin.php:4237
 msgid ""
 "In this panel, you can enable and disable shipping and payment methods for "
 "this specific user."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4294
+#: admin/class-b2bking-admin.php:4294 admin/class-b2bking-admin.php:6885
+msgid "CRM Hub"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:4311
 msgid "User Registration Data"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4309
+#: admin/class-b2bking-admin.php:4326
 msgid "Data Collected at Registration"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4318
+#: admin/class-b2bking-admin.php:4335
 msgid "Registration role"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4391
+#: admin/class-b2bking-admin.php:4408
 msgid "Download file"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4397
+#: admin/class-b2bking-admin.php:4414
 msgid "The file did not upload correctly"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4407
+#: admin/class-b2bking-admin.php:4424
 msgid "State"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4431
+#: admin/class-b2bking-admin.php:4448
 msgid "Registration Approval"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4447
+#: admin/class-b2bking-admin.php:4464
 msgid "No group is set up. Please create a customer group"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4474
+#: admin/class-b2bking-admin.php:4491
 msgid "Approve user"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4480
+#: admin/class-b2bking-admin.php:4497
 msgid "Reject and delete user"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4610
+#: admin/class-b2bking-admin.php:4629
 msgid "Pending Approval"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4637
+#: admin/class-b2bking-admin.php:4656
 msgid "Subaccount of "
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4647
+#: admin/class-b2bking-admin.php:4666
 msgid "Waiting approval"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4675 admin/class-b2bking-admin.php:4756
+#: admin/class-b2bking-admin.php:4694 admin/class-b2bking-admin.php:4775
 msgid "Groups who can see this category (PREMIUM)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4679 admin/class-b2bking-admin.php:4760
-#: admin/class-b2bking-admin.php:6238
+#: admin/class-b2bking-admin.php:4698 admin/class-b2bking-admin.php:4779
+#: admin/class-b2bking-admin.php:6279
 msgid "B2C Groups"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4682 admin/class-b2bking-admin.php:4763
+#: admin/class-b2bking-admin.php:4701 admin/class-b2bking-admin.php:4782
 msgid "Guest Users (Logged Out)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4726 admin/class-b2bking-admin.php:4821
+#: admin/class-b2bking-admin.php:4745 admin/class-b2bking-admin.php:4840
 msgid "Users who can see this category (PREMIUM)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4808
+#: admin/class-b2bking-admin.php:4827
 msgid "User Visibility (B2BKing Premium)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4895
+#: admin/class-b2bking-admin.php:4914
 msgid "Product Visibility (B2BKing)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4904
+#: admin/class-b2bking-admin.php:4923
 msgid "Dynamic Rules (B2BKing)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4932
+#: admin/class-b2bking-admin.php:4951
 msgid "There are no dynamic rules applicable to this product"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:4946
+#: admin/class-b2bking-admin.php:4965
 msgid "Who"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5106
+#: admin/class-b2bking-admin.php:5125
 msgid "Manage Dynamic Rules"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5109
+#: admin/class-b2bking-admin.php:5128
 msgid "Add Rule"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5118
+#: admin/class-b2bking-admin.php:5137
 msgid "Get B2BKing Premium to Unlock Product Visibility"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5121 admin/class-b2bking-admin.php:5278
+#: admin/class-b2bking-admin.php:5140 admin/class-b2bking-admin.php:5297
 msgid "Upgrade Now!"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5273 admin/class-b2bking-admin.php:5689
-#: admin/class-b2bking-admin.php:5702 admin/class-b2bking-admin.php:5715
-#: admin/class-b2bking-admin.php:5728 admin/class-b2bking-settings.php:505
+#: admin/class-b2bking-admin.php:5292 admin/class-b2bking-admin.php:5730
+#: admin/class-b2bking-admin.php:5743 admin/class-b2bking-admin.php:5756
+#: admin/class-b2bking-admin.php:5769 admin/class-b2bking-settings.php:505
 #: admin/class-b2bking-settings.php:520 admin/class-b2bking-settings.php:535
 #: admin/class-b2bking-settings.php:550
 msgid "Upgrade to B2BKing Premium to Unlock"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5275
+#: admin/class-b2bking-admin.php:5294
 msgid "Tiered Pricing + Min / Max / Step + Info Table"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5345
+#: admin/class-b2bking-admin.php:5364 admin/class-b2bking-admin.php:5421
 msgid "Price Tiers"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5347 admin/class-b2bking-admin.php:5396
-#: admin/class-b2bking-admin.php:7559
+#: admin/class-b2bking-admin.php:5366 admin/class-b2bking-admin.php:5424
+#: admin/class-b2bking-admin.php:8024
 msgid "Min. Quantity"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5348 admin/class-b2bking-admin.php:5397
-#: admin/class-b2bking-admin.php:7560
+#: admin/class-b2bking-admin.php:5367 admin/class-b2bking-admin.php:5425
+#: admin/class-b2bking-admin.php:8025
 msgid "Final Price"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5351 admin/class-b2bking-admin.php:5400
-#: admin/class-b2bking-admin.php:5415 admin/class-b2bking-admin.php:5461
+#: admin/class-b2bking-admin.php:5370 admin/class-b2bking-admin.php:5428
+#: admin/class-b2bking-admin.php:5445 admin/class-b2bking-admin.php:5500
 msgid "Unlock Price Tiers"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5366
+#: admin/class-b2bking-admin.php:5379 admin/class-b2bking-admin.php:5453
+msgid "price groups"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:5379 admin/class-b2bking-admin.php:5453
+msgid "Expand"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:5379 admin/class-b2bking-admin.php:5453
+msgid "Collapse"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:5385 admin/class-b2bking-admin.php:5459
+msgid "Toggle Group"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:5394 admin/class-b2bking-admin.php:5470
 msgid "Regular Price"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5368 admin/class-b2bking-admin.php:5433
-msgid "Enter the regular price for this B2BKing group here."
+#: admin/class-b2bking-admin.php:5396 admin/class-b2bking-admin.php:5472
+#, php-format
+msgid "Enter the regular price for the %s group here."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5379
+#: admin/class-b2bking-admin.php:5407 admin/class-b2bking-admin.php:5486
 msgid "Sale Price"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5381 admin/class-b2bking-admin.php:5449
-msgid "Enter the sale price for this B2BKing group here."
+#: admin/class-b2bking-admin.php:5409 admin/class-b2bking-admin.php:5488
+#, php-format
+msgid "Enter the sale price for the %s group here."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5393
-msgid " Price Tiers"
-msgstr ""
-
-#: admin/class-b2bking-admin.php:5431
-msgid "Regular price"
-msgstr ""
-
-#: admin/class-b2bking-admin.php:5447
-msgid "Sale price"
-msgstr ""
-
-#: admin/class-b2bking-admin.php:5529 admin/class-b2bking-admin.php:5530
+#: admin/class-b2bking-admin.php:5570 admin/class-b2bking-admin.php:5571
 msgid "Reports"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5643 admin/class-b2bking-admin.php:7856
+#: admin/class-b2bking-admin.php:5684 admin/class-b2bking-admin.php:8328
 msgid "Settings"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5644
+#: admin/class-b2bking-admin.php:5685
 msgid "Docs"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5647
+#: admin/class-b2bking-admin.php:5688
 msgid "Get B2BKing Pro for 40% Off"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5691
+#: admin/class-b2bking-admin.php:5732
 msgid "Offers / Product Bundles"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5704
+#: admin/class-b2bking-admin.php:5745
 msgid "Custom Registration Fields"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5717
+#: admin/class-b2bking-admin.php:5758
 msgid "Messaging & Conversations"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5730
+#: admin/class-b2bking-admin.php:5771
 msgid "Tools"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5823
+#: admin/class-b2bking-admin.php:5864
 msgid "View Documentation"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5827
+#: admin/class-b2bking-admin.php:5868
 msgid "Unlock now"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5827
+#: admin/class-b2bking-admin.php:5868
 msgid " with a Premium License"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5843
+#: admin/class-b2bking-admin.php:5884
 msgid "Pro Features"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5846
+#: admin/class-b2bking-admin.php:5887
 msgid "(Unlock all with a Premium License! - 35% OFF TODAY)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5887
+#: admin/class-b2bking-admin.php:5928
 msgid "Sales Reports"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5888 admin/class-b2bking-admin.php:6881
+#: admin/class-b2bking-admin.php:5929 admin/class-b2bking-admin.php:7329
 msgid "Total Sales Value"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5892 admin/class-b2bking-admin.php:6010
-#: admin/class-b2bking-admin.php:6191 admin/class-b2bking-admin.php:6922
+#: admin/class-b2bking-admin.php:5933 admin/class-b2bking-admin.php:6051
+#: admin/class-b2bking-admin.php:6232 admin/class-b2bking-admin.php:7370
 msgid "Gross Sales"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5893 admin/class-b2bking-admin.php:6019
-#: admin/class-b2bking-admin.php:6192
+#: admin/class-b2bking-admin.php:5934 admin/class-b2bking-admin.php:6060
+#: admin/class-b2bking-admin.php:6233
 msgid "Net Sales"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5894 admin/class-b2bking-admin.php:6193
+#: admin/class-b2bking-admin.php:5935 admin/class-b2bking-admin.php:6234
 msgid "Number of Orders"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5903
+#: admin/class-b2bking-admin.php:5944
 msgid "All Customers (B2B + B2C)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5911 admin/class-b2bking-admin.php:6748
+#: admin/class-b2bking-admin.php:5952 admin/class-b2bking-admin.php:6799
 msgid "B2B Customers"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5915
+#: admin/class-b2bking-admin.php:5956
 msgid "All B2B Customers"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5923
+#: admin/class-b2bking-admin.php:5964
 msgid "B2C Customers"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5939
+#: admin/class-b2bking-admin.php:5980
 msgid "Individual Customers (B2B)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5959
+#: admin/class-b2bking-admin.php:6000
 msgid "From:"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5963
+#: admin/class-b2bking-admin.php:6004
 msgid "To:"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5968
+#: admin/class-b2bking-admin.php:6009
 msgid "Quick Select:"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5969
+#: admin/class-b2bking-admin.php:6010
 msgid "This Month"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5970
+#: admin/class-b2bking-admin.php:6011
 msgid "Last Month"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5971
+#: admin/class-b2bking-admin.php:6012
 msgid "This Year"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5972
+#: admin/class-b2bking-admin.php:6013
 msgid "Last Year"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5983
+#: admin/class-b2bking-admin.php:6024
 msgid "Sales"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5985 admin/class-b2bking-admin.php:6926
+#: admin/class-b2bking-admin.php:6026 admin/class-b2bking-admin.php:6989
+#: admin/class-b2bking-admin.php:7096 admin/class-b2bking-admin.php:7117
+#: admin/class-b2bking-admin.php:7374 includes/class-b2bking.php:1375
 msgid "Orders"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:5986
+#: admin/class-b2bking-admin.php:6027
 msgid "Export Report File"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6030
+#: admin/class-b2bking-admin.php:6071
 msgid "Orders Placed"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6040
+#: admin/class-b2bking-admin.php:6081
 msgid "Items Purchased"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6052
+#: admin/class-b2bking-admin.php:6093
 msgid "Average Order Value"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6061 admin/class-b2bking-admin.php:6195
+#: admin/class-b2bking-admin.php:6102 admin/class-b2bking-admin.php:6236
 msgid "Refund Amount"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6072
+#: admin/class-b2bking-admin.php:6113
 msgid "Coupons Used"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6082 admin/class-b2bking-admin.php:6197
+#: admin/class-b2bking-admin.php:6123 admin/class-b2bking-admin.php:6238
 msgid "Shipping Charges"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6194
+#: admin/class-b2bking-admin.php:6235
 msgid "Number of Items"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6196
+#: admin/class-b2bking-admin.php:6237
 msgid "Worth of Coupons"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6220
+#: admin/class-b2bking-admin.php:6261
 msgid "Business Groups"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6223
+#: admin/class-b2bking-admin.php:6264
 msgid "Create Groups + Control Payment and Shipping Methods"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6231
+#: admin/class-b2bking-admin.php:6272
 msgid "Business (B2B) Groups"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6241
+#: admin/class-b2bking-admin.php:6282
 msgid "Control Payment and Shipping Methods"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6260 admin/class-b2bking-admin.php:6434
+#: admin/class-b2bking-admin.php:6301 admin/class-b2bking-admin.php:6475
 msgid "Logged Out Users"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6285 admin/class-b2bking-admin.php:6439
+#: admin/class-b2bking-admin.php:6326 admin/class-b2bking-admin.php:6480
 msgid "←  Go Back"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6292
+#: admin/class-b2bking-admin.php:6333
 msgid "B2C Users Shipping and Payment Methods"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6413
+#: admin/class-b2bking-admin.php:6454
 msgid ""
 "In this panel, you can enable and disable shipping and payment methods for "
 "B2C users."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6419 admin/class-b2bking-admin.php:6573
+#: admin/class-b2bking-admin.php:6460 admin/class-b2bking-admin.php:6614
 msgid "Save Settings"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6446
+#: admin/class-b2bking-admin.php:6487
 msgid "Logged Out Users Shipping and Payment Methods"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6568
+#: admin/class-b2bking-admin.php:6609
 msgid ""
 "In this panel, you can enable and disable shipping and payment methods for "
 "Logged Out users."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6593 admin/class-b2bking-settings.php:147
+#: admin/class-b2bking-admin.php:6634 admin/class-b2bking-settings.php:147
 #: admin/class-b2bking-settings.php:219
 msgid "Documentation"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6594
+#: admin/class-b2bking-admin.php:6635
 msgid "Support"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6606
+#: admin/class-b2bking-admin.php:6647
 msgid "Upgrade to Premium"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6653
+#: admin/class-b2bking-admin.php:6694
 msgid "Supercharge Your Wholesale Experience!"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6654 admin/class-b2bking-admin.php:6675
-#: admin/class-b2bking-admin.php:6695
+#: admin/class-b2bking-admin.php:6695 admin/class-b2bking-admin.php:6716
+#: admin/class-b2bking-admin.php:6736
 msgid ""
 "Upgrade to B2BKing Premium to unlock a powerful order form, tiered pricing, "
 "quote requests, business registration, tax exemptions, invoice payments, and "
 "so much more."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6657 admin/class-b2bking-admin.php:6678
-#: admin/class-b2bking-admin.php:6698
+#: admin/class-b2bking-admin.php:6698 admin/class-b2bking-admin.php:6719
+#: admin/class-b2bking-admin.php:6739
 msgid "View Live Demo"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6658 admin/class-b2bking-admin.php:6679
-#: admin/class-b2bking-admin.php:6699
+#: admin/class-b2bking-admin.php:6699 admin/class-b2bking-admin.php:6720
+#: admin/class-b2bking-admin.php:6740
 msgid "Learn More"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6674
+#: admin/class-b2bking-admin.php:6715
 msgid "Supercharge Your Wholesale Pricing!"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6694
+#: admin/class-b2bking-admin.php:6735
 msgid "Supercharge Business Customer Registration!"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6756 admin/class-b2bking-admin.php:6832
+#: admin/class-b2bking-admin.php:6802
+msgid "Search"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:6805
+msgid "Search..."
+msgstr ""
+
+#: admin/class-b2bking-admin.php:6810
+msgid "Export"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:6815 admin/class-b2bking-admin.php:8029
+msgid "Print"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:6821
+msgid "Columns"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:6852 admin/class-b2bking-admin.php:7132
 msgid "Account Type"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6757 admin/class-b2bking-admin.php:6833
-#: admin/class-b2bking-admin.php:7027
+#: admin/class-b2bking-admin.php:6856 admin/class-b2bking-admin.php:7131
+#: admin/class-b2bking-admin.php:7475
 msgid "Approval"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6758 admin/class-b2bking-admin.php:6834
+#: admin/class-b2bking-admin.php:6861 admin/class-b2bking-admin.php:7133
 msgid "Total Spent"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6776 includes/class-b2bking.php:1256
+#: admin/class-b2bking-admin.php:6869
+msgid "Credit Balance"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:6878 admin/class-b2bking-admin.php:7139
+msgid "Agent"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:6906 admin/class-b2bking-admin.php:7035
+#: includes/class-b2bking.php:1321
 msgid "Subaccount"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6778 includes/class-b2bking.php:1258
-msgid "Main business account"
+#: admin/class-b2bking-admin.php:6908 includes/class-b2bking.php:1323
+msgid "Main account"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6806 includes/class-b2bking.php:1286
-msgid "Waiting Approval"
+#: admin/class-b2bking-admin.php:6924 admin/class-b2bking-admin.php:7033
+#: includes/class-b2bking.php:1349
+msgid "Active"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6880
+#: admin/class-b2bking-admin.php:6927 admin/class-b2bking-admin.php:7033
+#: includes/class-b2bking.php:1352
+msgid "Pending"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:6989 admin/class-b2bking-admin.php:7096
+#: admin/class-b2bking-admin.php:7114 includes/class-b2bking.php:1373
+msgid "Overview"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:6989 admin/class-b2bking-admin.php:7096
+#: admin/class-b2bking-admin.php:7115 includes/class-b2bking.php:1373
+msgid "Notes"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:6989 admin/class-b2bking-admin.php:7096
+#: admin/class-b2bking-admin.php:7116 includes/class-b2bking.php:1374
+msgid "Files"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7035
+msgid "Main Account"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7096 admin/class-b2bking-admin.php:7118
+msgid "Subaccounts"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7126
+msgid "Phone"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7127
+msgid "Company"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7129
+msgid "Address"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7134
+msgid "Total Orders"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7135
+msgid "Last Order"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7136
+msgid "Customer Since"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7155
+msgid "Add notes about this customer..."
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7157
+msgid "Save Notes"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7168
+msgid "Registration Files"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7180 admin/class-b2bking-admin.php:7209
+msgid "View"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7180 admin/class-b2bking-admin.php:7209
+msgid "Download"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7190
+msgid "Uploaded Files"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7191
+msgid "Upload File"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7194
+msgid "No files uploaded yet."
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7210
+msgid "Remove"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7221
+msgid "No orders found."
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7225
+msgid "Order"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7228 admin/class-b2bking-admin.php:8051
+msgid "Total"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7244
+#, php-format
+msgid "View all %d orders"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7259
+msgid "Parent account:"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7266
+msgid "Subaccounts:"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7268
+msgid "No subaccounts found."
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7328
 msgid "B2B Sales Summary"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6885
+#: admin/class-b2bking-admin.php:7333
 msgid "B2B Sales"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6889
+#: admin/class-b2bking-admin.php:7337
 msgid "B2C Sales"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6896
+#: admin/class-b2bking-admin.php:7344
 msgid "Today"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6897
+#: admin/class-b2bking-admin.php:7345
 msgid "Last 7 Days"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6898
+#: admin/class-b2bking-admin.php:7346
 msgid "Last 31 Days"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6911
+#: admin/class-b2bking-admin.php:7359
 msgid "Refresh Data"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6945
+#: admin/class-b2bking-admin.php:7393
 msgid "Total Sales"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6963
+#: admin/class-b2bking-admin.php:7411
 msgid "Orders Nr."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6975
+#: admin/class-b2bking-admin.php:7423
 msgid "Customers Nr."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:6987
+#: admin/class-b2bking-admin.php:7435
 msgid "Net Earnings"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7015
+#: admin/class-b2bking-admin.php:7463
 msgid "Nothing here..."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7015
+#: admin/class-b2bking-admin.php:7463
 msgid "No registrations need approval!"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7019
+#: admin/class-b2bking-admin.php:7467
 msgid " New Registrations - Approval Needed"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7024
+#: admin/class-b2bking-admin.php:7472
 msgid "Name and Email"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7025
+#: admin/class-b2bking-admin.php:7473
 msgid "Reg. Role"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7026
+#: admin/class-b2bking-admin.php:7474
 msgid "Reg. Date"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7057
+#: admin/class-b2bking-admin.php:7505
 msgid "Review"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7082
+#: admin/class-b2bking-admin.php:7530
 msgid "Upgrade to B2BKing Premium"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7092
+#: admin/class-b2bking-admin.php:7540
 msgid "You have"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7099
+#: admin/class-b2bking-admin.php:7547
 msgid " New Orders"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7525
+#: admin/class-b2bking-admin.php:7894
+msgid "Expand all"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7895
+msgid "Collapse all"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:7990
 msgid "Yes, I confirm"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7526
+#: admin/class-b2bking-admin.php:7991
 msgid "Are you sure you want to approve this user?"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7527
+#: admin/class-b2bking-admin.php:7992
 msgid ""
 "Are you sure you want to REJECT and DELETE this user? This is irreversible."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7528
+#: admin/class-b2bking-admin.php:7993
 msgid "Are you sure you want to move ALL users to this group?"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7529
+#: admin/class-b2bking-admin.php:7994
 msgid ""
 "Are you sure you want to DEACTIVATE this user? The user will no longer be "
 "approved and they will be unable to login."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7530
+#: admin/class-b2bking-admin.php:7995
 msgid "Are you sure you want to set ALL categories?"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7531
+#: admin/class-b2bking-admin.php:7996
 msgid "Are you sure you want to set these users as subaccounts of the parent?"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7532
+#: admin/class-b2bking-admin.php:7997
 msgid ""
 "Are you sure you want to set these users as regular accounts and no longer "
 "subaccounts?"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7533
+#: admin/class-b2bking-admin.php:7998
 msgid "Are you sure you want to update this user's data?"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7534
+#: admin/class-b2bking-admin.php:7999
 msgid "User data has been updated"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7535
+#: admin/class-b2bking-admin.php:8000
 msgid ""
 "VAT VIES validation failed. Please check the VAT number you entered, or "
 "disable VIES validation in B2BKing > Registration Fields > VAT. Other fields "
 "have been successfully updated."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7536
+#: admin/class-b2bking-admin.php:8001
 msgid "All categories have been set successfully."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7537
+#: admin/class-b2bking-admin.php:8002
 msgid "All subaccounts have been set"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7538
+#: admin/class-b2bking-admin.php:8003
 msgid "Thank you. The feedback was sent successfully."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7539
+#: admin/class-b2bking-admin.php:8004
 msgid "Username already in the list!"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7550
+#: admin/class-b2bking-admin.php:8015
 msgid "Delete"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7553
+#: admin/class-b2bking-admin.php:8018
 msgid "Conditions must apply cumulatively."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7554
+#: admin/class-b2bking-admin.php:8019
 msgid ""
 "Each category must meet all category conditions + cart total conditions. "
 "Each product must meet all product conditions + cart total conditions."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7561
+#: admin/class-b2bking-admin.php:8026
 msgid "Label"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7564
-msgid "Print"
-msgstr ""
-
-#: admin/class-b2bking-admin.php:7565
+#: admin/class-b2bking-admin.php:8030
 msgid "Edit Columns"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7574
+#: admin/class-b2bking-admin.php:8040
 msgid "Go back"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7576
+#: admin/class-b2bking-admin.php:8042
 msgid "Set up group rules (optional)"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7578
+#: admin/class-b2bking-admin.php:8044
 msgid "Go to Quote Fields"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7579
+#: admin/class-b2bking-admin.php:8045
 msgid "Offer details"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7580
+#: admin/class-b2bking-admin.php:8046
 msgid "Additional info"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7581
+#: admin/class-b2bking-admin.php:8047
 msgid "Item"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7583
+#: admin/class-b2bking-admin.php:8049
 msgid "Unit price"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7584
+#: admin/class-b2bking-admin.php:8050
 msgid "Subtotal"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7585
-msgid "Total"
-msgstr ""
-
-#: admin/class-b2bking-admin.php:7589
+#: admin/class-b2bking-admin.php:8055
 msgid "-> Go to Offers"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7590
+#: admin/class-b2bking-admin.php:8056
 msgid ""
 "This offer will be emailed to ALL users that have visibility. That includes "
 "all groups you selected, all users, and all email addresses entered. Make "
@@ -2261,223 +2421,243 @@ msgid ""
 "want to proceed?"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7591
+#: admin/class-b2bking-admin.php:8057
 msgid "The offer has been emailed successfully."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7592
+#: admin/class-b2bking-admin.php:8058
 msgid ""
 "Value conditions (Cart Total Value, Product Value, Category Value) are not "
 "compatible with the \"Discount becomes sale price\" checkbox. Please remove "
 "value conditions, or uncheck the checkbox."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7595
+#: admin/class-b2bking-admin.php:8061
 msgid "All caches have been cleared"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7596
+#: admin/class-b2bking-admin.php:8062
 msgid "Caches are clearing..."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7603
+#: admin/class-b2bking-admin.php:8069
 msgid "Saving..."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7604
+#: admin/class-b2bking-admin.php:8070
 msgid "Settings Saved"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7605
+#: admin/class-b2bking-admin.php:8071
 msgid "All users have been moved to your chosen group"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7606
+#: admin/class-b2bking-admin.php:8072
 msgid "Registration Form Shortcodes"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7607
+#: admin/class-b2bking-admin.php:8073
 msgid "Order Form Shortcodes"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7608
+#: admin/class-b2bking-admin.php:8074
 msgid ""
 "Drag & drop fields to arrange them in the order you would like them "
 "displayed on the frontend."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7609
+#: admin/class-b2bking-admin.php:8075
 msgid "This is a preview of what the form may look like on the frontend."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7610
+#: admin/class-b2bking-admin.php:8076
 msgid "Click to Copy"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7611
+#: admin/class-b2bking-admin.php:8077
 msgid "Quick Edit"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7612
+#: admin/class-b2bking-admin.php:8078
 msgid "Save Edit"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7613
+#: admin/class-b2bking-admin.php:8079
 msgid "Copied!"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7614 admin/class-b2bking-admin.php:7644
+#: admin/class-b2bking-admin.php:8080 admin/class-b2bking-admin.php:8110
 msgid "Select All"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7615
+#: admin/class-b2bking-admin.php:8081
 msgid "Unselect"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7617 includes/class-b2bking.php:175
+#: admin/class-b2bking-admin.php:8083 includes/class-b2bking.php:183
 msgid "Disabled"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7618
+#: admin/class-b2bking-admin.php:8084
 msgid "Choose export format"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7619
+#: admin/class-b2bking-admin.php:8085
 msgid "Report downloaded"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7620
+#: admin/class-b2bking-admin.php:8086
 msgid "Please select an option!"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7630
+#: admin/class-b2bking-admin.php:8096
 msgid "selected"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7634
+#: admin/class-b2bking-admin.php:8100
 msgid "SHOW"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7650
+#: admin/class-b2bking-admin.php:8116
 msgid "Enable"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7656
+#: admin/class-b2bking-admin.php:8122
 msgid "Disable"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7690
+#: admin/class-b2bking-admin.php:8156
 msgid "Unlock 137+ Pro Features"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7694
+#: admin/class-b2bking-admin.php:8160
 msgid "with a "
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7694
+#: admin/class-b2bking-admin.php:8160
 msgid "Premium License"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7697
+#: admin/class-b2bking-admin.php:8163
 msgid ""
 "Start growing your business with B2BKing’s powerful features for B2B buyers. "
 "Join 14,000+ active stores. 100% money back guarantee."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7700
+#: admin/class-b2bking-admin.php:8166
 msgid "UPGRADE NOW"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7717
+#: admin/class-b2bking-admin.php:8183
 msgid "Search items..."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7733
+#: admin/class-b2bking-admin.php:8199
 msgid "Clear"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7843
+#: admin/class-b2bking-admin.php:8219
+msgid "No customers found..."
+msgstr ""
+
+#: admin/class-b2bking-admin.php:8220
+msgid "Saved"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:8221
+msgid "Error"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:8222
+msgid "Select File"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:8223
+msgid "Use this file"
+msgstr ""
+
+#: admin/class-b2bking-admin.php:8315
 msgid ""
 "Warning: The plugin \"B2BKing\" requires WooCommerce to be installed and "
 "activated."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7856
+#: admin/class-b2bking-admin.php:8328
 msgid "B2BKing is ready to go! "
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7856
+#: admin/class-b2bking-admin.php:8328
 msgid "Go to "
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7856
+#: admin/class-b2bking-admin.php:8328
 msgid " to configure the plugin. "
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7856
+#: admin/class-b2bking-admin.php:8328
 msgid "Here is the "
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7856
+#: admin/class-b2bking-admin.php:8328
 msgid "Initial Configuration"
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7856
+#: admin/class-b2bking-admin.php:8328
 msgid "guide."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7874
+#: admin/class-b2bking-admin.php:8346
 msgid ""
 "There are 3 default quote fields the plugin uses: Name, Email, Message. Here "
 "you can add additional, custom fields, to be shown beside the default ones."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7891
+#: admin/class-b2bking-admin.php:8363
 msgid ""
 "B2B groups help you organize and manage your business customers. Create, "
 "edit, or delete groups based on your store's needs. To add a user to a "
 "group, go to the user's profile and scroll down to 'B2B User Settings'."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7907
+#: admin/class-b2bking-admin.php:8379
 msgid ""
 "Conversations allow you to communicate with your customers, respond to quote "
 "requests, ask or receive questions, clarify matters, queries, etc. Customers "
 "can also initiate conversations."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7923
+#: admin/class-b2bking-admin.php:8395
 msgid ""
 "Offers allow you to sell packages (bundles) of products in any quantities "
 "and at any price to specific customers or groups. You can use offers to "
 "create special deals, offer discounts, or sell packages."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7939
+#: admin/class-b2bking-admin.php:8411
 msgid ""
 "Rules allow you to apply settings or requirements to specific users, groups "
 "or products. With rules you can offer discounts, hide prices, set minimum "
 "order quantities, tax-exempt users, and much more. "
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7955
+#: admin/class-b2bking-admin.php:8427
 msgid ""
 "Registration roles are the dropdown options users must choose from during "
 "registration. Create, edit, or delete roles as needed."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7955
+#: admin/class-b2bking-admin.php:8427
 msgid "Roles are public, whereas groups are private."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7971
+#: admin/class-b2bking-admin.php:8443
 msgid ""
 "Registration fields are custom fields that you can configure and use to "
 "collect more info from your customers. They are visible to users in "
 "registration, my account, or checkout."
 msgstr ""
 
-#: admin/class-b2bking-admin.php:7988
+#: admin/class-b2bking-admin.php:8460
 msgid ""
 "This panel shows an overview of all business customers in the site. Here you "
 "will see only users that have the \"customer\" role and are part of a "
@@ -2883,141 +3063,141 @@ msgstr ""
 msgid "B2BKing B2C User"
 msgstr ""
 
-#: includes/class-b2bking.php:875
+#: includes/class-b2bking.php:903
 msgid "Invalid post type."
 msgstr ""
 
-#: includes/class-b2bking.php:880
+#: includes/class-b2bking.php:908
 msgid "You need a higher level of permission."
 msgstr ""
 
-#: includes/class-b2bking.php:881
+#: includes/class-b2bking.php:909
 msgid "Sorry, you are not allowed to edit posts in this post type."
 msgstr ""
 
-#: includes/class-b2bking.php:954
+#: includes/class-b2bking.php:982
 #, php-format
 msgid "%s post updated."
 msgid_plural "%s posts updated."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:955
+#: includes/class-b2bking.php:983
 msgid "1 post not updated, somebody is editing it."
 msgstr ""
 
-#: includes/class-b2bking.php:957
+#: includes/class-b2bking.php:985
 #, php-format
 msgid "%s post not updated, somebody is editing it."
 msgid_plural "%s posts not updated, somebody is editing them."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:959
+#: includes/class-b2bking.php:987
 #, php-format
 msgid "%s post permanently deleted."
 msgid_plural "%s posts permanently deleted."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:960
+#: includes/class-b2bking.php:988
 #, php-format
 msgid "%s post moved to the Trash."
 msgid_plural "%s posts moved to the Trash."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:961
+#: includes/class-b2bking.php:989
 #, php-format
 msgid "%s post restored from the Trash."
 msgid_plural "%s posts restored from the Trash."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:964
+#: includes/class-b2bking.php:992
 #, php-format
 msgid "%s page updated."
 msgid_plural "%s pages updated."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:965
+#: includes/class-b2bking.php:993
 msgid "1 page not updated, somebody is editing it."
 msgstr ""
 
-#: includes/class-b2bking.php:966
+#: includes/class-b2bking.php:994
 #, php-format
 msgid "%s page not updated, somebody is editing it."
 msgid_plural "%s pages not updated, somebody is editing them."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:967
+#: includes/class-b2bking.php:995
 #, php-format
 msgid "%s page permanently deleted."
 msgid_plural "%s pages permanently deleted."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:968
+#: includes/class-b2bking.php:996
 #, php-format
 msgid "%s page moved to the Trash."
 msgid_plural "%s pages moved to the Trash."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:969
+#: includes/class-b2bking.php:997
 #, php-format
 msgid "%s page restored from the Trash."
 msgid_plural "%s pages restored from the Trash."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:972
+#: includes/class-b2bking.php:1000
 #, php-format
 msgid "%s block updated."
 msgid_plural "%s blocks updated."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:973
+#: includes/class-b2bking.php:1001
 msgid "1 block not updated, somebody is editing it."
 msgstr ""
 
-#: includes/class-b2bking.php:974
+#: includes/class-b2bking.php:1002
 #, php-format
 msgid "%s block not updated, somebody is editing it."
 msgid_plural "%s blocks not updated, somebody is editing them."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:975
+#: includes/class-b2bking.php:1003
 #, php-format
 msgid "%s block permanently deleted."
 msgid_plural "%s blocks permanently deleted."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:976
+#: includes/class-b2bking.php:1004
 #, php-format
 msgid "%s block moved to the Trash."
 msgid_plural "%s blocks moved to the Trash."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:977
+#: includes/class-b2bking.php:1005
 #, php-format
 msgid "%s block restored from the Trash."
 msgid_plural "%s blocks restored from the Trash."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-b2bking.php:1001
+#: includes/class-b2bking.php:1029
 #, php-format
 msgid "Search results for: %s"
 msgstr ""
 
-#: includes/class-b2bking.php:1024
+#: includes/class-b2bking.php:1052
 msgid "Undo"
 msgstr ""
 
@@ -3220,24 +3400,24 @@ msgstr ""
 msgid "Sale!"
 msgstr ""
 
-#: public/class-b2bking-public.php:434
+#: public/class-b2bking-public.php:443
 msgid "Your account is waiting for approval. Until approved, you cannot login."
 msgstr ""
 
-#: public/class-b2bking-public.php:452
+#: public/class-b2bking-public.php:461
 msgid "Attention! Your account requires manual approval. "
 msgstr ""
 
-#: public/class-b2bking-public.php:454
+#: public/class-b2bking-public.php:463
 msgid ""
 "Our team will review it as soon as possible. Thank you for understanding."
 msgstr ""
 
-#: public/class-b2bking-public.php:513 public/class-b2bking-public.php:568
+#: public/class-b2bking-public.php:522 public/class-b2bking-public.php:577
 msgid "User Type"
 msgstr ""
 
-#: public/class-b2bking-public.php:664 public/class-b2bking-public.php:681
+#: public/class-b2bking-public.php:673 public/class-b2bking-public.php:690
 msgid ""
 "Thank you for registering. Your account requires manual approval. Please "
 "wait to be approved."
