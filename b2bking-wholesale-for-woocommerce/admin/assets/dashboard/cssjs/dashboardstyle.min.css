@@ -10426,11 +10426,11 @@ ul.list-style-none li a:hover {
     transition: 0.2s ease-in;
 }
 .card-hover:hover {
-    webkit-transform: translateY(-4px) scale(1.01);
-    -moz-transform: translateY(-4px) scale(1.01);
-    -ms-transform: translateY(-4px) scale(1.01);
-    -o-transform: translateY(-4px) scale(1.01);
-    transform: translateY(-4px) scale(1.01);
+    webkit-transform: translateY(-4px) scale(1.00);
+    -moz-transform: translateY(-4px) scale(1.00);
+    -ms-transform: translateY(-4px) scale(1.00);
+    -o-transform: translateY(-4px) scale(1.00);
+    transform: translateY(-4px) scale(1.00);
     -webkit-box-shadow: 0 14px 24px rgba(62, 57, 107, 0.1);
     box-shadow: 0 14px 24px rgba(62, 57, 107, 0.1);
 }

@@ -1,4 +1,4 @@
-=== B2BKing — Ultimate WooCommerce B2B and Wholesale Solution — Dynamic Pricing, Wholesale Order Form & More ===
+=== B2BKing — Ultimate WooCommerce B2B and Wholesale Plugin — Wholesale Prices, Bulk Order Form & More ===
 Plugin URI: https://kingsplugins.com/woocommerce-wholesale/b2bking/
 Contributors: WebWizardsDev
 Donate link: https://webwizards.dev
@@ -8,8 +8,8 @@ Author: WebWizards
 Requires at least: 4.8
 Tested up to: 7.0
 Requires PHP: 5.6.20
-Stable tag: 5.1.00
-Version: 5.1.00
+Stable tag: 5.2.00
+Version: 5.2.00
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 B2BKing is the complete solution for running a Wholesale, B2B or B2B + B2C hybrid store with WooCommerce.
@@ -59,6 +59,7 @@ Example: Give B2B buyers a 10% discount on all products with a single rule.
 * Set different **payment methods** for each user or user group.
 * Set different **shipping methods** for each user or user group.
 * Configure **discount percentages** (e.g. 10% discount on all products for Wholesale buyers) easily with dynamic rules.
+* Built-in **[CRM Hub and Customers page](https://woocommerce-b2b-plugin.com/docs/managing-b2b-users-the-customers-page-and-crm-hub/ "CRM Hub and Customers page")** to manage B2B accounts, approvals, notes, files, and order history, all from one dashboard.
 * View **reports for B2B / B2C** customers with data on gross and net sales, orders placed, order value, refunds, coupons and more.
 * Works with any WooCommerce-compatible theme
 * Fully translatable with Loco Translate or WPML

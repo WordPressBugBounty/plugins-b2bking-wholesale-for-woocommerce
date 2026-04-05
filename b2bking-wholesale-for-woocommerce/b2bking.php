@@ -2,9 +2,9 @@
 /*
 /**
  * Plugin Name:       B2BKing Core
- * Plugin URI:        https://codecanyon.net/item/b2bking-the-ultimate-woocommerce-b2b-plugin/26689576
+ * Plugin URI:        https://kingsplugins.com/woocommerce-wholesale/b2bking
  * Description:       B2BKing is the complete solution for turning WooCommerce into an enterprise-level B2B e-commerce platform. Core Plugin.
- * Version:           5.1.00
+ * Version:           5.2.0
  * Author:            WebWizards
  * Author URI:        webwizards.dev
  * Text Domain:       b2bking
@@ -20,7 +20,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 define( 'B2BKINGCORE_DIR', plugin_dir_path( __FILE__ ) );
 if ( ! defined( 'B2BKINGCORE_VERSION' ) ) {
-	define(	'B2BKINGCORE_VERSION', 'v5.1.00');
+	define(	'B2BKINGCORE_VERSION', 'v5.2.00');
 }
 
 

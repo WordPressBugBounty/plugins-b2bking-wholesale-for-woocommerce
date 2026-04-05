@@ -13,6 +13,8 @@ class B2bkingcore_Admin{
 		add_action( 'admin_notices', array($this, 'b2bking_roles_howto') );
 		add_action( 'admin_notices', array($this, 'b2bking_fields_howto') );
 		add_action( 'admin_notices', array($this, 'b2bking_customers_howto') );
+		// After activation, redirect first-time users to the welcome page.
+		add_action( 'admin_init', array( $this, 'b2bking_maybe_redirect_to_welcome_page' ) );
 
 		// Require WooCommerce notification
 		add_action( 'admin_notices', array($this, 'b2bking_plugin_dependencies') );
@@ -4080,7 +4082,7 @@ class B2bkingcore_Admin{
 		    			<svg class="b2bking_group_payment_shipping_information_box_icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 36 36">
 		    			  <path fill="#358BBB" d="M18 0C8.06 0 0 8.06 0 18s8.06 18 18 18 18-8.06 18-18S27.94 0 18 0zm0 28.446a1.607 1.607 0 110-3.213 1.607 1.607 0 010 3.213zm2.527-8.819a1.941 1.941 0 00-1.241 1.8v.912a.322.322 0 01-.322.322h-1.928a.322.322 0 01-.322-.322v-.864c0-.928.27-1.844.8-2.607a4.49 4.49 0 012.093-1.643c1.366-.527 2.25-1.672 2.25-2.921 0-1.772-1.732-3.215-3.857-3.215s-3.857 1.443-3.857 3.215v.305a.322.322 0 01-.322.321h-1.928a.322.322 0 01-.322-.321v-.305c0-1.58.691-3.054 1.945-4.15C14.721 9.095 16.312 8.517 18 8.517c1.688 0 3.279.582 4.484 1.635 1.253 1.097 1.945 2.572 1.945 4.15 0 2.323-1.531 4.412-3.902 5.324z"/>
 		    			</svg>
-		    			<?php esc_html_e('If you are running a hybrid B2B / B2C shop, here you can set users as B2B or B2C and control their group.','b2bking'); ?>
+		    			<?php esc_html_e('Assign the user to a B2C or B2B group. This controls the pricing, methods, and rules they can see.','b2bking'); ?>
 		    		</div>
 				</div>
 					        	
@@ -4106,8 +4108,8 @@ class B2bkingcore_Admin{
     	    				<?php esc_html_e('Set Shipping and Payment Methods','b2bking'); ?>
     	    			</div>
     	    			<select class="b2bking_user_shipping_payment_methods_container_content_override_select" name="b2bking_user_shipping_payment_methods_override" id="b2bking_user_shipping_payment_methods_override">
-    	    				<option value="default" <?php selected('default', get_user_meta($user->ID, 'b2bking_user_shipping_payment_methods_override', true), true); ?>> <?php esc_html_e('Follow group rules (default / automatic)','b2bking'); ?></option>
-    	    				<option value="manual" <?php selected('manual', get_user_meta($user->ID, 'b2bking_user_shipping_payment_methods_override', true), true); ?>><?php esc_html_e('Manual setting (override group settings)','b2bking'); ?></option>
+    	    				<option value="default" <?php selected('default', get_user_meta($user->ID, 'b2bking_user_shipping_payment_methods_override', true), true); ?>> <?php esc_html_e('Use group rules (Default)','b2bking'); ?></option>
+    	    				<option value="manual" <?php selected('manual', get_user_meta($user->ID, 'b2bking_user_shipping_payment_methods_override', true), true); ?>><?php esc_html_e('Set manually (Override group rules)','b2bking'); ?></option>
     	    			</select>
     	    		</div>
     	    		<div class="b2bking_user_payment_shipping_methods_container">
@@ -5598,6 +5600,17 @@ class B2bkingcore_Admin{
 	    	1
 	    );
 
+	    // Hidden welcome page
+		add_submenu_page(
+	        '',
+	        esc_html__('Welcome','b2bking'), //page title
+	        esc_html__('Welcome','b2bking'), //menu title
+	        apply_filters('b2bking_backend_capability_needed', 'manage_woocommerce'), //capability,
+	        'b2bking_welcome', //menu slug
+	        array( $this, 'b2bking_welcome_page_content' ), //callback function
+	    	1
+	    );
+
 		
 		add_submenu_page(
 	        'b2bkingcore',
@@ -5720,6 +5733,57 @@ class B2bkingcore_Admin{
 		require_once ( B2BKINGCORE_DIR . 'admin/class-b2bking-settings.php' );
 		$settings = new B2bkingcore_Settings;
 		$settings-> render_settings_page_content();
+	}
+
+	private function b2bking_is_welcome_page() {
+		if ( ! isset( $_GET['page'] ) ) {
+			return false;
+		}
+
+		return 'b2bking_welcome' === sanitize_key( wp_unslash( $_GET['page'] ) );
+	}
+
+	public function b2bking_maybe_redirect_to_welcome_page() {
+		$user_id = get_current_user_id();
+		$pro_active = defined( 'B2BKING_DIR' );
+		$pro_welcome_shown_count = intval( get_user_meta( $user_id, 'b2bking_pro_welcome_page_shown_count', true ) );
+
+		// Redirect only when a first-time welcome page visit is pending.
+		if ( empty( $user_id ) || 1 !== intval( get_user_meta( $user_id, 'b2bking_redirect_to_welcome_page', true ) ) ) {
+			return;
+		}
+
+		// When Pro is active, never show the shared welcome page more than twice total.
+		if ( $pro_active && $pro_welcome_shown_count >= 2 ) {
+			update_user_meta( $user_id, 'b2bking_redirect_to_welcome_page', 2 );
+			return;
+		}
+
+		// Mark onboarding as completed once the welcome page is actually opened.
+		if ( $this->b2bking_is_welcome_page() ) {
+			update_user_meta( $user_id, 'b2bking_redirect_to_welcome_page', 2 );
+			return;
+		}
+
+		// Skip redirects in contexts where wp-admin navigation would be disruptive.
+		if ( wp_doing_ajax() || is_network_admin() || isset( $_GET['activate-multi'] ) ) {
+			return;
+		}
+
+		if ( ! current_user_can( apply_filters( 'b2bking_backend_capability_needed', 'manage_woocommerce' ) ) ) {
+			return;
+		}
+
+		if ( $pro_active ) {
+			update_user_meta( $user_id, 'b2bking_pro_welcome_page_shown_count', min( 2, $pro_welcome_shown_count + 1 ) );
+		}
+
+		wp_safe_redirect( admin_url( 'admin.php?page=b2bking_welcome' ) );
+		exit;
+	}
+
+	function b2bking_welcome_page_content() {
+		require_once B2BKINGCORE_DIR . 'admin/welcome/welcome-page.php';
 	}
 
 	function b2bking_offers_page_content(){

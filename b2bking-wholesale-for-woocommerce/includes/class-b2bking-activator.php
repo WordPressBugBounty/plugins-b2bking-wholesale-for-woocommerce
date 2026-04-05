@@ -5,6 +5,8 @@ class B2bkingcore_Activator {
 
 	public static function activate() {
 
+		self::b2bking_set_welcome_redirect_state();
+
 		if (!defined('B2BKING_DIR')){
 
 			// prevent option update issues due to caching
@@ -28,7 +30,6 @@ class B2bkingcore_Activator {
 				update_user_meta( get_current_user_id(), 'b2bking_dismiss_review_notice', 1 );
 			}
 
-			
 			// Set admin notice state to enabled ('activate woocommerce' notice)
 			update_user_meta(get_current_user_id(), 'b2bking_dismiss_activate_woocommerce_notice', 0);
 
@@ -229,6 +230,44 @@ class B2bkingcore_Activator {
 			}
 		}
 
+	}
+
+	private static function b2bking_set_welcome_redirect_state() {
+		$user_id = get_current_user_id();
+
+		if ( empty( $user_id ) ) {
+			return;
+		}
+
+		// Default to showing the welcome page unless we can confirm an active license.
+		$show_welcome_page = true;
+
+		$license = get_option( 'b2bking_license_key_setting', '' );
+		$email   = get_option( 'b2bking_license_email_setting', '' );
+		$welcome_state = intval( get_user_meta( $user_id, 'b2bking_redirect_to_welcome_page', true ) );
+		$pro_active = defined( 'B2BKING_DIR' );
+		$pro_welcome_shown_count = intval( get_user_meta( $user_id, 'b2bking_pro_welcome_page_shown_count', true ) );
+
+		// Existing license details indicate this is not a first-time setup.
+		if ( ! empty( $license ) || ! empty( $email ) ) {
+			$show_welcome_page = false;
+		}
+
+		// If Pro is already active, reuse the shared welcome page even if Core onboarding was completed before,
+		// but still respect the Pro welcome cap.
+		if ( $pro_active && $show_welcome_page ) {
+			if ( $pro_welcome_shown_count < 2 ) {
+				update_user_meta( $user_id, 'b2bking_redirect_to_welcome_page', 1 );
+			}
+			return;
+		}
+
+		// Only queue the welcome page if this user has never completed onboarding.
+		if ( $show_welcome_page && 2 !== $welcome_state ) {
+			update_user_meta( $user_id, 'b2bking_redirect_to_welcome_page', 1 );
+		} else if ( 1 === $welcome_state ) {
+			delete_user_meta( $user_id, 'b2bking_redirect_to_welcome_page' );
+		}
 	}
 
 }

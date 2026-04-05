@@ -321,6 +321,345 @@ ul.b2bking_upgrade_list {
     list-style: square;
     margin-left: 25px;
 }
+.b2bking_upgrade_showcase{
+  --b2bking-upgrade-ink: #17324a;
+  --b2bking-upgrade-ink-soft: #52667a;
+  --b2bking-upgrade-line: #d8e1ea;
+  --b2bking-upgrade-surface: #ffffff;
+  --b2bking-upgrade-surface-soft: #f6f9fc;
+  --b2bking-upgrade-gold: #d98a11;
+  --b2bking-upgrade-gold-deep: #b96e00;
+  --b2bking-upgrade-blue: #1c5f86;
+  color: var(--b2bking-upgrade-ink);
+}
+.b2bking_upgrade_hero{
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.95fr);
+  gap: 24px;
+  padding: 32px;
+  margin-bottom: 28px;
+  border-radius: 24px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,0.16), transparent 28%),
+    linear-gradient(130deg, #151515 0%, #2e2e2e 65%, #f5efe4 52%, #fffaf1 100%);
+  box-shadow: 0 18px 44px rgba(12, 11, 18, 0.34);
+}
+.b2bking_upgrade_hero:before{
+  content: "";
+  position: absolute;
+  inset: auto auto -90px -60px;
+  width: 220px;
+  height: 220px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 8%);
+}
+.b2bking_upgrade_hero:after{
+  content: "";
+  position: absolute;
+  inset: 0 0 auto auto;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(222,163,32,0.16) 0%, rgba(222,163,32,0) 70%);
+  transform: translate(28%, -28%);
+}
+.b2bking_upgrade_hero_copy,
+.b2bking_upgrade_hero_panel{
+  position: relative;
+  z-index: 1;
+}
+.b2bking_upgrade_eyebrow{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  margin-bottom: 16px;
+  border-radius: 999px;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fef3d5;
+  background: rgba(255,255,255,0.12);
+}
+.b2bking_upgrade_title{
+  margin: 0 0 14px;
+  max-width: 700px;
+  color: #fff;
+  font-size: 34px;
+  line-height: 1.15;
+}
+.b2bking_upgrade_lead{
+  max-width: 680px;
+  margin: 0;
+  color: rgba(255,255,255,0.86);
+  font-size: 16px;
+  line-height: 1.65;
+}
+.b2bking_upgrade_badges{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0 24px;
+}
+.b2bking_upgrade_badge{
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(10, 24, 36, 0.18);
+  backdrop-filter: blur(8px);
+  font-size: 13px;
+  font-weight: 600;
+}
+.b2bking_upgrade_cta_row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+.b2bking_upgrade_primary_button.ui.button{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: 0;
+  background: linear-gradient(135deg, var(--b2bking-upgrade-gold) 0%, var(--b2bking-upgrade-gold-deep) 100%) !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+.b2bking_upgrade_primary_button.ui.button:hover,
+.b2bking_upgrade_primary_button.ui.button:focus{
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #e4961c 0%, #be7100 100%) !important;
+}
+.b2bking_upgrade_secondary_link{
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.b2bking_upgrade_secondary_link:hover,
+.b2bking_upgrade_secondary_link:focus{
+  color: #fff;
+  text-decoration: underline;
+}
+.b2bking_upgrade_hero_panel{
+  align-self: stretch;
+  padding: 24px;
+  border: 1px solid rgba(22, 50, 75, 0.08);
+  border-radius: 22px;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 28px rgba(28, 50, 77, 0.12);
+}
+.b2bking_upgrade_panel_label{
+  margin-bottom: 10px;
+  color: var(--b2bking-upgrade-blue);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.b2bking_upgrade_panel_value{
+  font-size: 46px;
+  line-height: 1;
+  font-weight: 800;
+  color: var(--b2bking-upgrade-ink);
+}
+.b2bking_upgrade_panel_subvalue{
+  margin-top: 6px;
+  color: var(--b2bking-upgrade-gold-deep);
+  font-size: 15px;
+  font-weight: 700;
+}
+.b2bking_upgrade_panel_description{
+  margin: 16px 0 0;
+  color: var(--b2bking-upgrade-ink-soft);
+  line-height: 1.65;
+}
+.b2bking_upgrade_panel_list{
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.b2bking_upgrade_panel_list li{
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+  color: var(--b2bking-upgrade-ink);
+  font-weight: 600;
+}
+.b2bking_upgrade_panel_list li:last-child{
+  margin-bottom: 0;
+}
+.b2bking_upgrade_panel_list li:before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--b2bking-upgrade-gold) 0%, #efbc62 100%);
+  box-shadow: 0 0 0 5px rgba(217, 138, 17, 0.11);
+}
+.b2bking_upgrade_section_header{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.9fr);
+  gap: 18px 24px;
+  align-items: end;
+  margin-bottom: 20px;
+}
+.b2bking_upgrade_section_kicker{
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--b2bking-upgrade-blue);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.b2bking_upgrade_section_header h3{
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--b2bking-upgrade-ink);
+}
+.b2bking_upgrade_section_header p{
+  margin: 0;
+  color: var(--b2bking-upgrade-ink-soft);
+  font-size: 14px;
+  line-height: 1.65;
+}
+.b2bking_upgrade_grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.b2bking_upgrade_card{
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 22px 20px;
+  border: 1px solid var(--b2bking-upgrade-line);
+  border-radius: 20px;
+  background: linear-gradient(180deg, var(--b2bking-upgrade-surface) 0%, var(--b2bking-upgrade-surface-soft) 100%);
+  box-shadow: 0 12px 28px rgba(16, 42, 67, 0.07);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  text-decoration: none;
+  color: inherit;
+}
+.b2bking_upgrade_card:hover,
+.b2bking_upgrade_card:focus{
+  transform: translateY(-3px);
+  border-color: #bfd1e0;
+  box-shadow: 0 18px 34px rgba(16, 42, 67, 0.12);
+  text-decoration: none;
+}
+.b2bking_upgrade_card:focus-visible{
+  outline: 2px solid rgba(28,95,134,0.24);
+  outline-offset: 3px;
+}
+.b2bking_upgrade_card_icon{
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(28,95,134,0.14) 0%, rgba(217,138,17,0.22) 100%);
+  color: var(--b2bking-upgrade-blue);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+}
+.b2bking_upgrade_card_icon i.icon{
+  margin: 0;
+  font-size: 21px;
+}
+.b2bking_upgrade_card_body{
+  min-width: 0;
+}
+.b2bking_upgrade_card_body h4{
+  margin: 0 0 8px;
+  color: var(--b2bking-upgrade-ink);
+  font-size: 17px;
+  line-height: 1.35;
+}
+.b2bking_upgrade_card_body p{
+  margin: 0;
+  color: var(--b2bking-upgrade-ink-soft);
+  font-size: 14px;
+  line-height: 1.65;
+}
+.b2bking_upgrade_footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 28px 22px 6px;
+  text-align: center;
+}
+.b2bking_upgrade_footer p{
+  max-width: 760px;
+  margin: 0;
+  color: var(--b2bking-upgrade-ink-soft);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.b2bking_upgrade_footer .b2bking_upgrade_primary_button.ui.button{
+  box-shadow: 0 12px 26px rgba(217, 138, 17, 0.24);
+}
+
+@media screen and (max-width: 1100px) {
+  .b2bking_upgrade_hero{
+    grid-template-columns: 1fr;
+  }
+  .b2bking_upgrade_section_header{
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
+@media screen and (max-width: 782px) {
+  .b2bking_upgrade_hero{
+    padding: 24px 20px;
+    border-radius: 20px;
+    background:
+      linear-gradient(160deg, #16324b 0%, #1f5b7f 48%, #f5efe4 48%, #fffaf1 100%);
+  }
+  .b2bking_upgrade_title{
+    font-size: 28px;
+  }
+  .b2bking_upgrade_cta_row{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .b2bking_upgrade_primary_button.ui.button{
+    justify-content: center;
+    width: 100%;
+  }
+  .b2bking_upgrade_secondary_link{
+    text-align: center;
+  }
+  .b2bking_upgrade_grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .b2bking_upgrade_card{
+    flex-direction: column;
+  }
+  .b2bking_upgrade_card_icon{
+    flex-basis: auto;
+  }
+}
 
 /* 5. Media Queries */
 @media screen and (max-width: 767px) { 
@@ -589,4 +928,55 @@ p.b2bking_block_description {
 }
 td#b2bking_existing_users_apply_warning_row {
     padding: 10px;
+}
+
+/* B2BKing admin toggle refresh - isolated block for easy rollback */
+#b2bking_admin_form .ui.toggle.checkbox{
+    --b2bking-toggle-width: 45px;
+    --b2bking-toggle-height: 24px;
+    --b2bking-toggle-diameter: 17px;
+    --b2bking-toggle-offset: calc((var(--b2bking-toggle-height) - var(--b2bking-toggle-diameter)) / 2);
+    --b2bking-toggle-off: #dddddd;
+    --b2bking-toggle-on: #1f78bb;
+}
+#b2bking_admin_form .ui.toggle.checkbox label{
+    min-height: var(--b2bking-toggle-height);
+    padding-left: 3.45rem;
+}
+#b2bking_admin_form .ui.toggle.checkbox label:before{
+    width: var(--b2bking-toggle-width);
+    height: var(--b2bking-toggle-height);
+    top: 50%;
+    left: 0;
+    margin-top: calc(var(--b2bking-toggle-height) / -2);
+    border-radius: 999px;
+    background: var(--b2bking-toggle-off) !important;
+    box-shadow: none;
+    background-repeat: no-repeat !important;
+    background-position: 9px center;
+    background-size: 5px 5px;
+    transition: background-color .28s ease;
+}
+#b2bking_admin_form .ui.toggle.checkbox label:after{
+    content: "" !important;
+    width: var(--b2bking-toggle-diameter);
+    height: var(--b2bking-toggle-diameter);
+    top: 50%;
+    left: 0;
+    margin-top: calc(var(--b2bking-toggle-diameter) / -2);
+    margin-left: 0;
+    border-radius: 999px;
+    background: #fff !important;
+    box-shadow: none !important;
+    transform: translateX(var(--b2bking-toggle-offset));
+    will-change: transform;
+    transition: transform .28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+#b2bking_admin_form .ui.toggle.checkbox input:checked~label:before{
+    background: var(--b2bking-toggle-on) !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cg transform='translate(256 256) scale(0.5)'%3E%3Cpath fill='%23ffffff' d='M406.656 706.944 195.84 496.256a32 32 0 1 0-45.248 45.248l256 256 512-512a32 32 0 0 0-45.248-45.248L406.592 706.944z'/%3E%3C/g%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+}
+#b2bking_admin_form .ui.toggle.checkbox input:checked~label:after{
+    transform: translateX(calc(var(--b2bking-toggle-width) - var(--b2bking-toggle-diameter) - var(--b2bking-toggle-offset)));
 }
