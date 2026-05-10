@@ -31,6 +31,9 @@
 #b2bking_admin_form .checkbox input{
 	margin:0;
 }
+.b2bking_settings_saved_swal_title {
+    font-size: 16px !important;
+}
 .b2bking_button_color_gold.b2bking_button_color_gold_main button{
   background: radial-gradient(141.77% 141.08% at 100.26% 99.25%, #cd4f72 0%, #e59a45 100%) !important;
 }

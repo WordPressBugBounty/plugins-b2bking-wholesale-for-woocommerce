@@ -4096,12 +4096,14 @@ table#b2bking_admin_customers_table thead svg {
     min-width: 65px;
 }
 .approval_badge.active{
-    background: rgba(40, 167, 69, 0.1) !important;
-    color: #28a745 !important;
+    background: #f4f6f5 !important;
+    border: 1px solid #e5e9e7 !important;
+    color: #5d7466 !important;
 }
 .approval_badge.pending{
-    background: rgba(255, 193, 7, 0.1) !important;
-    color: #ffc107 !important;
+    background: #fff8e5 !important;
+    border: 1px solid #f2dfad !important;
+    color: #9a6a00 !important;
     cursor: pointer;
     position: relative;
 }

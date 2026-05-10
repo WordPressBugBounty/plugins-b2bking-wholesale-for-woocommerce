@@ -8132,6 +8132,7 @@ class B2bkingcore_Admin{
 			    'groupspage' => admin_url( 'admin.php?page=b2bking_groups'),
 			    'saving'	=> esc_html__('Saving...','b2bking'),
 			    'settings_saved' => esc_html__('Settings Saved','b2bking'),
+			    'settings_saved_successfully' => esc_html__('Settings saved successfully','b2bking'),
 			    'users_have_been_moved' => esc_html__('All users have been moved to your chosen group','b2bking'),
 			    'registration_form_shortcodes_text' => esc_html__('Registration Form Shortcodes','b2bking'),
 			    'bulkorder_form_shortcodes_text' => esc_html__('Order Form Shortcodes','b2bking'),

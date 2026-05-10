@@ -12,6 +12,59 @@ class B2bking_Globalhelpercore{
 	    return self::$instance;
 	}
 
+	public static function get_user_product_prices($product_id, $user_id) {
+		$regular = get_post_meta($product_id, 'b2bking_regular_price_user_'.$user_id, true);
+		$sale = get_post_meta($product_id, 'b2bking_sale_price_user_'.$user_id, true);
+
+		if (($regular === '' || $sale === '') && ($user = get_userdata($user_id))) {
+			if ($regular === '') {
+				$regular = get_post_meta($product_id, 'b2bking_regular_price_user_'.$user->user_login, true);
+			}
+			if ($sale === '') {
+				$sale = get_post_meta($product_id, 'b2bking_sale_price_user_'.$user->user_login, true);
+			}
+		}
+
+		return array('regular' => $regular, 'sale' => $sale);
+	}
+
+	public static function set_user_product_prices($product_id, $user_id, $regular, $sale) {
+		$regular_key = 'b2bking_regular_price_user_'.$user_id;
+		$sale_key = 'b2bking_sale_price_user_'.$user_id;
+		$user = get_userdata($user_id);
+
+		if ($user) {
+			delete_post_meta($product_id, 'b2bking_regular_price_user_'.$user->user_login);
+			delete_post_meta($product_id, 'b2bking_sale_price_user_'.$user->user_login);
+		}
+		$regular === '' ? delete_post_meta($product_id, $regular_key) : update_post_meta($product_id, $regular_key, wc_format_decimal($regular));
+		$sale === '' ? delete_post_meta($product_id, $sale_key) : update_post_meta($product_id, $sale_key, wc_format_decimal($sale));
+	}
+
+	public static function get_user_product_tiers($product_id, $user_id) {
+		$tiers = get_post_meta($product_id, 'b2bking_product_pricetiers_user_'.$user_id, true);
+		if ($tiers === '' && ($user = get_userdata($user_id))) {
+			$tiers = get_post_meta($product_id, 'b2bking_product_pricetiers_user_'.$user->user_login, true);
+		}
+		return $tiers;
+	}
+
+	public static function set_user_product_tiers($product_id, $user_id, $tiers) {
+		$clean = array();
+		foreach ((array) $tiers as $tier) {
+			$quantity = isset($tier['quantity']) ? wc_format_decimal($tier['quantity']) : '';
+			$price = isset($tier['price']) ? wc_format_decimal($tier['price']) : '';
+			if ($quantity !== '' && $price !== '') {
+				$clean[] = $quantity.':'.$price;
+			}
+		}
+		$user = get_userdata($user_id);
+		if ($user) {
+			delete_post_meta($product_id, 'b2bking_product_pricetiers_user_'.$user->user_login);
+		}
+		empty($clean) ? delete_post_meta($product_id, 'b2bking_product_pricetiers_user_'.$user_id) : update_post_meta($product_id, 'b2bking_product_pricetiers_user_'.$user_id, implode(';', $clean).';');
+	}
+
 	public static function format_price_range( $from, $to ) {
 		$price = wc_format_price_range($from, $to);
 
