@@ -1514,6 +1514,9 @@ class B2bkingcore_Admin{
 
 	// Save Groups Metabox Content
 	function b2bking_save_groups_metaboxes($post_id){
+		if (get_post_type($post_id) !== 'b2bking_group'){
+			return;
+		}
 		if (isset($_POST['_inline_edit'])){
 			return;
 		}

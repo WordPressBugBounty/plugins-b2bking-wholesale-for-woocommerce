@@ -26,7 +26,7 @@
 /* 1. Fonts */
 /* cyrillic-ext */
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'B2BKing-Roboto';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -35,7 +35,7 @@
 }
 /* cyrillic */
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'B2BKing-Roboto';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -44,7 +44,7 @@
 }
 /* greek-ext */
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'B2BKing-Roboto';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -53,7 +53,7 @@
 }
 /* greek */
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'B2BKing-Roboto';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -62,7 +62,7 @@
 }
 /* vietnamese */
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'B2BKing-Roboto';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -71,7 +71,7 @@
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'B2BKing-Roboto';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -80,7 +80,7 @@
 }
 /* latin */
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'B2BKing-Roboto';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -119,7 +119,7 @@
     padding: 20px;
     width: 100%;
     text-align: center;
-    font-family: Roboto;
+    font-family: 'B2BKing-Roboto';
     margin-top: 120px;
     font-weight: 700;
 }
@@ -130,7 +130,7 @@
     padding: 20px;
     width: 100%;
     text-align: center;
-    font-family: Roboto;
+    font-family: 'B2BKing-Roboto';
     margin-top: 56px;
     font-weight: 600;
 }
@@ -145,7 +145,7 @@
     padding: 20px;
     width: 100%;
     text-align: center;
-    font-family: Roboto;
+    font-family: 'B2BKing-Roboto';
     margin-top: 10px;
     font-weight: 700;
 }
@@ -1738,7 +1738,7 @@ a.b2bking_admin_header_right_element_button:hover button{
     border-radius: 5px 5px 0px 0px;
     align-items: center;
     padding-left: 10px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 13.5px;
@@ -1764,7 +1764,7 @@ a.b2bking_admin_header_right_element_button:hover button{
 	color: #5C5C5C;
 	display: table-cell;
     padding-left: 20px;
-    font-family: Roboto, sans-serif;
+    font-family: 'B2BKing-Roboto', sans-serif;
     line-height: 2em;
 }
 .b2bking_metabox_product_categories_wrapper_top_category{
@@ -1789,7 +1789,7 @@ a.b2bking_admin_header_right_element_button:hover button{
 	padding: 5px 10px 10px 5px;
 }
 #b2bking_metabox_product_categories_wrapper_content_headline{
-	font-family: "Roboto Medium", Roboto;
+	font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -1809,7 +1809,7 @@ a.b2bking_admin_header_right_element_button:hover button{
     background: #aaaaaa;
     box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
@@ -1839,7 +1839,7 @@ a.b2bking_admin_header_right_element_button:hover button{
     background: #f6f6f6;
     box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
@@ -1983,7 +1983,7 @@ button#b2bking_upgrade_premium_bar_button:hover{
 .b2bking_metabox_product_categories_wrapper_content_line{
 	min-height: 35px;
     display: block;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
@@ -2031,7 +2031,7 @@ button#b2bking_upgrade_premium_bar_button:hover{
     display: flex;
     align-items: center;
     padding-left: 10px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 13.5px;
@@ -2042,7 +2042,7 @@ button#b2bking_upgrade_premium_bar_button:hover{
     padding: 13px;
 }
 .b2bking_group_visibility_container_content_title {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     position: relative;
     font-style: normal;
     font-weight: 500;
@@ -2070,7 +2070,7 @@ button#b2bking_upgrade_premium_bar_button:hover{
     min-height: 40px;
 }
 .b2bking_group_visibility_container_content_checkbox_name {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -2104,7 +2104,7 @@ textarea#b2bking_category_users_textarea {
 select#b2bking_all_users_dropdown {
     background-color: #ececec;
     border: none;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     min-height: 36px;
@@ -2373,7 +2373,7 @@ input.b2bking_offer_text_input{
 #b2bking_select_multiple_product_categories_selector li.select2-selection__choice, #b2bking_select_multiple_users_selector li.select2-selection__choice{
     font-size:14px;
     background-color:#ffffff;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
 }
 
 
@@ -2386,7 +2386,7 @@ input.b2bking_offer_text_input{
     min-height: 35px;
     margin-top: 1px;
     font-size: 13.5px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     display: flex;
     align-items: center;
@@ -2437,7 +2437,7 @@ input.b2bking_offer_text_input{
     height: 35px;
     margin-top: 1px;
     font-size: 13.5px;
-    font-family: Roboto;
+    font-family: 'B2BKing-Roboto';
     font-style: normal;
     font-weight: bold;
 }
@@ -2577,7 +2577,7 @@ div#b2bking_container_tax_shipping_rate {
 }
 
 #b2bking_rule_select_conditions_container .b2bking_rule_condition_container .b2bking_dynamic_rule_condition_name, #b2bking_rule_select_conditions_container .b2bking_rule_condition_container .b2bking_dynamic_rule_condition_operator, #b2bking_rule_select_conditions_container .b2bking_rule_condition_container .b2bking_dynamic_rule_condition_number {
-  	font-family: "Roboto Medium", Roboto;
+  	font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 13.5px;
@@ -2591,7 +2591,7 @@ div#b2bking_container_tax_shipping_rate {
     color: #ffffff;
     border: none;
     padding: 0px 18px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 13.5px;
@@ -2604,7 +2604,7 @@ div#b2bking_container_tax_shipping_rate {
     color: #ffffff;
     border: none;
     padding: 0px 18px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 13.5px;
@@ -2635,7 +2635,7 @@ div#b2bking_container_tax_shipping_rate {
     margin-bottom: 4px;
     color: #6c6c6c;
     font-size: 13.5px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
 }
@@ -2643,7 +2643,7 @@ div#b2bking_container_tax_shipping_rate {
     margin-bottom: 4px;
     color: #6c6c6c;
     font-size: 13.5px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     display:none;
@@ -2668,7 +2668,7 @@ select#b2bking_rule_select_countries {
     min-height: 35px;
 }
 .b2bking_dynamic_rule_discount_show_everywhere_checkbox_name {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -2692,7 +2692,7 @@ select#b2bking_rule_select_countries {
     width: 50%;
 }
 .b2bking_group_payment_shipping_methods_container_element_title {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     position: relative;
     font-style: normal;
     font-weight: 500;
@@ -2727,7 +2727,7 @@ svg.b2bking_group_payment_shipping_methods_container_element_title_icon_payment 
     min-height: 40px;
 }
 .b2bking_group_payment_shipping_methods_container_element_method_name {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -2752,7 +2752,7 @@ input.b2bking_group_payment_shipping_methods_container_element_method_checkbox:f
     border-radius: 2px;
     min-height: 53px;
     margin-left: 10px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     margin-right: 30px;
     font-style: normal;
     font-weight: 500;
@@ -2790,7 +2790,7 @@ input.b2bking_group_payment_shipping_methods_container_element_method_checkbox:f
     display: flex;
     align-items: center;
     padding-left: 10px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 13.5px;
@@ -2809,7 +2809,7 @@ select.b2bking_user_shipping_payment_methods_container_content_override_select {
     padding: 0px 15px;
     width: 100%;
     max-width: 100%;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -2830,7 +2830,7 @@ svg.b2bking_user_shipping_payment_methods_container_content_override_title_icon 
     left: 0px;
 }
 .b2bking_user_shipping_payment_methods_container_content_override_title {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     position: relative;
     font-style: normal;
     display: flex;
@@ -2862,7 +2862,7 @@ svg.b2bking_user_shipping_payment_methods_container_content_override_title_icon 
     margin-right: 30px;
 }
 .b2bking_custom_role_settings_metabox_container_element_title {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     position: relative;
     font-style: normal;
     font-weight: 500;
@@ -2891,7 +2891,7 @@ svg.b2bking_custom_role_settings_metabox_container_element_title_icon {
     min-height: 40px;
 }
 .b2bking_custom_role_settings_metabox_container_element_checkbox_name {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -2922,7 +2922,7 @@ select.b2bking_custom_role_settings_metabox_container_element_select {
     align-items: center;
     padding: 0px 15px;
     min-height: 40px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -2949,7 +2949,7 @@ select.b2bking_custom_role_settings_metabox_container_element_select:focus{
     border-radius: 2px;
     min-height: 53px;
     margin-left: 10px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     margin-right: 10px;
     font-style: normal;
     font-weight: 500;
@@ -2985,7 +2985,7 @@ select.b2bking_automatic_approval_customer_group_select {
     align-items: center;
     padding: 0px 15px;
     min-height: 40px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -3030,7 +3030,7 @@ input.b2bking_custom_field_mapping_input {
     align-items: center;
     padding: 0px 15px;
     min-height: 40px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -3050,7 +3050,7 @@ input.b2bking_custom_field_mapping_input {
     width: 50%;
 }
 .b2bking_custom_field_settings_metabox_bottom_user_choices_title, .b2bking_custom_field_settings_metabox_bottom_field_label_title,.b2bking_custom_field_settings_metabox_bottom_field_placeholder_title, .b2bking_custom_field_settings_metabox_bottom_field_type_title, .b2bking_custom_field_settings_metabox_top_column_status_title, .b2bking_custom_field_settings_metabox_top_column_registration_role_title,.b2bking_custom_field_settings_metabox_top_column_required_title, .b2bking_custom_field_settings_metabox_top_column_sort_title, .b2bking_custom_field_settings_metabox_top_column_editable_title {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     position: relative;
     font-style: normal;
     font-weight: 500;
@@ -3062,7 +3062,7 @@ input.b2bking_custom_field_mapping_input {
     color: #6B6B6B;
 }
 .b2bking_select_multiple_products_categories_title{
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     position: relative;
     font-style: normal;
     font-weight: 500;
@@ -3098,7 +3098,7 @@ svg.b2bking_custom_field_settings_metabox_top_column_registration_role_title_ico
     min-height: 40px;
 }
 .b2bking_custom_field_settings_metabox_top_column_status_checkbox_name {
-	font-family: "Roboto Medium", Roboto;
+	font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -3129,7 +3129,7 @@ select.b2bking_custom_field_settings_metabox_top_column_registration_role_select
     align-items: center;
     padding: 0px 15px;
     min-height: 40px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -3152,7 +3152,7 @@ select.b2bking_select_multiple_product_categories_selector_select {
     align-items: center;
     padding: 0px 15px;
     min-height: 200px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -3205,7 +3205,7 @@ input.b2bking_custom_field_settings_metabox_top_column_sort_text {
     align-items: center;
     padding: 0px 15px;
     min-height: 40px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -3272,7 +3272,7 @@ select.b2bking_custom_field_settings_metabox_bottom_field_type_select {
     align-items: center;
     padding: 0px 15px;
     min-height: 40px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -3303,7 +3303,7 @@ select.b2bking_custom_field_settings_metabox_bottom_field_type_select:focus{
 }
 /* billing connection metabox */
 .b2bking_custom_field_billing_connection_metabox_title {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     position: relative;
     font-style: normal;
     font-weight: 500;
@@ -3335,7 +3335,7 @@ select.b2bking_custom_field_billing_connection_metabox_select {
     align-items: center;
     padding: 0px 15px;
     min-height: 40px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -3350,7 +3350,7 @@ select.b2bking_custom_field_billing_connection_metabox_select:focus{
         background: #E0F3FE;
     border-radius: 2px;
     min-height: 53px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     left: 1px;
     margin-top: 25px;
@@ -3370,7 +3370,7 @@ select.b2bking_custom_field_billing_connection_metabox_select:focus{
     width: 31%;
 }
 .b2bking_add_to_billing_container_element_title {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     position: relative;
     font-style: normal;
     font-weight: 500;
@@ -3402,7 +3402,7 @@ svg.b2bking_add_to_billing_container_element_title_icon {
     min-height: 40px;
 }
 .b2bking_add_to_billing_container_element_checkbox_name {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -3426,7 +3426,7 @@ input.b2bking_add_to_billing_container_element_checkbox_input:focus{
 
 /* vat container */
 .b2bking_VAT_container_column_title {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     position: relative;
     font-style: normal;
     font-weight: 500;
@@ -3462,7 +3462,7 @@ svg.b2bking_VAT_container_column_title_icon {
     min-height: 40px;
 }
 .b2bking_VAT_container_VIES_validation_checkbox_name {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -3486,7 +3486,7 @@ select.b2bking_VAT_container_countries_select {
     width: 100%;
     font-size: 15px;
     border: 4px solid #ececec;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -3505,7 +3505,7 @@ select.b2bking_VAT_container_countries_select:focus{
     margin: 25px 20px 1px 20px;
 }
 .b2bking_user_registration_user_data_container_title {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     position: relative;
     font-style: normal;
     font-weight: 500;
@@ -3525,7 +3525,7 @@ svg.b2bking_user_registration_user_data_container_title_icon {
     top: -8px;
 }
 .b2bking_user_registration_user_data_container_element_label {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 13.5px;
@@ -3581,7 +3581,7 @@ button.b2bking_user_registration_user_data_container_element_download {
     position: relative;
     display: flex;
     align-items: center;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-size: 13.5px;
     border: none;
@@ -3622,7 +3622,7 @@ select.b2bking_user_registration_user_data_container_element_select_group {
     align-items: center;
     padding: 0px 15px;
     min-height: 40px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -3641,7 +3641,7 @@ button.b2bking_user_registration_user_data_container_element_approval_button_app
     position: relative;
     display: inline-flex;
     align-items: center;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     padding-left: 55px;
     font-weight: 400;
@@ -3671,7 +3671,7 @@ button.b2bking_user_registration_user_data_container_element_approval_button_rej
     position: relative;
     display: inline-flex;
     align-items: center;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     padding-left: 55px;
     font-weight: 400;
@@ -3703,7 +3703,7 @@ button.b2bking_user_registration_user_data_container_element_approval_button_rej
     width: 100%;
 }
 .b2bking_user_settings_container_column_title {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     position: relative;
     font-style: normal;
     font-weight: 500;
@@ -3715,7 +3715,7 @@ button.b2bking_user_registration_user_data_container_element_approval_button_rej
     color: #6B6B6B;
 }
 .b2bking_user_settings_container_column_title_role {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     position: relative;
     font-style: normal;
     font-weight: 500;
@@ -3746,7 +3746,7 @@ select.b2bking_user_settings_select{
     padding: 0px 15px;
     width: 97.5%;
     max-width: 100%;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -3762,7 +3762,7 @@ select.b2bking_user_settings_select:focus{
     border-radius: 2px;
     min-height: 53px;
     margin-left: 20px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     margin-right: 43px;
     font-style: normal;
     font-weight: 500;
@@ -3779,7 +3779,7 @@ select.b2bking_user_settings_select:focus{
 .b2bking_discount_options_information_box, .b2bking_minimum_options_information_box{
     border-radius: 2px;
     min-height: 53px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     margin-right: 30px;
     font-style: normal;
     font-weight: 500;
@@ -3836,7 +3836,7 @@ span.b2bking_discount_box_text {
     background: #E0F3FE;
     border-radius: 2px;
     min-height: 53px;
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     margin-right: 30px;
     font-style: normal;
     font-weight: 500;
@@ -3999,7 +3999,7 @@ div#b2bking_admin_groups_main_container {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Roboto;
+    font-family: 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 17px;
@@ -4048,7 +4048,7 @@ div#b2bking_admin_groups_main_container {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    font-family: Roboto;
+    font-family: 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 17px;
@@ -4068,7 +4068,7 @@ svg.b2bking_admin_groups_main_container_main_row_right_box_icon_second {
     top: 3px;
 }
 .b2bking_admin_groups_main_container_main_row_title {
-    font-family: "Roboto Medium",Roboto;
+    font-family: "Roboto Medium",'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
@@ -4076,7 +4076,7 @@ svg.b2bking_admin_groups_main_container_main_row_right_box_icon_second {
     color: #E7E7E7;
 }
 .b2bking_admin_groups_main_container_main_row_subtitle {
-    font-family: "Roboto Medium",Roboto;
+    font-family: "Roboto Medium",'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -4096,7 +4096,7 @@ svg.b2bking_admin_groups_main_container_main_row_right_box_icon_second {
     align-items: center;
 }
 .b2bking_above_top_title_button_left {
-    font-family: "Roboto Medium", Roboto;
+    font-family: "Roboto Medium", 'B2BKing-Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 25px;
@@ -4115,7 +4115,7 @@ button.b2bking_above_top_title_button_right_button {
     position: relative;
     outline: none;
     border: none;
-    font-family: "Roboto";
+    font-family: 'B2BKing-Roboto';
     font-weight: 500;
     font-size: 15.5px;
     padding: 5px 16px;
