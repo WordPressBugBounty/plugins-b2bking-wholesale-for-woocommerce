@@ -668,6 +668,8 @@ class B2bkingcore_Dynamic_Rules {
         // Dynamic rule cart discount
         public static function b2bking_dynamic_rule_cart_discount( WC_Cart $cart ){
 
+            $cart_subtotal = apply_filters('b2bking_cart_subtotal', $cart->subtotal);
+
             $user_id = get_current_user_id();
             $account_type = get_user_meta($user_id,'b2bking_account_type', true);
             if ($account_type === 'subaccount'){
@@ -866,19 +868,19 @@ class B2bkingcore_Dynamic_Rules {
                                     case 'cart_total_value':
                                         switch ($condition_details[1]){
                                             case 'greater':
-                                                if (! (floatval($cart->subtotal) > floatval($condition_details[2]))){
+                                                if (! (floatval($cart_subtotal) > floatval($condition_details[2]))){
                                                     $passconditions = 'no';
                                                     break 3;
                                                 }
                                             break;
                                             case 'equal':
-                                                if (! (floatval($cart->subtotal) === floatval($condition_details[2]))){
+                                                if (! (floatval($cart_subtotal) === floatval($condition_details[2]))){
                                                     $passconditions = 'no';
                                                     break 3;
                                                 }
                                             break;
                                             case 'smaller':
-                                                if (! (floatval($cart->subtotal) < floatval($condition_details[2]))){
+                                                if (! (floatval($cart_subtotal) < floatval($condition_details[2]))){
                                                     $passconditions = 'no';
                                                     break 3;
                                                 }
@@ -1099,19 +1101,19 @@ class B2bkingcore_Dynamic_Rules {
                         case 'cart_total_value':
                             switch ($condition_details[1]){
                                 case 'greater':
-                                    if (! (floatval($cart->subtotal) > floatval($condition_details[2]))){
+                                    if (! (floatval($cart_subtotal) > floatval($condition_details[2]))){
                                         $passconditions = 'no';
                                         break 3;
                                     }
                                 break;
                                 case 'equal':
-                                    if (! (floatval($cart->subtotal) === floatval($condition_details[2]))){
+                                    if (! (floatval($cart_subtotal) === floatval($condition_details[2]))){
                                         $passconditions = 'no';
                                         break 3;
                                     }
                                 break;
                                 case 'smaller':
-                                    if (! (floatval($cart->subtotal) < floatval($condition_details[2]))){
+                                    if (! (floatval($cart_subtotal) < floatval($condition_details[2]))){
                                         $passconditions = 'no';
                                         break 3;
                                     }
@@ -1131,7 +1133,7 @@ class B2bkingcore_Dynamic_Rules {
                     if ($type === 'discount_amount'){
                         $howmuch = floatval ($howmuch);
                     } else if ($type === 'discount_percentage') {
-                        $howmuch = (floatval($howmuch)/100) * WC()->cart->get_subtotal();
+                        $howmuch = (floatval($howmuch)/100) * apply_filters('b2bking_cart_subtotal_discount_basis', WC()->cart->get_subtotal());
                     }
 
                     if($howmuch > $current_total_cart_discount){
@@ -1312,19 +1314,19 @@ class B2bkingcore_Dynamic_Rules {
                         case 'cart_total_value':
                             switch ($condition_details[1]){
                                 case 'greater':
-                                    if (! (floatval($cart->subtotal) > floatval($condition_details[2]))){
+                                    if (! (floatval($cart_subtotal) > floatval($condition_details[2]))){
                                         $passconditions = 'no';
                                         break 3;
                                     }
                                 break;
                                 case 'equal':
-                                    if (! (floatval($cart->subtotal) === floatval($condition_details[2]))){
+                                    if (! (floatval($cart_subtotal) === floatval($condition_details[2]))){
                                         $passconditions = 'no';
                                         break 3;
                                     }
                                 break;
                                 case 'smaller':
-                                    if (! (floatval($cart->subtotal) < floatval($condition_details[2]))){
+                                    if (! (floatval($cart_subtotal) < floatval($condition_details[2]))){
                                         $passconditions = 'no';
                                         break 3;
                                     }
@@ -1530,19 +1532,19 @@ class B2bkingcore_Dynamic_Rules {
                         case 'cart_total_value':
                             switch ($condition_details[1]){
                                 case 'greater':
-                                    if (! (floatval($cart->subtotal) > floatval($condition_details[2]))){
+                                    if (! (floatval($cart_subtotal) > floatval($condition_details[2]))){
                                         $passconditions = 'no';
                                         break 3;
                                     }
                                 break;
                                 case 'equal':
-                                    if (! (floatval($cart->subtotal) === floatval($condition_details[2]))){
+                                    if (! (floatval($cart_subtotal) === floatval($condition_details[2]))){
                                         $passconditions = 'no';
                                         break 3;
                                     }
                                 break;
                                 case 'smaller':
-                                    if (! (floatval($cart->subtotal) < floatval($condition_details[2]))){
+                                    if (! (floatval($cart_subtotal) < floatval($condition_details[2]))){
                                         $passconditions = 'no';
                                         break 3;
                                     }
@@ -1754,19 +1756,19 @@ class B2bkingcore_Dynamic_Rules {
                                 case 'cart_total_value':
                                     switch ($condition_details[1]){
                                         case 'greater':
-                                            if (! (floatval($cart->subtotal) > floatval($condition_details[2]))){
+                                            if (! (floatval($cart_subtotal) > floatval($condition_details[2]))){
                                                 $passconditions = 'no';
                                                 break 3;
                                             }
                                         break;
                                         case 'equal':
-                                            if (! (floatval($cart->subtotal) === floatval($condition_details[2]))){
+                                            if (! (floatval($cart_subtotal) === floatval($condition_details[2]))){
                                                 $passconditions = 'no';
                                                 break 3;
                                             }
                                         break;
                                         case 'smaller':
-                                            if (! (floatval($cart->subtotal) < floatval($condition_details[2]))){
+                                            if (! (floatval($cart_subtotal) < floatval($condition_details[2]))){
                                                 $passconditions = 'no';
                                                 break 3;
                                             }
@@ -1912,19 +1914,19 @@ class B2bkingcore_Dynamic_Rules {
                                 case 'cart_total_value':
                                     switch ($condition_details[1]){
                                         case 'greater':
-                                            if (! (floatval($cart->subtotal) > floatval($condition_details[2]))){
+                                            if (! (floatval($cart_subtotal) > floatval($condition_details[2]))){
                                                 $passconditions = 'no';
                                                 break 3;
                                             }
                                         break;
                                         case 'equal':
-                                            if (! (floatval($cart->subtotal) === floatval($condition_details[2]))){
+                                            if (! (floatval($cart_subtotal) === floatval($condition_details[2]))){
                                                 $passconditions = 'no';
                                                 break 3;
                                             }
                                         break;
                                         case 'smaller':
-                                            if (! (floatval($cart->subtotal) < floatval($condition_details[2]))){
+                                            if (! (floatval($cart_subtotal) < floatval($condition_details[2]))){
                                                 $passconditions = 'no';
                                                 break 3;
                                             }

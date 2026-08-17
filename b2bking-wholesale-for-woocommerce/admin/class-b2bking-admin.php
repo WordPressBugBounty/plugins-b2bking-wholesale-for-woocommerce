@@ -20,6 +20,12 @@ class B2bkingcore_Admin{
 		add_action( 'admin_notices', array($this, 'b2bking_plugin_dependencies') );
 		// Load admin notice resources (enables notification dismissal)
 		add_action( 'admin_enqueue_scripts', array($this, 'load_global_admin_notice_resource') ); 
+		add_filter( 'admin_body_class', function( $classes ) {
+			if ( version_compare( get_bloginfo( 'version' ), '7.0', '>=' ) ) {
+				$classes .= ' b2bking-wp-7-plus';
+			}
+			return $classes;
+		} );
 
 
 		add_action( 'plugins_loaded', function(){
@@ -4320,7 +4326,8 @@ class B2bkingcore_Admin{
 		    		<?php
 
 				    // if there are custom fields or registration role, show 'Data collected at registration' (there may be no fields, only a need for approval)
-		    		if((trim($custom_fields) !== '' && $custom_fields !== NULL) || ($registration_role !== NULL && $registration_role !== '')){
+	    			if((trim($custom_fields) !== '' && $custom_fields !== NULL) || ($registration_role !== NULL && $registration_role !== '') || ($account_approved === 'no')){
+
 		    			// show header
 		    			?>
 		    			<div class="b2bking_user_registration_user_data_container">
@@ -4529,7 +4536,7 @@ class B2bkingcore_Admin{
 	}
 
 	function b2bking_save_user_meta_customer_group($user_id ){
-		if ( !current_user_can( 'edit_user', $user_id ) ) { 
+		if ( (!current_user_can( apply_filters('b2bking_backend_capability_needed', 'manage_woocommerce') ) && !current_user_can( 'edit_users' )) || !current_user_can( 'edit_user', $user_id ) ) { 
 		    return false; 
 		}
 
@@ -7168,7 +7175,13 @@ class B2bkingcore_Admin{
 			<div class="b2bking-crm-panel-head">
 				<div class="b2bking-crm-avatar">
 				<span class="b2bking-crm-avatar-initials"><?php echo esc_html($initials); ?></span>
-				<?php $avatar_url = get_avatar_url($user_id, ['size' => 54, 'default' => '404']); if ($avatar_url) : ?>
+				<?php
+				$avatar_url = '';
+				try {
+					$avatar_url = function_exists('get_avatar_url') ? get_avatar_url($user_id, ['size' => 54, 'default' => '404']) : '';
+				} catch (Throwable $e) {}
+				if ($avatar_url) :
+				?>
 				<img class="b2bking-crm-avatar-img" src="<?php echo esc_url($avatar_url); ?>" onerror="this.style.display='none'" alt="">
 				<?php endif; ?>
 			</div>

@@ -218,51 +218,51 @@ div#b2bking_reports_quick_links {
 }
 
 /* wp 7 */
-.branch-7 div#b2bking_dashboard_wrapper .card {
+.b2bking-wp-7-plus div#b2bking_dashboard_wrapper .card {
     padding: .7em 2em 1em;
 }
-.branch-7.b2bking_customers_howto_notice .notice-dismiss, .branch-7 .b2bking_dismiss_onboarding_notice .notice-dismiss, .branch-7 .b2bking_quotefields_howto_notice .notice-dismiss, .branch-7 .b2bking_groups_howto_notice .notice-dismiss, .branch-7 .b2bking_groupsrules_howto_notice .notice-dismiss, .branch-7 .b2bking_rules_howto_notice .notice-dismiss, .branch-7 .b2bking_roles_howto_notice .notice-dismiss, .branch-7 .b2bking_fields_howto_notice .notice-dismiss, .branch-7 .b2bking_conversations_howto_notice .notice-dismiss, .branch-7 .b2bking_offers_howto_notice .notice-dismiss {
+.b2bking-wp-7-plus.b2bking_customers_howto_notice .notice-dismiss, .b2bking-wp-7-plus .b2bking_dismiss_onboarding_notice .notice-dismiss, .b2bking-wp-7-plus .b2bking_quotefields_howto_notice .notice-dismiss, .b2bking-wp-7-plus .b2bking_groups_howto_notice .notice-dismiss, .b2bking-wp-7-plus .b2bking_groupsrules_howto_notice .notice-dismiss, .b2bking-wp-7-plus .b2bking_rules_howto_notice .notice-dismiss, .b2bking-wp-7-plus .b2bking_roles_howto_notice .notice-dismiss, .b2bking-wp-7-plus .b2bking_fields_howto_notice .notice-dismiss, .b2bking-wp-7-plus .b2bking_conversations_howto_notice .notice-dismiss, .b2bking-wp-7-plus .b2bking_offers_howto_notice .notice-dismiss {
     top: 0px;
 }
-.branch-7.b2bking_customers_howto_notice .notice-dismiss::before, .branch-7 .b2bking_dismiss_onboarding_notice .notice-dismiss::before, .branch-7 .b2bking_quotefields_howto_notice .notice-dismiss::before, .branch-7 .b2bking_groups_howto_notice .notice-dismiss::before, .branch-7 .b2bking_groupsrules_howto_notice .notice-dismiss::before, .branch-7 .b2bking_rules_howto_notice .notice-dismiss::before, .branch-7 .b2bking_roles_howto_notice .notice-dismiss::before, .branch-7 .b2bking_fields_howto_notice .notice-dismiss::before, .branch-7 .b2bking_conversations_howto_notice .notice-dismiss::before, .branch-7 .b2bking_offers_howto_notice .notice-dismiss::before {
+.b2bking-wp-7-plus.b2bking_customers_howto_notice .notice-dismiss::before, .b2bking-wp-7-plus .b2bking_dismiss_onboarding_notice .notice-dismiss::before, .b2bking-wp-7-plus .b2bking_quotefields_howto_notice .notice-dismiss::before, .b2bking-wp-7-plus .b2bking_groups_howto_notice .notice-dismiss::before, .b2bking-wp-7-plus .b2bking_groupsrules_howto_notice .notice-dismiss::before, .b2bking-wp-7-plus .b2bking_rules_howto_notice .notice-dismiss::before, .b2bking-wp-7-plus .b2bking_roles_howto_notice .notice-dismiss::before, .b2bking-wp-7-plus .b2bking_fields_howto_notice .notice-dismiss::before, .b2bking-wp-7-plus .b2bking_conversations_howto_notice .notice-dismiss::before, .b2bking-wp-7-plus .b2bking_offers_howto_notice .notice-dismiss::before {
     content: "\f153" / '' !important;
     color: #787c82 !important;
     font-size: 16px !important;
 }
-.branch-7 .b2bking_customers_howto_notice, .branch-7 .b2bking_dismiss_onboarding_notice, .branch-7 .b2bking_groups_howto_notice.notice.notice-info.is-dismissible, .branch-7 .b2bking_quotefields_howto_notice.notice.notice-info.is-dismissible, .branch-7 .b2bking_rules_howto_notice.notice.notice-info.is-dismissible, .branch-7 .b2bking_groupsrules_howto_notice.notice.notice-info.is-dismissible, .branch-7 .b2bking_roles_howto_notice.notice.notice-info.is-dismissible, .branch-7 .b2bking_conversations_howto_notice.notice.notice-info.is-dismissible, .branch-7 .b2bking_fields_howto_notice.notice.notice-info.is-dismissible, .branch-7 .b2bking_offers_howto_notice.notice.notice-info.is-dismissible {
+.b2bking-wp-7-plus .b2bking_customers_howto_notice, .b2bking-wp-7-plus .b2bking_dismiss_onboarding_notice, .b2bking-wp-7-plus .b2bking_groups_howto_notice.notice.notice-info.is-dismissible, .b2bking-wp-7-plus .b2bking_quotefields_howto_notice.notice.notice-info.is-dismissible, .b2bking-wp-7-plus .b2bking_rules_howto_notice.notice.notice-info.is-dismissible, .b2bking-wp-7-plus .b2bking_groupsrules_howto_notice.notice.notice-info.is-dismissible, .b2bking-wp-7-plus .b2bking_roles_howto_notice.notice.notice-info.is-dismissible, .b2bking-wp-7-plus .b2bking_conversations_howto_notice.notice.notice-info.is-dismissible, .b2bking-wp-7-plus .b2bking_fields_howto_notice.notice.notice-info.is-dismissible, .b2bking-wp-7-plus .b2bking_offers_howto_notice.notice.notice-info.is-dismissible {
     background: #fff;
     border: 1px solid #c3c4c7;
     border-left-width: 4px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
     padding: 5px 12px;
 }
-.branch-7 .b2bking_searchbar_input{
+.b2bking-wp-7-plus .b2bking_searchbar_input{
     padding-left: 3px !important;
 }
-.branch-7.b2bking_page_b2bking_rule .tablenav.top .alignleft.actions.bulkactions, .branch-7.b2bking_page_b2bking_rule .subsubsub, .branch-7.post-type-b2bking_rule .tablenav.top .alignleft.actions.bulkactions{
+.b2bking-wp-7-plus.b2bking_page_b2bking_rule .tablenav.top .alignleft.actions.bulkactions, .b2bking-wp-7-plus.b2bking_page_b2bking_rule .subsubsub, .b2bking-wp-7-plus.post-type-b2bking_rule .tablenav.top .alignleft.actions.bulkactions{
     position: relative;
     bottom: 10px !important;
 }
-.branch-7.post-type-b2bking_rule .subsubsub, .branch-7.b2bking_page_b2bking_rule .subsubsub{
+.b2bking-wp-7-plus.post-type-b2bking_rule .subsubsub, .b2bking-wp-7-plus.b2bking_page_b2bking_rule .subsubsub{
     position: relative;
     bottom: 12px !important;
     top: initial !important;
 }
-.branch-7.post-type-b2bking_conversation .subsubsub, .branch-7.b2bking_page_b2bking_conversation .subsubsub{
+.b2bking-wp-7-plus.post-type-b2bking_conversation .subsubsub, .b2bking-wp-7-plus.b2bking_page_b2bking_conversation .subsubsub{
     position: relative;
     bottom: 8px !important;
     top: initial !important;
 }
-.branch-7.post-type-b2bking_custom_field .subsubsub, .branch-7.b2bking_page_b2bking_custom_field .subsubsub{
+.b2bking-wp-7-plus.post-type-b2bking_custom_field .subsubsub, .b2bking-wp-7-plus.b2bking_page_b2bking_custom_field .subsubsub{
     position: relative;
     bottom: 5px !important;
     top: initial !important;
 }
-.branch-7.post-type-b2bking_conversation .alignleft.actions, .branch-7.b2bking_page_b2bking_conversation .alignleft.actions {
+.b2bking-wp-7-plus.post-type-b2bking_conversation .alignleft.actions, .b2bking-wp-7-plus.b2bking_page_b2bking_conversation .alignleft.actions {
     position: relative;
     bottom: 3px;
 }
-.branch-7 .b2bking_offer_add_item_button {
+.b2bking-wp-7-plus .b2bking_offer_add_item_button {
     background: #2271b1 !important;
     border-color: #2271b1 !important;
     line-height: 2.15384615 !important;
@@ -270,7 +270,7 @@ div#b2bking_reports_quick_links {
     border-radius: 3px !important;
     padding: 0 10px !important;
 }
-.branch-7 .b2bking_offer_delete_item_button{
+.b2bking-wp-7-plus .b2bking_offer_delete_item_button{
     color: #2271b1 !important;
     border-color: #2271b1 !important;
     background: #f6f7f7 !important;
@@ -279,112 +279,112 @@ div#b2bking_reports_quick_links {
     border-radius: 3px !important;
     padding: 0 10px !important;
 }
-.branch-7 .b2bking_offer_text_input {
+.b2bking-wp-7-plus .b2bking_offer_text_input {
     border-radius: 4px !important;
     padding: 0 8px !important;
     line-height: 2 !important;
     min-height: 30px !important;
 }
-.branch-7 .b2bking_offer_input_container{
+.b2bking-wp-7-plus .b2bking_offer_input_container{
     max-width: 19% !important;
 }
-.branch-7 div#b2bking_rule_details_metabox input[type="text"], .branch-7 div#b2bking_rule_details_metabox input[type="number"], .branch-7 div#b2bking_rule_details_metabox select {
+.b2bking-wp-7-plus div#b2bking_rule_details_metabox input[type="text"], .b2bking-wp-7-plus div#b2bking_rule_details_metabox input[type="number"], .b2bking-wp-7-plus div#b2bking_rule_details_metabox select {
     border-radius: 4px !important;
     min-height: 30px;
 }
-.branch-7 .b2bking_dynamic_rule_metabox_content_container .select2-container .select2-selection--single{
+.b2bking-wp-7-plus .b2bking_dynamic_rule_metabox_content_container .select2-container .select2-selection--single{
     height: 30px;
     border-radius: 4px;
 }
-.branch-7 .b2bking_dynamic_rule_metabox_content_container .select2-container .select2-search--inline .select2-search__field{
+.b2bking-wp-7-plus .b2bking_dynamic_rule_metabox_content_container .select2-container .select2-search--inline .select2-search__field{
     min-height: 28px !important;
 }
-.branch-7 div#b2bking_rule_details_metabox input.switch:focus{
+.b2bking-wp-7-plus div#b2bking_rule_details_metabox input.switch:focus{
     outline: none;
     box-shadow: none;
 }
-.branch-7 input#b2bking_standard_rule_priority{
+.b2bking-wp-7-plus input#b2bking_standard_rule_priority{
     width: 88px;
 }
-.branch-7.post-type-b2bking_offer #title, .branch-7.post-type-b2bking_rule #title, .branch-7.post-type-b2bking_grule #title, .branch-7.post-type-b2bking_conversation #title, .branch-7.post-type-b2bking_group #title{
+.b2bking-wp-7-plus.post-type-b2bking_offer #title, .b2bking-wp-7-plus.post-type-b2bking_rule #title, .b2bking-wp-7-plus.post-type-b2bking_grule #title, .b2bking-wp-7-plus.post-type-b2bking_conversation #title, .b2bking-wp-7-plus.post-type-b2bking_group #title{
     border-radius: 4px !important;
 }
-.branch-7 .b2bking_offer_add_item_button:focus, .branch-7 .b2bking_offer_delete_item_button:focus{
+.b2bking-wp-7-plus .b2bking_offer_add_item_button:focus, .b2bking-wp-7-plus .b2bking_offer_delete_item_button:focus{
     outline: none !important;
     box-shadow: none !important;
 }
-.branch-7 hr.wp-header-end {
+.b2bking-wp-7-plus hr.wp-header-end {
     height: 10px !important;
 }
-.branch-7 div#b2bking_tabs_wrapper select{
+.b2bking-wp-7-plus div#b2bking_tabs_wrapper select{
     border-radius: 5px;
     line-height: 2 !important;
     min-height: 38px !important;
 }
-.branch-7 #b2bking_dashboard_days_select {
+.b2bking-wp-7-plus #b2bking_dashboard_days_select {
     border-radius: 5px;
     line-height: 2 !important;
     min-height: 35px !important;
 }
-.branch-7 #b2bking_product_visibility_override{
+.b2bking-wp-7-plus #b2bking_product_visibility_override{
     border-radius: 3px;
     line-height: 2 !important;
     min-height: 30px !important;
 }
-.branch-7 button#b2bking_update_registration_data_button {
+.b2bking-wp-7-plus button#b2bking_update_registration_data_button {
     background: #2271b1;
     border-color: #2271b1;
     min-height: 30px !important;
     line-height: 2.5;
     border-radius: 3px;
 }
-.branch-7 button#b2bking_print_user_data {
+.b2bking-wp-7-plus button#b2bking_print_user_data {
     min-height: 30px !important;
     border-color: #2271b1;
     color: #2271b1;
     line-height: 2.5;
     border-radius: 3px;
 }
-.branch-7 button.b2bking_user_registration_user_data_container_element_approval_button_deactivate {
+.b2bking-wp-7-plus button.b2bking_user_registration_user_data_container_element_approval_button_deactivate {
     border-radius: 3px;
 }
-.branch-7 .b2bking_product_wrap {
+.b2bking-wp-7-plus .b2bking_product_wrap {
     width: 55%;
 }
-.branch-7 select#b2bking_reports_days_select {
+.b2bking-wp-7-plus select#b2bking_reports_days_select {
     min-height: 30px !important;
     border-radius: 3px !important;
     line-height: 2.3;
 }
-.branch-7 .b2bking_reports_fromto input {
+.b2bking-wp-7-plus .b2bking_reports_fromto input {
     border-radius: 3px !important;
 }
-.branch-7 input#b2bking_offers_logo_setting, .branch-7 #b2bking_offers_image_setting{
+.b2bking-wp-7-plus input#b2bking_offers_logo_setting, .b2bking-wp-7-plus #b2bking_offers_image_setting{
     min-height: 35px;
     border-radius: 5px;
 }
-.branch-7 input#b2bking-logo-upload-btn, .branch-7 #b2bking-logoimg-upload-btn {
+.b2bking-wp-7-plus input#b2bking-logo-upload-btn, .b2bking-wp-7-plus #b2bking-logoimg-upload-btn {
     min-height: 35px;
     position: relative;
     bottom: 0.5px;
 }
-.branch-7 button.b2bking-crm-save-notes{
+.b2bking-wp-7-plus button.b2bking-crm-save-notes{
     line-height: 2.15384615;
     min-height: 31px;
     padding: 0px 11px;
     border-radius: 3px !important;
 }
-.branch-7 .b2bking-customer-pricing-import-export-actions .dashicons {
+.b2bking-wp-7-plus .b2bking-customer-pricing-import-export-actions .dashicons {
     line-height: normal !important;
 }
-.branch-7 div#b2bking_conversation_messaging_metabox .button-primary {
+.b2bking-wp-7-plus div#b2bking_conversation_messaging_metabox .button-primary {
     background: #2271b1;
     border-color: #2271b1;
     min-height: 30px !important;
     line-height: 2.5;
     border-radius: 3px;
 }
-.branch-7 div#b2bking_conversation_messaging_metabox .button-secondary {
+.b2bking-wp-7-plus div#b2bking_conversation_messaging_metabox .button-secondary {
     background: #fff;
     border-color: #2271b1;
     color: #2271b1;
@@ -392,100 +392,100 @@ div#b2bking_reports_quick_links {
     line-height: 2.5;
     border-radius: 3px;
 }
-.branch-7 .b2bking-customer-pricing-search-btn{
+.b2bking-wp-7-plus .b2bking-customer-pricing-search-btn{
     line-height: 2.15384615;
     min-height: 31px;
     padding: 0px 11px;
     border-radius: 5px !important;
 }
-.branch-7 input.b2bking-customer-pricing-search {
+.b2bking-wp-7-plus input.b2bking-customer-pricing-search {
     min-height: 31px !important;
     border-radius: 5px;
 }
-.branch-7 .b2bking-customer-pricing-editor .wc_input_price, .branch-7 .b2bking-customer-pricing-editor input[type="number"]{
+.b2bking-wp-7-plus .b2bking-customer-pricing-editor .wc_input_price, .b2bking-wp-7-plus .b2bking-customer-pricing-editor input[type="number"]{
     min-height: 31px !important;
     border-radius: 5px !important;
     border: 1px solid #b1b1b1;
 }
-.branch-7 .b2bking-customer-tier-remove {
+.b2bking-wp-7-plus .b2bking-customer-tier-remove {
     min-height: 31px !important;
     font-size: 12px !important;
 }
-.branch-7 .b2bking-crm-files-section button {
+.b2bking-wp-7-plus .b2bking-crm-files-section button {
     border-radius: 3px !important;
 }
-.branch-7 div#b2bking_admin_customers_table_container #b2bking_dt_length_select {
+.b2bking-wp-7-plus div#b2bking_admin_customers_table_container #b2bking_dt_length_select {
     min-height: 31px !important;
     line-height: 2 !important;
     border-radius: 4px !important;
     padding-right: 20px !important;
 }
-.branch-7 .b2bking-customer-pricing-save-all {
+.b2bking-wp-7-plus .b2bking-customer-pricing-save-all {
     min-height: 31px !important;
     line-height: 2 !important;
     padding: 2px 10px !important;
 }
-.branch-7 .b2bking-customer-pricing-import, .branch-7 .b2bking-customer-pricing-export {
+.b2bking-wp-7-plus .b2bking-customer-pricing-import, .b2bking-wp-7-plus .b2bking-customer-pricing-export {
     min-height: 31px !important;
     line-height: 2.5 !important;
 }
-.branch-7 .b2bking-customer-tier-add {
+.b2bking-wp-7-plus .b2bking-customer-tier-add {
     min-height: 27px !important;
 }
-.branch-7 input.b2bking_group_visibility_container_content_checkbox_input:checked::before, .branch-7 #b2bking_product input[type="checkbox"]:checked::before, .branch-7 .b2bking_group_payment_shipping_methods_container_element_method_checkbox:checked::before, .branch-7 #b2bking_offer_access_metabox input[type="checkbox"]:checked::before, .branch-7 .b2bking_custom_role_settings_metabox_container_element_checkbox:checked:before, .branch-7 #b2bking_custom_field_billing_connection_metabox input[type="checkbox"]:checked:before, .branch-7 #b2bking_custom_field_settings_metabox input[type="checkbox"]:checked:before{
+.b2bking-wp-7-plus input.b2bking_group_visibility_container_content_checkbox_input:checked::before, .b2bking-wp-7-plus #b2bking_product input[type="checkbox"]:checked::before, .b2bking-wp-7-plus .b2bking_group_payment_shipping_methods_container_element_method_checkbox:checked::before, .b2bking-wp-7-plus #b2bking_offer_access_metabox input[type="checkbox"]:checked::before, .b2bking-wp-7-plus .b2bking_custom_role_settings_metabox_container_element_checkbox:checked:before, .b2bking-wp-7-plus #b2bking_custom_field_billing_connection_metabox input[type="checkbox"]:checked:before, .b2bking-wp-7-plus #b2bking_custom_field_settings_metabox input[type="checkbox"]:checked:before{
     content: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%233582c4%27%2F%3E%3C%2Fsvg%3E")
 }
-.branch-7 #b2bking_product input[type="checkbox"]{
+.b2bking-wp-7-plus #b2bking_product input[type="checkbox"]{
     background: #fff !important;
     border: 1px solid #8c8f94 !important;
     border-radius: 4px !important;
 }
-.branch-7 .b2bking_group_payment_shipping_methods_container_element_method_checkbox, .branch-7 #b2bking_offer_access_metabox input[type="checkbox"], .branch-7 .b2bking_custom_role_settings_metabox_container_element_checkbox, .branch-7 #b2bking_custom_field_settings_metabox input[type="checkbox"], .branch-7 #b2bking_custom_field_billing_connection_metabox input[type="checkbox"]{
+.b2bking-wp-7-plus .b2bking_group_payment_shipping_methods_container_element_method_checkbox, .b2bking-wp-7-plus #b2bking_offer_access_metabox input[type="checkbox"], .b2bking-wp-7-plus .b2bking_custom_role_settings_metabox_container_element_checkbox, .b2bking-wp-7-plus #b2bking_custom_field_settings_metabox input[type="checkbox"], .b2bking-wp-7-plus #b2bking_custom_field_billing_connection_metabox input[type="checkbox"]{
     background: #c4c4c4 !important;
     border: none !important;
     border-radius: 4px !important;
 }
-.branch-7 #b2bking_product input[type="checkbox"]:focus, .branch-7 .b2bking_group_payment_shipping_methods_container_element_method_checkbox:focus{
+.b2bking-wp-7-plus #b2bking_product input[type="checkbox"]:focus, .b2bking-wp-7-plus .b2bking_group_payment_shipping_methods_container_element_method_checkbox:focus{
     outline: none !important;
     box-shadow: none !important;
 }
-.branch-7 #b2bking_conversation_status_select{
+.b2bking-wp-7-plus #b2bking_conversation_status_select{
     min-height: 31px !important;
     line-height: 2 !important;
     border-radius: 4px !important;
 }
-.branch-7 div#b2bking_product_dynamic_rules_metabox .page-title-action {
+.b2bking-wp-7-plus div#b2bking_product_dynamic_rules_metabox .page-title-action {
     border-color: #ccc !important;
     color: #303030 !important;
     border-radius: 3px !important;
     background: #f1f1f1 !important;
 }
-.branch-7 button#b2bking_category_add_user, .branch-7 .b2bking_category_users_textarea_buttons_container .select2-container--default .select2-selection--single {
+.b2bking-wp-7-plus button#b2bking_category_add_user, .b2bking-wp-7-plus .b2bking_category_users_textarea_buttons_container .select2-container--default .select2-selection--single {
     border-radius: 3px;
 }
-.branch-7 #b2bking_category_users_textarea{
+.b2bking-wp-7-plus #b2bking_category_users_textarea{
     border-radius: 3px;
 }
-.branch-7.b2bking_page_b2bking_profeatures .plugin-filter a, .branch-7.b2bking_page_b2bking_profeatures .b2bking_pro_modules_container a{
+.b2bking-wp-7-plus.b2bking_page_b2bking_profeatures .plugin-filter a, .b2bking-wp-7-plus.b2bking_page_b2bking_profeatures .b2bking_pro_modules_container a{
     color: #2271b1 !important;
 }
-.branch-7 .b2bking_customers_howto_notice a, .branch-7 .b2bking_dismiss_onboarding_notice a, .branch-7 .b2bking_groups_howto_notice.notice.notice-info.is-dismissible a, .branch-7 .b2bking_quotefields_howto_notice.notice.notice-info.is-dismissible a, .branch-7 .b2bking_rules_howto_notice.notice.notice-info.is-dismissible a, .branch-7 .b2bking_groupsrules_howto_notice.notice.notice-info.is-dismissible a, .branch-7 .b2bking_roles_howto_notice.notice.notice-info.is-dismissible a, .branch-7 .b2bking_conversations_howto_notice.notice.notice-info.is-dismissible a, .branch-7 .b2bking_fields_howto_notice.notice.notice-info.is-dismissible a, .branch-7 .b2bking_offers_howto_notice.notice.notice-info.is-dismissible a {
+.b2bking-wp-7-plus .b2bking_customers_howto_notice a, .b2bking-wp-7-plus .b2bking_dismiss_onboarding_notice a, .b2bking-wp-7-plus .b2bking_groups_howto_notice.notice.notice-info.is-dismissible a, .b2bking-wp-7-plus .b2bking_quotefields_howto_notice.notice.notice-info.is-dismissible a, .b2bking-wp-7-plus .b2bking_rules_howto_notice.notice.notice-info.is-dismissible a, .b2bking-wp-7-plus .b2bking_groupsrules_howto_notice.notice.notice-info.is-dismissible a, .b2bking-wp-7-plus .b2bking_roles_howto_notice.notice.notice-info.is-dismissible a, .b2bking-wp-7-plus .b2bking_conversations_howto_notice.notice.notice-info.is-dismissible a, .b2bking-wp-7-plus .b2bking_fields_howto_notice.notice.notice-info.is-dismissible a, .b2bking-wp-7-plus .b2bking_offers_howto_notice.notice.notice-info.is-dismissible a {
     color: #2271b1 !important;
 }
-.branch-7.b2bking_page_b2bking_rule #posts-filter a, .branch-7.b2bking_page_b2bking_group #posts-filter a, .branch-7.b2bking_page_b2bking_grule #posts-filter a, .branch-7.b2bking_page_b2bking_offer #posts-filter a, .branch-7.b2bking_page_b2bking_custom_role #posts-filter a, .branch-7.b2bking_page_b2bking_custom_field #posts-filter a, .branch-7.b2bking_page_b2bking_conversation #posts-filter a, .branch-7.post-type-b2bking_custom_role #posts-filter a, .branch-7.post-type-b2bking_rule #posts-filter a, .branch-7.post-type-b2bking_group #posts-filter a, .branch-7.post-type-b2bking_grule #posts-filter a, .branch-7.post-type-b2bking_custom_role #posts-filter a, .branch-7.post-type-b2bking_conversation #posts-filter a, .branch-7.post-type-b2bking_offer #posts-filter a, .branch-7.post-type-b2bking_custom_field #posts-filter a, .branch-7.post-type-b2bking_quote_field #posts-filter a{
+.b2bking-wp-7-plus.b2bking_page_b2bking_rule #posts-filter a, .b2bking-wp-7-plus.b2bking_page_b2bking_group #posts-filter a, .b2bking-wp-7-plus.b2bking_page_b2bking_grule #posts-filter a, .b2bking-wp-7-plus.b2bking_page_b2bking_offer #posts-filter a, .b2bking-wp-7-plus.b2bking_page_b2bking_custom_role #posts-filter a, .b2bking-wp-7-plus.b2bking_page_b2bking_custom_field #posts-filter a, .b2bking-wp-7-plus.b2bking_page_b2bking_conversation #posts-filter a, .b2bking-wp-7-plus.post-type-b2bking_custom_role #posts-filter a, .b2bking-wp-7-plus.post-type-b2bking_rule #posts-filter a, .b2bking-wp-7-plus.post-type-b2bking_group #posts-filter a, .b2bking-wp-7-plus.post-type-b2bking_grule #posts-filter a, .b2bking-wp-7-plus.post-type-b2bking_custom_role #posts-filter a, .b2bking-wp-7-plus.post-type-b2bking_conversation #posts-filter a, .b2bking-wp-7-plus.post-type-b2bking_offer #posts-filter a, .b2bking-wp-7-plus.post-type-b2bking_custom_field #posts-filter a, .b2bking-wp-7-plus.post-type-b2bking_quote_field #posts-filter a{
     color: #2271b1 !important;
 }
-.branch-7.b2bking_page_b2bking_rule .subsubsub a, .branch-7.b2bking_page_b2bking_group .subsubsub a, .branch-7.b2bking_page_b2bking_grule .subsubsub a, .branch-7.b2bking_page_b2bking_offer .subsubsub a, .branch-7.b2bking_page_b2bking_custom_role .subsubsub a, .branch-7.b2bking_page_b2bking_custom_field .subsubsub a, .branch-7.b2bking_page_b2bking_conversation .subsubsub a, .branch-7.post-type-b2bking_custom_role .subsubsub a, .branch-7.post-type-b2bking_rule .subsubsub a, .branch-7.post-type-b2bking_group .subsubsub a, .branch-7.post-type-b2bking_grule .subsubsub a, .branch-7.post-type-b2bking_custom_role .subsubsub a, .branch-7.post-type-b2bking_conversation .subsubsub a, .branch-7.post-type-b2bking_offer .subsubsub a, .branch-7.post-type-b2bking_custom_field .subsubsub a, .branch-7.post-type-b2bking_quote_field .subsubsub a{
+.b2bking-wp-7-plus.b2bking_page_b2bking_rule .subsubsub a, .b2bking-wp-7-plus.b2bking_page_b2bking_group .subsubsub a, .b2bking-wp-7-plus.b2bking_page_b2bking_grule .subsubsub a, .b2bking-wp-7-plus.b2bking_page_b2bking_offer .subsubsub a, .b2bking-wp-7-plus.b2bking_page_b2bking_custom_role .subsubsub a, .b2bking-wp-7-plus.b2bking_page_b2bking_custom_field .subsubsub a, .b2bking-wp-7-plus.b2bking_page_b2bking_conversation .subsubsub a, .b2bking-wp-7-plus.post-type-b2bking_custom_role .subsubsub a, .b2bking-wp-7-plus.post-type-b2bking_rule .subsubsub a, .b2bking-wp-7-plus.post-type-b2bking_group .subsubsub a, .b2bking-wp-7-plus.post-type-b2bking_grule .subsubsub a, .b2bking-wp-7-plus.post-type-b2bking_custom_role .subsubsub a, .b2bking-wp-7-plus.post-type-b2bking_conversation .subsubsub a, .b2bking-wp-7-plus.post-type-b2bking_offer .subsubsub a, .b2bking-wp-7-plus.post-type-b2bking_custom_field .subsubsub a, .b2bking-wp-7-plus.post-type-b2bking_quote_field .subsubsub a{
     color: #2271b1 !important;
 }
-.branch-7.b2bking_page_b2bking_rule button.editinline, .branch-7.b2bking_page_b2bking_group button.editinline, .branch-7.b2bking_page_b2bking_grule button.editinline, .branch-7.b2bking_page_b2bking_offer button.editinline, .branch-7.b2bking_page_b2bking_custom_role button.editinline, .branch-7.b2bking_page_b2bking_custom_field button.editinline, .branch-7.b2bking_page_b2bking_conversation button.editinline, .branch-7.post-type-b2bking_custom_role button.editinline, .branch-7.post-type-b2bking_rule button.editinline, .branch-7.post-type-b2bking_group button.editinline, .branch-7.post-type-b2bking_grule button.editinline, .branch-7.post-type-b2bking_custom_role button.editinline, .branch-7.post-type-b2bking_conversation button.editinline, .branch-7.post-type-b2bking_offer button.editinline, .branch-7.post-type-b2bking_custom_field button.editinline, .branch-7.post-type-b2bking_quote_field button.editinline{
+.b2bking-wp-7-plus.b2bking_page_b2bking_rule button.editinline, .b2bking-wp-7-plus.b2bking_page_b2bking_group button.editinline, .b2bking-wp-7-plus.b2bking_page_b2bking_grule button.editinline, .b2bking-wp-7-plus.b2bking_page_b2bking_offer button.editinline, .b2bking-wp-7-plus.b2bking_page_b2bking_custom_role button.editinline, .b2bking-wp-7-plus.b2bking_page_b2bking_custom_field button.editinline, .b2bking-wp-7-plus.b2bking_page_b2bking_conversation button.editinline, .b2bking-wp-7-plus.post-type-b2bking_custom_role button.editinline, .b2bking-wp-7-plus.post-type-b2bking_rule button.editinline, .b2bking-wp-7-plus.post-type-b2bking_group button.editinline, .b2bking-wp-7-plus.post-type-b2bking_grule button.editinline, .b2bking-wp-7-plus.post-type-b2bking_custom_role button.editinline, .b2bking-wp-7-plus.post-type-b2bking_conversation button.editinline, .b2bking-wp-7-plus.post-type-b2bking_offer button.editinline, .b2bking-wp-7-plus.post-type-b2bking_custom_field button.editinline, .b2bking-wp-7-plus.post-type-b2bking_quote_field button.editinline{
     color: #2271b1 !important;
 }
-.branch-7.b2bking_page_b2bking_rule .check-column input[type="checkbox"], .branch-7.b2bking_page_b2bking_group .check-column input[type="checkbox"], .branch-7.b2bking_page_b2bking_grule .check-column input[type="checkbox"], .branch-7.b2bking_page_b2bking_offer .check-column input[type="checkbox"], .branch-7.b2bking_page_b2bking_custom_role .check-column input[type="checkbox"], .branch-7.b2bking_page_b2bking_custom_field .check-column input[type="checkbox"], .branch-7.b2bking_page_b2bking_conversation .check-column input[type="checkbox"], .branch-7.post-type-b2bking_custom_role .check-column input[type="checkbox"], .branch-7.post-type-b2bking_rule .check-column input[type="checkbox"], .branch-7.post-type-b2bking_group .check-column input[type="checkbox"], .branch-7.post-type-b2bking_grule .check-column input[type="checkbox"], .branch-7.post-type-b2bking_custom_role .check-column input[type="checkbox"], .branch-7.post-type-b2bking_conversation .check-column input[type="checkbox"], .branch-7.post-type-b2bking_offer .check-column input[type="checkbox"], .branch-7.post-type-b2bking_custom_field .check-column input[type="checkbox"], .branch-7.post-type-b2bking_quote_field .check-column input[type="checkbox"]{
+.b2bking-wp-7-plus.b2bking_page_b2bking_rule .check-column input[type="checkbox"], .b2bking-wp-7-plus.b2bking_page_b2bking_group .check-column input[type="checkbox"], .b2bking-wp-7-plus.b2bking_page_b2bking_grule .check-column input[type="checkbox"], .b2bking-wp-7-plus.b2bking_page_b2bking_offer .check-column input[type="checkbox"], .b2bking-wp-7-plus.b2bking_page_b2bking_custom_role .check-column input[type="checkbox"], .b2bking-wp-7-plus.b2bking_page_b2bking_custom_field .check-column input[type="checkbox"], .b2bking-wp-7-plus.b2bking_page_b2bking_conversation .check-column input[type="checkbox"], .b2bking-wp-7-plus.post-type-b2bking_custom_role .check-column input[type="checkbox"], .b2bking-wp-7-plus.post-type-b2bking_rule .check-column input[type="checkbox"], .b2bking-wp-7-plus.post-type-b2bking_group .check-column input[type="checkbox"], .b2bking-wp-7-plus.post-type-b2bking_grule .check-column input[type="checkbox"], .b2bking-wp-7-plus.post-type-b2bking_custom_role .check-column input[type="checkbox"], .b2bking-wp-7-plus.post-type-b2bking_conversation .check-column input[type="checkbox"], .b2bking-wp-7-plus.post-type-b2bking_offer .check-column input[type="checkbox"], .b2bking-wp-7-plus.post-type-b2bking_custom_field .check-column input[type="checkbox"], .b2bking-wp-7-plus.post-type-b2bking_quote_field .check-column input[type="checkbox"]{
     border: 1px solid #8c8f94;
     border-radius: 4px;
 }
-.branch-7.b2bking_page_b2bking_rule .check-column input[type="checkbox"]:focus, .branch-7.b2bking_page_b2bking_group .check-column input[type="checkbox"]:focus, .branch-7.b2bking_page_b2bking_grule .check-column input[type="checkbox"]:focus, .branch-7.b2bking_page_b2bking_offer .check-column input[type="checkbox"]:focus, .branch-7.b2bking_page_b2bking_custom_role .check-column input[type="checkbox"]:focus, .branch-7.b2bking_page_b2bking_custom_field .check-column input[type="checkbox"]:focus, .branch-7.b2bking_page_b2bking_conversation .check-column input[type="checkbox"]:focus, .branch-7.post-type-b2bking_custom_role .check-column input[type="checkbox"]:focus, .branch-7.post-type-b2bking_rule .check-column input[type="checkbox"]:focus, .branch-7.post-type-b2bking_group .check-column input[type="checkbox"]:focus, .branch-7.post-type-b2bking_grule .check-column input[type="checkbox"]:focus, .branch-7.post-type-b2bking_custom_role .check-column input[type="checkbox"]:focus, .branch-7.post-type-b2bking_conversation .check-column input[type="checkbox"]:focus, .branch-7.post-type-b2bking_offer .check-column input[type="checkbox"]:focus, .branch-7.post-type-b2bking_custom_field .check-column input[type="checkbox"]:focus, .branch-7.post-type-b2bking_quote_field .check-column input[type="checkbox"]:focus{
+.b2bking-wp-7-plus.b2bking_page_b2bking_rule .check-column input[type="checkbox"]:focus, .b2bking-wp-7-plus.b2bking_page_b2bking_group .check-column input[type="checkbox"]:focus, .b2bking-wp-7-plus.b2bking_page_b2bking_grule .check-column input[type="checkbox"]:focus, .b2bking-wp-7-plus.b2bking_page_b2bking_offer .check-column input[type="checkbox"]:focus, .b2bking-wp-7-plus.b2bking_page_b2bking_custom_role .check-column input[type="checkbox"]:focus, .b2bking-wp-7-plus.b2bking_page_b2bking_custom_field .check-column input[type="checkbox"]:focus, .b2bking-wp-7-plus.b2bking_page_b2bking_conversation .check-column input[type="checkbox"]:focus, .b2bking-wp-7-plus.post-type-b2bking_custom_role .check-column input[type="checkbox"]:focus, .b2bking-wp-7-plus.post-type-b2bking_rule .check-column input[type="checkbox"]:focus, .b2bking-wp-7-plus.post-type-b2bking_group .check-column input[type="checkbox"]:focus, .b2bking-wp-7-plus.post-type-b2bking_grule .check-column input[type="checkbox"]:focus, .b2bking-wp-7-plus.post-type-b2bking_custom_role .check-column input[type="checkbox"]:focus, .b2bking-wp-7-plus.post-type-b2bking_conversation .check-column input[type="checkbox"]:focus, .b2bking-wp-7-plus.post-type-b2bking_offer .check-column input[type="checkbox"]:focus, .b2bking-wp-7-plus.post-type-b2bking_custom_field .check-column input[type="checkbox"]:focus, .b2bking-wp-7-plus.post-type-b2bking_quote_field .check-column input[type="checkbox"]:focus{
     outline: none;
     box-shadow: none;
 }

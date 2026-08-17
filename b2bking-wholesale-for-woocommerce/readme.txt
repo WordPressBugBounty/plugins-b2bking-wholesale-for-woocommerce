@@ -6,10 +6,10 @@ Tags: 	wholesale prices, woocommerce b2b, woocommerce wholesale, b2b, wholesale
 Author URI: webwizards.dev
 Author: WebWizards
 Requires at least: 4.8
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 5.6.20
-Stable tag: 5.2.30
-Version: 5.2.30
+Stable tag: 5.2.40
+Version: 5.2.40
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 B2BKing is the complete solution for running a Wholesale, B2B or B2B + B2C hybrid store with WooCommerce.
@@ -22,7 +22,7 @@ B2BKing is the complete solution for running a Wholesale, B2B or B2B + B2C hybri
 
 🏆 **Most Featured** B2B Solution - Highlighted by WPLift, WPMayor, Envato, BusinessBloomer, GreenGeeks, LearnWoo and top WP industry sites.
 
-🚀 B2BKing is a global **bestseller** powering **10,000+ active stores**, backed by 6+ years of dedicated, monthly updates (132+ releases, currently [v5.5](https://woocommerce-b2b-plugin.com/changelog/ "v5.5")) - making it the most trusted B2B solution for WooCommerce.
+🚀 B2BKing is a global **bestseller** powering **15,000+ active stores**, backed by 6+ years of dedicated, monthly updates (135+ releases, currently [v5.6](https://woocommerce-b2b-plugin.com/changelog/ "v5.6")) - making it the most trusted B2B solution for WooCommerce.
 
 
 

@@ -590,12 +590,20 @@ class B2bkingcore_Public{
 
 	// Save Custom Registration Fields
 	function b2bking_save_custom_registration_fields($user_id){
+		$user_role = '';
+		if (isset($_POST['b2bking_registration_roles_dropdown'])){
+			$user_role = is_string($_POST['b2bking_registration_roles_dropdown']) ? sanitize_text_field(wp_unslash($_POST['b2bking_registration_roles_dropdown'])) : '';
+			$submitted_role_id = preg_match('/^role_([0-9]+)$/', $user_role, $matches) === 1 ? intval($matches[1]) : 0;
+			if ($submitted_role_id < 1 || get_post_type($submitted_role_id) !== 'b2bking_custom_role' || get_post_status($submitted_role_id) !== 'publish' || intval(get_post_meta($submitted_role_id, 'b2bking_custom_role_status', true)) !== 1 || intval(get_post_meta($submitted_role_id, 'b2bking_non_selectable', true)) === 1){
+				$user_role = '';
+				unset($_POST['b2bking_registration_roles_dropdown']);
+			}
+		}
 
 		// if user role dropdown enabled, also set user registration role as meta
 		$registration_role_setting = intval(get_option( 'b2bking_registration_roles_dropdown_setting', 1 ));
 		if ($registration_role_setting === 1){
-			$user_role = sanitize_text_field(filter_input(INPUT_POST, 'b2bking_registration_roles_dropdown'));
-			if ($user_role !== NULL){
+			if (!empty($user_role)){
 				update_user_meta( $user_id, 'b2bking_registration_role', $user_role);
 			}
 		}
@@ -604,8 +612,7 @@ class B2bkingcore_Public{
 		if (intval(get_option('b2bking_approval_required_all_users_setting', 0)) === 1){
 			update_user_meta( $user_id, 'b2bking_account_approved', 'no');
 
-		} else if (isset($_POST['b2bking_registration_roles_dropdown'])){
-			$user_role = sanitize_text_field(filter_input(INPUT_POST, 'b2bking_registration_roles_dropdown'));
+		} else if (!empty($user_role)){
 			$user_role_id = explode('_', $user_role)[1];
 			$user_role_approval = get_post_meta($user_role_id, 'b2bking_custom_role_approval', true);
 			if ($user_role_approval === 'manual'){
@@ -639,20 +646,21 @@ class B2bkingcore_Public{
 		}
 
 		// if customer is being approved automatically, and group is other than none, set customer as B2B
-		$user_role = sanitize_text_field(filter_input(INPUT_POST, 'b2bking_registration_roles_dropdown'));
-		$user_role_id = explode('_', $user_role)[1];
-		$user_role_approval = get_post_meta($user_role_id, 'b2bking_custom_role_approval', true);
-		if ($user_role_approval === 'automatic'){
-			if ($user_role_automatic_customer_group !== 'none'){
-				update_user_meta($user_id, 'b2bking_b2buser', 'yes');
-			} else {
-				// user must be b2c, add b2c role
-				if (apply_filters('b2bking_use_wp_roles', false)){
-					$user_obj = new WP_User($user_id);
-					$user_obj->add_role('b2bking_role_b2cuser');
+		if (!empty($user_role)){
+			$user_role_id = explode('_', $user_role)[1];
+			$user_role_approval = get_post_meta($user_role_id, 'b2bking_custom_role_approval', true);
+			if ($user_role_approval === 'automatic'){
+				if ($user_role_automatic_customer_group !== 'none'){
+					update_user_meta($user_id, 'b2bking_b2buser', 'yes');
+				} else {
+					// user must be b2c, add b2c role
+					if (apply_filters('b2bking_use_wp_roles', false)){
+						$user_obj = new WP_User($user_id);
+						$user_obj->add_role('b2bking_role_b2cuser');
 
-					if (apply_filters('b2bking_use_wp_roles_only_b2b', false)){
-						$user_obj->set_role('b2bking_role_b2cuser');
+						if (apply_filters('b2bking_use_wp_roles_only_b2b', false)){
+							$user_obj->set_role('b2bking_role_b2cuser');
+						}
 					}
 				}
 			}
@@ -1028,4 +1036,3 @@ class B2bkingcore_Public{
     }
     	
 }
-
