@@ -5963,7 +5963,7 @@ class B2bkingcore_Admin{
 			</div>
 			
 			<form class="plugin-filter" method="post">			
-				<div class="wp-list-table widefat plugin-install">
+				<div class="wp-list-table widefat plugin-install plugin-install-php">
 					<div id="the-list" class="b2bking_pro_plugin_cards">
 						<?php 
 						self::b2bking_display_modules_cards('pro');
