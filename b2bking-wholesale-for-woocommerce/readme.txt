@@ -8,8 +8,8 @@ Author: WebWizards
 Requires at least: 4.8
 Tested up to: 7.1
 Requires PHP: 5.6.20
-Stable tag: 5.2.50
-Version: 5.2.50
+Stable tag: 5.2.60
+Version: 5.2.60
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 B2BKing is the complete solution for running a Wholesale, B2B or B2B + B2C hybrid store with WooCommerce.
@@ -22,7 +22,7 @@ B2BKing is the complete solution for running a Wholesale, B2B or B2B + B2C hybri
 
 🏆 **Most Featured** B2B Solution - Highlighted by WPLift, WPMayor, Envato, BusinessBloomer, GreenGeeks, LearnWoo and top WP industry sites.
 
-🚀 B2BKing is a global **bestseller** powering **15,000+ active stores**, backed by 6+ years of dedicated, monthly updates (135+ releases, currently [v5.6](https://woocommerce-b2b-plugin.com/changelog/ "v5.6")) - making it the most trusted B2B solution for WooCommerce.
+🚀 B2BKing is a global **bestseller** powering **15,000+ active stores**, backed by 6+ years of dedicated, monthly updates (135+ releases, currently [v5.6](https://b2bkingplugin.com/changelog/ "v5.6")) - making it the most trusted B2B solution for WooCommerce.
 
 
 
@@ -30,7 +30,7 @@ B2BKing is the complete solution for running a Wholesale, B2B or B2B + B2C hybri
 
 👉 [Live Demo (Free)](https://demobk1.wpbay.co/b2bking-demos/ "Live Demo")
 
-👉 [Documentation](https://woocommerce-b2b-plugin.com/docs "Documentation")
+👉 [Documentation](https://b2bkingplugin.com/docs "Documentation")
 
 👉 [Check out B2BKing Premium](https://kingsplugins.com/woocommerce-wholesale/b2bking/ "Check out B2BKing Premium")
 
@@ -45,11 +45,11 @@ From an extended business registration and separate B2B/B2C registration forms, 
 
 == Free Plugin: Step-by-Step Guides ==
 
-👉 [How to set different prices for wholesale users ](https://woocommerce-b2b-plugin.com/docs/wholesale-prices-how-to-set-different-prices-for-wholesale-buyers/ "How to set different prices for wholesale users")
+👉 [How to set different prices for wholesale users ](https://b2bkingplugin.com/docs/wholesale-prices-how-to-set-different-prices-for-wholesale-buyers/ "How to set different prices for wholesale users")
 
 Example: Product costs $199 for B2C buyers, and $179 for B2B buyers.
 
-👉 [How to apply a percentage discount on all products](https://woocommerce-b2b-plugin.com/docs/wholesale-discounts-how-to-apply-a-percentage-discount-on-all-products/ "How to apply a percentage discount on all products")
+👉 [How to apply a percentage discount on all products](https://b2bkingplugin.com/docs/wholesale-discounts-how-to-apply-a-percentage-discount-on-all-products/ "How to apply a percentage discount on all products")
 
 Example: Give B2B buyers a 10% discount on all products with a single rule.
 
@@ -59,7 +59,7 @@ Example: Give B2B buyers a 10% discount on all products with a single rule.
 * Set different **payment methods** for each user or user group.
 * Set different **shipping methods** for each user or user group.
 * Configure **discount percentages** (e.g. 10% discount on all products for Wholesale buyers) easily with dynamic rules.
-* Built-in **[CRM Hub and Customers page](https://woocommerce-b2b-plugin.com/docs/managing-b2b-users-the-customers-page-and-crm-hub/ "CRM Hub and Customers page")** to manage B2B accounts, approvals, notes, files, and order history, all from one dashboard.
+* Built-in **[CRM Hub and Customers page](https://b2bkingplugin.com/docs/managing-b2b-users-the-customers-page-and-crm-hub/ "CRM Hub and Customers page")** to manage B2B accounts, approvals, notes, files, and order history, all from one dashboard.
 * View **reports for B2B / B2C** customers with data on gross and net sales, orders placed, order value, refunds, coupons and more.
 * Works with any WooCommerce-compatible theme
 * Fully translatable with Loco Translate or WPML
@@ -292,7 +292,7 @@ With the business registration feature you can configure comprehensive registrat
 * **Many more features** and integrations across features
 * **New features constantly added. Get in touch with us for pre-sales questions.**
 
-👉 [Get B2BKing - The Ultimate WooCommerce Wholesale & B2B Plugin](https://woocommerce-b2b-plugin.com "Get B2BKing - The Ultimate WooCommerce Wholesale & B2B Plugin")
+👉 [Get B2BKing - The Ultimate WooCommerce Wholesale & B2B Plugin](https://b2bkingplugin.com "Get B2BKing - The Ultimate WooCommerce Wholesale & B2B Plugin")
 
 == Plugin Presentation==
 [youtube https://www.youtube.com/watch?v=oXu3m1NKSBQ]
@@ -341,7 +341,7 @@ With the business registration feature you can configure comprehensive registrat
 
 == Changelog ==
 
-https://woocommerce-b2b-plugin.com/changelog
+https://b2bkingplugin.com/changelog
 
 == Frequently Asked Questions ==
 
@@ -355,7 +355,7 @@ B2BKing is ideal for both types of sites, and has 2 dedicated modes, one for eac
 
 = Can I hide prices for logged-out users? =
 
-Yes, B2BKing has an easy-to-use feature that hides prices until users log in. More info [here](https://woocommerce-b2b-plugin.com/docs/guest-access-restriction-hide-prices-hide-the-website-replace-prices-with-quote-request/ "here")
+Yes, B2BKing has an easy-to-use feature that hides prices until users log in. More info [here](https://b2bkingplugin.com/docs/guest-access-restriction-hide-prices-hide-the-website-replace-prices-with-quote-request/ "here")
 
 
 = Can I hide prices on specific products only? = 
@@ -380,7 +380,7 @@ Yes, you can create 'Fixed Price' dynamic rules, which allow you to select indiv
 
 = Can I hide some products completely for some users? = 
 
-Yes! B2BKing can not only hide price, but it can also hide products entirely using the plugin's visibility module. This can be configured for specific products, categories, users or user groups. More info [here](https://woocommerce-b2b-plugin.com/docs/faq-product-visibility-is-not-working-how-to-set-up-product-visibility/ "here")
+Yes! B2BKing can not only hide price, but it can also hide products entirely using the plugin's visibility module. This can be configured for specific products, categories, users or user groups. More info [here](https://b2bkingplugin.com/docs/faq-product-visibility-is-not-working-how-to-set-up-product-visibility/ "here")
 
 = How can I report security bugs? =
 

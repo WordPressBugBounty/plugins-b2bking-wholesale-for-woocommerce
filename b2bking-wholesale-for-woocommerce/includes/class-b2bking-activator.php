@@ -12,17 +12,17 @@ class B2bkingcore_Activator {
 			// prevent option update issues due to caching
 			wp_cache_delete ( 'alloptions', 'options' );
 
-			// Trigger post types and endpoints functions
+			// Register Core's post types before rebuilding their database rewrite rules.
 			require_once ( B2BKINGCORE_DIR . 'admin/class-b2bking-admin.php' );
-			require_once ( B2BKINGCORE_DIR . 'public/class-b2bking-public.php' );
 			$adminobj = new B2bkingcore_Admin;
-			$publicobj = new B2bkingcore_Public;
 			$adminobj->b2bking_register_post_type_customer_groups();
 			$adminobj->b2bking_register_post_type_dynamic_rules();
 			$adminobj->b2bking_register_post_type_custom_role();
 			
-			// Flush rewrite rules
-			flush_rewrite_rules();
+			// A soft flush leaves .htaccess unchanged, including on WPML-translated requests.
+			if (apply_filters('b2bking_flush_permalinks', true)){
+				flush_rewrite_rules(false);
+			}
 
 			if (empty(get_user_meta(get_current_user_id(),'b2bking_dismiss_activate_woocommerce_notice', true))){
 				// give users 48 hours first

@@ -65,6 +65,22 @@ class B2bking_Globalhelpercore{
 		empty($clean) ? delete_post_meta($product_id, 'b2bking_product_pricetiers_user_'.$user_id) : update_post_meta($product_id, 'b2bking_product_pricetiers_user_'.$user_id, implode(';', $clean).';');
 	}
 
+	// Escape literal "[,]" in a raw b2bking_custom_field_user_choices string so that
+	// explode(',', ...) does not split on a user-intended comma (e.g. "15[,]000 feet").
+	// Call BEFORE the outer explode(',', ...).
+	public static function escape_user_choices( $raw ) {
+		return str_replace( '[,]', "\x01", (string) $raw );
+	}
+
+	// Restore the literal comma after the outer explode(',', ...). Accepts the
+	// exploded array or a single piece. Call AFTER the outer explode(',', ...).
+	public static function unescape_user_choices( $choices ) {
+		if ( is_array( $choices ) ) {
+			return array_map( array( __CLASS__, 'unescape_user_choices' ), $choices );
+		}
+		return str_replace( "\x01", ',', (string) $choices );
+	}
+
 	public static function format_price_range( $from, $to ) {
 		$price = wc_format_price_range($from, $to);
 
@@ -2070,6 +2086,63 @@ class B2bking_Globalhelpercore{
 		return $field_value;
 	}
 
+	public static function get_user_vat_number($user_id = 0, $field_id = 0){
+		if ($user_id === 0){
+			$user_id = get_current_user_id();
+		}
+
+		static $configured_field_ids = null;
+		if ($configured_field_ids === null){
+			$configured_field_ids = get_posts(array(
+				'post_type' => 'b2bking_custom_field',
+				'post_status' => 'publish',
+				'numberposts' => -1,
+				'orderby' => 'menu_order',
+				'order' => 'ASC',
+				'fields' => 'ids',
+				'meta_query' => array(
+					'relation' => 'AND',
+					array(
+						'key' => 'b2bking_custom_field_status',
+						'value' => 1,
+					),
+					array(
+						'key' => 'b2bking_custom_field_billing_connection',
+						'value' => 'billing_vat',
+					),
+				),
+			));
+		}
+		$field_ids = $configured_field_ids;
+		if ($field_id !== 0){
+			array_unshift($field_ids, intval($field_id));
+			$field_ids = array_unique($field_ids);
+		}
+
+		foreach ($field_ids as $vat_field_id){
+			$vat_number = get_user_meta($user_id, 'b2bking_custom_field_'.$vat_field_id, true);
+			if ($vat_number !== '' && $vat_number !== null){
+				return $vat_number;
+			}
+		}
+
+		$vat_number = get_user_meta($user_id, 'vat_number', true);
+		if ($vat_number === '' || $vat_number === null){
+			$vat_number = get_user_meta($user_id, 'billing_vat', true);
+		}
+
+		return $vat_number;
+	}
+
+	public static function set_user_vat_number($user_id, $field_id, $vat_number){
+		$field_id = intval($field_id);
+		$vat_number = sanitize_text_field($vat_number);
+		update_user_meta($user_id, 'b2bking_custom_field_'.$field_id, $vat_number);
+		update_user_meta($user_id, 'b2bking_custom_field_'.$field_id.'bis', $vat_number);
+		update_user_meta($user_id, 'vat_number', $vat_number);
+		update_user_meta($user_id, 'billing_vat', $vat_number);
+	}
+
 	public static function get_user_phone($user_id = 0){
 		if ($user_id === 0){
 			$user_id = get_current_user_id();
@@ -2519,8 +2592,8 @@ class B2bking_Globalhelpercore{
 			wp_cache_flush();
 		}
 
-		// force permalinks
-		update_option('b2bking_force_permalinks_flushing_setting', 1);
+		// If Core's helper is used alongside Pro, request Pro's one-time rewrite rebuild.
+		delete_option('b2bking_account_endpoints_flushed');
 
 		delete_transient('webwizards_dashboard_data_cache');
 		delete_transient('webwizards_dashboard_data_cache_time');

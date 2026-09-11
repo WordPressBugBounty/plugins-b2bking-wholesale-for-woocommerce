@@ -147,7 +147,7 @@ class B2bkingcore_Settings {
 								        <h3 class="header">	<?php esc_html_e('Documentation','b2bking'); ?></h3>
 								        <p>
 								            <?php
-								            $learn_more_link = '<a href="https://woocommerce-b2b-plugin.com/docs/plugin-status/" target="_blank" style="color: #295b6b"><span style="color: #295b6b">&nbsp;<strong style="text-decoration: underline;">%s</strong></span></a>';
+								            $learn_more_link = '<a href="https://b2bkingplugin.com/docs/plugin-status/" target="_blank" style="color: #295b6b"><span style="color: #295b6b">&nbsp;<strong style="text-decoration: underline;">%s</strong></span></a>';
 
 								            $translated_text = sprintf(
 								                /* translators: %s: Linked text for 'Learn more' */
@@ -219,7 +219,7 @@ class B2bkingcore_Settings {
 							        <h3 class="header">	<?php esc_html_e('Documentation','b2bking'); ?></h3>
 								    <p>
 								        <?php								        
-								        $extended_registration_link = '<a href="https://woocommerce-b2b-plugin.com/docs/extended-registration-and-custom-fields/" target="_blank" style="color: #295b6b"><span style="color: #295b6b"><strong style="text-decoration: underline;">%s</strong></span></a>';
+								        $extended_registration_link = '<a href="https://b2bkingplugin.com/docs/extended-registration-and-custom-fields/" target="_blank" style="color: #295b6b"><span style="color: #295b6b"><strong style="text-decoration: underline;">%s</strong></span></a>';
 
 								        $translated_text = sprintf(
 								            /* translators: %1$s: Linked text for 'completely separate B2B and B2C registration', %2$s: Linked text for 'extended registration and custom fields' */
@@ -270,157 +270,157 @@ class B2bkingcore_Settings {
 										'icon' => 'wpforms',
 										'title' => esc_html__( 'Business Registration & Approval', 'b2bking' ),
 										'description' => esc_html__( 'Build polished B2B signup flows with separate B2B/B2C registration, multiple roles, manual or automatic approval, VAT support, and VIES validation.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/extended-registration-and-custom-fields/',
+										'url' => 'https://b2bkingplugin.com/docs/extended-registration-and-custom-fields/',
 									),
 									array(
 										'icon' => 'clipboard',
 										'title' => esc_html__( 'Wholesale Order Form', 'b2bking' ),
 										'description' => esc_html__( 'Speed up repeat purchases with a wholesale order form, AJAX search, SKU lookup, variation support, and multiple display styles.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/woocommerce-wholesale-order-form-bulk-order-plugin/',
+										'url' => 'https://b2bkingplugin.com/woocommerce-wholesale-order-form-bulk-order-plugin/',
 									),
 									array(
 										'icon' => 'privacy',
 										'title' => esc_html__( 'Hide Prices for Guests & Hide Shop', 'b2bking' ),
 										'description' => esc_html__( 'Hide prices, replace them with quote requests, or lock down the entire website and shop for guest users.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/guest-access-restriction-hide-prices-hide-the-website-replace-prices-with-quote-request/',
+										'url' => 'https://b2bkingplugin.com/docs/guest-access-restriction-hide-prices-hide-the-website-replace-prices-with-quote-request/',
 									),
 									array(
 										'icon' => 'percent',
 										'title' => esc_html__( 'Wholesale Prices & Tiered Pricing', 'b2bking' ),
 										'description' => esc_html__( 'Set different prices by group or user, apply tiered pricing, show automatic pricing tables, and create bulk percentage discount rules.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/woocommerce-wholesale-prices/',
+										'url' => 'https://b2bkingplugin.com/woocommerce-wholesale-prices/',
 									),
 									array(
 										'icon' => 'eye',
 										'title' => esc_html__( 'Product Visibility Control', 'b2bking' ),
 										'description' => esc_html__( 'Show or hide products and categories for specific users or groups to create tailored wholesale catalogs.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/faq-product-visibility-is-not-working-how-to-set-up-product-visibility/',
+										'url' => 'https://b2bkingplugin.com/docs/faq-product-visibility-is-not-working-how-to-set-up-product-visibility/',
 									),
 									array(
 										'icon' => 'calculator',
 										'title' => esc_html__( 'Minimum Order Quantity & Value', 'b2bking' ),
 										'description' => esc_html__( 'Set different minimum order quantity and order value thresholds to match the way you sell wholesale.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/how-to-set-different-minimum-order-thresholds-for-different-users-in-woocommerce/',
+										'url' => 'https://b2bkingplugin.com/docs/how-to-set-different-minimum-order-thresholds-for-different-users-in-woocommerce/',
 									),
 									array(
 										'icon' => 'balance',
 										'title' => esc_html__( 'Tax Exemptions & VAT Validation', 'b2bking' ),
 										'description' => esc_html__( 'Handle tax exemptions, VAT number validation, EU VAT and VIES checks, custom taxes, and withholding tax scenarios.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/vat-and-vies-validation/',
+										'url' => 'https://b2bkingplugin.com/docs/vat-and-vies-validation/',
 									),
 									array(
 										'icon' => 'random',
 										'title' => esc_html__( 'Dynamic Pricing, Discount & Order Rules', 'b2bking' ),
 										'description' => esc_html__( 'Create rule-based pricing, discounts, order conditions, coupon restrictions, and flexible wholesale logic across your store.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/dynamic-rules-discount-free-shipping-fixed-price-hidden-price-minimum-order-maximum-order-tax-exemption-required-multiple-add-tax-fee/',
+										'url' => 'https://b2bkingplugin.com/docs/dynamic-rules-discount-free-shipping-fixed-price-hidden-price-minimum-order-maximum-order-tax-exemption-required-multiple-add-tax-fee/',
 									),
 									array(
 										'icon' => 'shipping',
 										'title' => esc_html__( 'Shipping & Payment Methods Control', 'b2bking' ),
 										'description' => esc_html__( 'Control which shipping and payment methods each customer can use, including value-based restrictions and B2B-specific payment flows.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/how-to-enable-disable-payment-and-shipping-methods-based-on-users-or-groups/',
+										'url' => 'https://b2bkingplugin.com/docs/how-to-enable-disable-payment-and-shipping-methods-based-on-users-or-groups/',
 									),
 									array(
 										'icon' => 'handshake',
 										'title' => esc_html__( 'Quote Requests & Convert Quotes to Offers', 'b2bking' ),
 										'description' => esc_html__( 'Let customers request quotes instead of buying directly, then turn those requests into tailored offers and deals.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/registered-user-access-restriction-replace-prices-with-request-a-quote/',
+										'url' => 'https://b2bkingplugin.com/docs/registered-user-access-restriction-replace-prices-with-request-a-quote/',
 									),
 									array(
 										'icon' => 'edit',
 										'title' => esc_html__( 'Custom Quote Fields', 'b2bking' ),
 										'description' => esc_html__( 'Manage quote request fields with 9 field types so you can collect the extra business details needed before pricing.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/add-custom-fields-to-quote-requests/',
+										'url' => 'https://b2bkingplugin.com/docs/add-custom-fields-to-quote-requests/',
 									),
 									array(
 										'icon' => 'table',
 										'title' => esc_html__( 'Quick Orders via CSV Upload', 'b2bking' ),
 										'description' => esc_html__( 'Let buyers place quick bulk orders by uploading CSV files, making larger repeat orders much faster to process.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/quick-orders-via-csv-upload/',
+										'url' => 'https://b2bkingplugin.com/docs/quick-orders-via-csv-upload/',
 									),
 									array(
 										'icon' => 'sort amount down',
 										'title' => esc_html__( 'Min / Max / Step Quantities on Product Pages', 'b2bking' ),
 										'description' => esc_html__( 'Set minimum, maximum, and step quantities directly on product pages to guide wholesale ordering behavior.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/quantity-rules-min-max-step-on-product-page/',
+										'url' => 'https://b2bkingplugin.com/docs/quantity-rules-min-max-step-on-product-page/',
 									),
 									array(
 										'icon' => 'boxes',
 										'title' => esc_html__( 'Product Bundles & Negotiated Offers', 'b2bking' ),
 										'description' => esc_html__( 'Create bundles and personalized offers for groups or individual buyers, with full control over who sees each one.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/offers-2/',
+										'url' => 'https://b2bkingplugin.com/docs/offers-2/',
 									),
 									array(
 										'icon' => 'copy',
 										'title' => esc_html__( 'Purchase Lists & CSV Downloads', 'b2bking' ),
 										'description' => esc_html__( 'Give buyers reusable purchase lists for replenishment and reordering, and allow lists to be downloaded as CSV files.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/purchase-lists-wish-lists-requisition-lists/',
+										'url' => 'https://b2bkingplugin.com/docs/purchase-lists-wish-lists-requisition-lists/',
 									),
 									array(
 										'icon' => 'comments',
 										'title' => esc_html__( 'Conversations & Messaging', 'b2bking' ),
 										'description' => esc_html__( 'Keep inquiries, negotiations, and sales communication inside WooCommerce with built-in messaging for your business buyers.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/conversations/',
+										'url' => 'https://b2bkingplugin.com/docs/conversations/',
 									),
 									array(
 										'icon' => 'sort',
 										'title' => esc_html__( 'Automatic Tiered Pricing Table', 'b2bking' ),
 										'description' => esc_html__( 'Show customers clear automatic tiered pricing tables so quantity breaks and wholesale discounts are easier to understand.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/woocommerce-tiered-pricing-price-table/',
+										'url' => 'https://b2bkingplugin.com/woocommerce-tiered-pricing-price-table/',
 									),
 									array(
 										'icon' => 'chart line',
 										'title' => esc_html__( 'Tiered Price Rules in Bulk', 'b2bking' ),
 										'description' => esc_html__( 'Create tiered percentage discount rules in bulk and roll out wholesale pricing structures faster across your catalog.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/tiered-price-rules/',
+										'url' => 'https://b2bkingplugin.com/docs/tiered-price-rules/',
 									),
 									array(
 										'icon' => 'sitemap',
 										'title' => esc_html__( 'Multiple Buyers on One Account', 'b2bking' ),
 										'description' => esc_html__( 'Support company subaccounts so multiple buyers can order under one business account with their own permissions.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/multiple-buyers-per-account-subaccounts/',
+										'url' => 'https://b2bkingplugin.com/docs/multiple-buyers-per-account-subaccounts/',
 									),
 									array(
 										'icon' => 'checkmark',
 										'title' => esc_html__( 'Company Order Approval', 'b2bking' ),
 										'description' => esc_html__( 'Let business accounts review, approve, or reject employee orders before they are placed.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/company-order-approval',
+										'url' => 'https://b2bkingplugin.com/docs/company-order-approval',
 									),
 									array(
 										'icon' => 'warehouse',
 										'title' => esc_html__( 'Separate Inventory for B2B & B2C', 'b2bking' ),
 										'description' => esc_html__( 'Use separate stock quantities or enable backorders just for B2B users, so wholesale and retail inventory can be managed differently.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/separate-stock-b2b-b2c-users-wholesale-woocommerce/',
+										'url' => 'https://b2bkingplugin.com/docs/separate-stock-b2b-b2c-users-wholesale-woocommerce/',
 									),
 									array(
 										'icon' => 'file',
 										'title' => esc_html__( 'Invoice Payment Gateway', 'b2bking' ),
 										'description' => esc_html__( 'Offer invoice payments at checkout so higher-value wholesale orders can be reviewed and finalized later.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/invoice-payment-gateway/',
+										'url' => 'https://b2bkingplugin.com/docs/invoice-payment-gateway/',
 									),
 									array(
 										'icon' => 'shopping basket',
 										'title' => esc_html__( 'Purchase Order Gateway', 'b2bking' ),
 										'description' => esc_html__( 'Accept purchase orders directly at checkout and support the ordering flows many business customers expect.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/purchase-order-gateway/',
+										'url' => 'https://b2bkingplugin.com/docs/purchase-order-gateway/',
 									),
 									array(
 										'icon' => 'dashboard',
 										'title' => esc_html__( 'Reports & Analytics', 'b2bking' ),
 										'description' => esc_html__( 'View sales and performance data for B2B customers and groups so you can understand wholesale revenue more clearly.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/reports/',
+										'url' => 'https://b2bkingplugin.com/docs/reports/',
 									),
 									array(
 										'icon' => 'columns',
 										'title' => esc_html__( 'Bulk Variations Table', 'b2bking' ),
 										'description' => esc_html__( 'Show product variations in a fast bulk table layout that makes ordering multiple sizes, colors, or options much easier.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs/bulk-variations-table-grid/',
+										'url' => 'https://b2bkingplugin.com/docs/bulk-variations-table-grid/',
 									),
 									array(
 										'icon' => 'cubes',
 										'title' => esc_html__( '137+ Features. Incredible Value.', 'b2bking' ),
 										'description' => esc_html__( 'And that is just part of it. B2BKing also includes content restriction tools, different currencies, group-based coupons, rank systems, product information tables, and much more.', 'b2bking' ),
-										'url' => 'https://woocommerce-b2b-plugin.com/docs',
+										'url' => 'https://b2bkingplugin.com/docs',
 									),
 								);
 
@@ -449,7 +449,7 @@ class B2bkingcore_Settings {
 												<?php } ?>
 											</div>
 											<div class="b2bking_upgrade_cta_row">
-												<a class="ui orange large button b2bking_upgrade_primary_button" href="https://woocommerce-b2b-plugin.com/pricing" target="_blank" rel="noopener noreferrer"><i class="rocket icon"></i><?php esc_html_e( 'Explore B2BKing Premium', 'b2bking' ); ?></a>
+												<a class="ui orange large button b2bking_upgrade_primary_button" href="https://b2bkingplugin.com/pricing" target="_blank" rel="noopener noreferrer"><i class="rocket icon"></i><?php esc_html_e( 'Explore B2BKing Premium', 'b2bking' ); ?></a>
 												<a class="b2bking_upgrade_secondary_link" href="https://kingsplugins.com/woocommerce-wholesale/b2bking/" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'See the full product overview', 'b2bking' ); ?></a>
 											</div>
 										</div>
@@ -490,7 +490,7 @@ class B2bkingcore_Settings {
 
 									<div class="b2bking_upgrade_footer">
 											<p><?php esc_html_e( 'If you need business registration, tiered pricing, quote workflows, CSV ordering, approvals, private catalogs, analytics, or advanced tax handling, B2BKing Premium brings it together in one place.', 'b2bking' ); ?></p>
-										<a class="ui orange large button b2bking_upgrade_primary_button" href="https://woocommerce-b2b-plugin.com/pricing" target="_blank" rel="noopener noreferrer"><i class="rocket icon"></i><?php esc_html_e( 'Get Started with B2BKing Premium', 'b2bking' ); ?></a>
+										<a class="ui orange large button b2bking_upgrade_primary_button" href="https://b2bkingplugin.com/pricing" target="_blank" rel="noopener noreferrer"><i class="rocket icon"></i><?php esc_html_e( 'Get Started with B2BKing Premium', 'b2bking' ); ?></a>
 									</div>
 								</div>
 

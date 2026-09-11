@@ -19,12 +19,12 @@ if ( empty( $custom_logo ) && function_exists( 'plugins_url' ) ) {
 
 $settings_url            = function_exists( 'admin_url' ) ? admin_url( 'admin.php?page=b2bkingcore' ) : '#';
 $groups_url              = function_exists( 'admin_url' ) ? admin_url( 'admin.php?page=b2bking_groups' ) : '#';
-$docs_url                = 'https://woocommerce-b2b-plugin.com/docs';
+$docs_url                = 'https://b2bkingplugin.com/docs';
 $support_url             = 'https://wordpress.org/plugins/b2bking-wholesale-for-woocommerce/';
-$wholesale_prices_url    = 'https://woocommerce-b2b-plugin.com/docs/wholesale-prices-how-to-set-different-prices-for-wholesale-buyers/';
-$wholesale_discounts_url = 'https://woocommerce-b2b-plugin.com/docs/wholesale-discounts-how-to-apply-a-percentage-discount-on-all-products/';
-$payment_methods_doc_url = 'https://woocommerce-b2b-plugin.com/docs/how-to-enable-disable-payment-and-shipping-methods-based-on-users-or-groups/';
-$upgrade_url             = 'https://woocommerce-b2b-plugin.com/pricing';
+$wholesale_prices_url    = 'https://b2bkingplugin.com/docs/wholesale-prices-how-to-set-different-prices-for-wholesale-buyers/';
+$wholesale_discounts_url = 'https://b2bkingplugin.com/docs/wholesale-discounts-how-to-apply-a-percentage-discount-on-all-products/';
+$payment_methods_doc_url = 'https://b2bkingplugin.com/docs/how-to-enable-disable-payment-and-shipping-methods-based-on-users-or-groups/';
+$upgrade_url             = 'https://b2bkingplugin.com/pricing';
 $overview_url            = 'https://kingsplugins.com/woocommerce-wholesale/b2bking/';
 ?>
 

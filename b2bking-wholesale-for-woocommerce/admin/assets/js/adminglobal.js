@@ -81,7 +81,7 @@
 						'padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; ' +
 						'transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(144, 106, 29, 0.3);' +
 						'">Disable AJAX Loading</button>' +
-						'<a href="https://woocommerce-b2b-plugin.com/docs/issue-b2bking-pages-do-not-load-infinite-loading-icon/" target="_blank" style="' +
+						'<a href="https://b2bkingplugin.com/docs/issue-b2bking-pages-do-not-load-infinite-loading-icon/" target="_blank" style="' +
 						'background: white; color: #191821; border: 2px solid #e9ecef; ' +
 						'padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500; ' +
 						'transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 8px;' +
