@@ -8,8 +8,8 @@ Author: WebWizards
 Requires at least: 4.8
 Tested up to: 7.1
 Requires PHP: 5.6.20
-Stable tag: 5.2.60
-Version: 5.2.60
+Stable tag: 5.2.61
+Version: 5.2.61
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 B2BKing is the complete solution for running a Wholesale, B2B or B2B + B2C hybrid store with WooCommerce.
@@ -18,7 +18,7 @@ B2BKing is the complete solution for running a Wholesale, B2B or B2B + B2C hybri
 
 **B2BKing® is the complete solution for running a Wholesale, B2B or B2B + B2C hybrid store with WooCommerce.**
 
-🥇 **Highest Rated** B2B & Wholesale plugin: **4.98/5 stars** from [100+ reviews](https://codecanyon.net/item/b2bking-the-ultimate-woocommerce-b2b-plugin/reviews/26689576 "100+ reviews")
+🥇 **Highest Rated** B2B & Wholesale plugin: **4.95/5 stars** from [215+ reviews](https://b2bkingplugin.com/reviews/ "B2BKing reviews on WordPress.org, CodeCanyon, Capterra and G2") on WordPress.org, CodeCanyon, Capterra and G2
 
 🏆 **Most Featured** B2B Solution - Highlighted by WPLift, WPMayor, Envato, BusinessBloomer, GreenGeeks, LearnWoo and top WP industry sites.
 

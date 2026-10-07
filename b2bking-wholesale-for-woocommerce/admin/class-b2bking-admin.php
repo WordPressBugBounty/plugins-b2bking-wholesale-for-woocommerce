@@ -5881,7 +5881,7 @@ class B2bkingcore_Admin{
 			array('title' => 'Company Approval', 'description' => 'Businesses can require approval for staff orders, reviewing and approving each order.', 'documentation_url'=> 'https://b2bkingplugin.com/docs/company-order-approval/', 'image' => plugins_url('../includes/assets/images/module-company.png', __FILE__)),
 			array('title' => 'Company Line of Credit', 'description' => 'Extend a line of credit to your B2B customers and set up a credit limit.', 'documentation_url'=> 'https://kingsplugins.com/woocommerce-wholesale/b2bking-company-credit/', 'image' => plugins_url('../includes/assets/images/module-credit4.png', __FILE__)),
 			array('title' => 'White Label', 'description' => 'White label the plugin backend to add your company or customer logo and details.', 'documentation_url'=> 'https://b2bkingplugin.com/docs/white-label-woocommerce-b2b-wholesale-solution/', 'image' => plugins_url('../includes/assets/images/module-document2.png', __FILE__)),
-			array('title' => 'And much more...', 'description' => 'There are dozens of more features and integrations. <a href="https://webwizards.ticksy.com/submit/#100016894">Get in touch with us</a> for questions.', 'documentation_url'=> 'https://webwizards.ticksy.com/submit/#100016894', 'image' => plugins_url('../includes/assets/images/module-question2.png', __FILE__)),
+			array('title' => 'And much more...', 'description' => 'There are dozens of more features and integrations. <a href="https://support.kingsplugins.com/submit/#100016894">Get in touch with us</a> for questions.', 'documentation_url'=> 'https://support.kingsplugins.com/submit/#100016894', 'image' => plugins_url('../includes/assets/images/module-question2.png', __FILE__)),
 
 
 		);
